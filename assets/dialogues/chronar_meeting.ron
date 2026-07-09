@@ -1,0 +1,79 @@
+// Chronar Meeting — Post-Boss Dialogue (Realm of Time)
+// Phase: 3 | Priority: HIGH (Critical)
+// First face-to-face meeting with a Primordial after defeating the Spirit of Time.
+
+DialogueSequence(
+    id: "chronar_post_boss",
+    trigger: AfterBoss("spirit_of_time"),
+    scenes: [
+        Narration(
+            text: "The Realm falls silent. Time flows naturally for the first time since you arrived.",
+            style: Italic,
+            duration: Timed(3.0),
+        ),
+        Narration(
+            text: "A figure appears. No weapon. No armor. Only exhaustion carved into ancient features.",
+            style: Normal,
+            duration: Timed(3.0),
+        ),
+        DialogueLine(
+            speaker: "Chronar",
+            portrait: "chronar_exhausted",
+            text: "Which moment made you believe revenge could heal grief?",
+            emotion: Melancholy,
+            duration: Auto,
+            on_complete: None,
+        ),
+        PlayerChoice(
+            options: [
+                ("The night they died.", "chronar_response_grief"),
+                ("I don't remember.", "chronar_response_honesty"),
+                ("...", "chronar_response_silence"),
+            ],
+        ),
+        // Response: Grief
+        DialogueLine(
+            speaker: "Chronar",
+            portrait: "chronar_sad",
+            text: "That night haunts you because you survived it. Not because you remember it.",
+            emotion: Wisdom,
+            duration: Auto,
+            on_complete: None,
+        ),
+        // Response: Honesty
+        DialogueLine(
+            speaker: "Chronar",
+            portrait: "chronar_neutral",
+            text: "Honest. That is rarer than you realize.",
+            emotion: Neutral,
+            duration: Auto,
+            on_complete: None,
+        ),
+        // Response: Silence
+        DialogueLine(
+            speaker: "Chronar",
+            portrait: "chronar_exhausted",
+            text: "Silence is also an answer. Perhaps the wisest one you've given.",
+            emotion: Melancholy,
+            duration: Auto,
+            on_complete: None,
+        ),
+        // Kael demands truth
+        DialogueLine(
+            speaker: "Kael",
+            portrait: "kael_angry",
+            text: "Enough. Tell me what happened to my parents.",
+            emotion: Angry,
+            duration: Auto,
+            on_complete: None,
+        ),
+        DialogueLine(
+            speaker: "Chronar",
+            portrait: "chronar_fading",
+            text: "Every answer has its proper time. Reach the end of your journey... then judge us.",
+            emotion: Wisdom,
+            duration: Auto,
+            on_complete: FadeOut(2.0),
+        ),
+    ],
+)
