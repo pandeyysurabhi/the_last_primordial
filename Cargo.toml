@@ -16,13 +16,16 @@ bevy_ecs_ldtk = "0.15"
 # Audio playback with Kira backend
 bevy_kira_audio = { version = "0.26", features = ["ogg", "wav"] }
 
-# 2D Physics engine
-bevy_rapier2d = "0.34"
+# 2D Physics engine (ECS-native, Bevy 0.19 compatible)
+avian2d = "0.7"
 
 # Serialization for save/load and dialogue files
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 ron = "0.10"
+
+# Random number generation (enemy AI, chaos realm)
+rand = "0.9"
 
 # Compile with optimizations in dev mode for Bevy performance
 [profile.dev]
