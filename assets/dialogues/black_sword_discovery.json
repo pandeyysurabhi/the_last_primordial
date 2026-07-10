@@ -1,0 +1,69 @@
+{
+  "_comment": "Black Sword Discovery — Pivotal Event | Phase: 2 | Priority: HIGH (Critical) | The moment Kael touches the Black Sword for the first time.",
+  "id": "black_sword_discovery",
+  "trigger": { "type": "OnInteract", "entity_id": "black_sword_entity" },
+  "scenes": [
+    {
+      "type": "Narration",
+      "text": "A sword stands upright outside your home. Black as void. Silent as death.",
+      "style": "Italic",
+      "duration": { "type": "Timed", "seconds": 3.0 }
+    },
+    {
+      "type": "Narration",
+      "text": "Your hand reaches for the hilt before your mind decides.",
+      "style": "Normal",
+      "duration": { "type": "Timed", "seconds": 2.0 }
+    },
+    {
+      "type": "Narration",
+      "text": "The world falls silent.",
+      "style": "Bold",
+      "duration": { "type": "Timed", "seconds": 2.0 }
+    },
+    {
+      "type": "SwordVoice",
+      "wielder_id": "wielder_ancient",
+      "portrait": "wielder_ancient_neutral",
+      "text": "Another one. After all this time.",
+      "emotion": "Exhausted",
+      "color": "#8888CC"
+    },
+    {
+      "type": "SwordVoice",
+      "wielder_id": "wielder_warrior",
+      "portrait": "wielder_warrior_angry",
+      "text": "Don't trust the Seven. They took everything from us.",
+      "emotion": "Angry",
+      "color": "#CC4444"
+    },
+    {
+      "type": "SwordVoice",
+      "wielder_id": "wielder_scholar",
+      "portrait": "wielder_scholar_neutral",
+      "text": "Listen before you judge. We all made that mistake.",
+      "emotion": "Wisdom",
+      "color": "#44AA88"
+    },
+    {
+      "type": "SwordVoice",
+      "wielder_id": "wielder_father",
+      "portrait": "wielder_unknown_mysterious",
+      "text": "...",
+      "emotion": "Mysterious",
+      "color": "#DDDDDD"
+    },
+    {
+      "type": "Narration",
+      "text": "A flood of memories — none of them yours. Centuries of choices, regrets, and unanswered questions.",
+      "style": "Italic",
+      "duration": { "type": "Timed", "seconds": 3.0 }
+    },
+    {
+      "type": "Narration",
+      "text": "The sword feels lighter now. As if it was always meant for you.",
+      "style": "Normal",
+      "duration": { "type": "Auto" }
+    }
+  ]
+}

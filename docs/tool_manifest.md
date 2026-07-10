@@ -1,6 +1,6 @@
 # The Last Primordial — Tool & Asset Pipeline Manifest
 
-> **Version:** 0.1.0 | **Last Updated:** 2026-07-10
+> **Version:** 0.2.0 | **Last Updated:** 2026-07-10 | **Engine:** Godot 4.3 (.NET/C#)
 
 ---
 
@@ -8,10 +8,11 @@
 
 | Purpose | Tool | Version | Notes |
 |---------|------|---------|-------|
-| **Game Engine** | Bevy (Rust) | 0.19.0 | ECS architecture, 2D rendering |
-| **Language** | Rust | 1.96+ | Memory-safe, high performance |
-| **Build System** | Cargo | 1.96+ | Rust's package manager |
-| **IDE** | VS Code + rust-analyzer | Latest | Primary development environment |
+| **Game Engine** | Godot | 4.3.stable.mono | 2D rendering, physics, audio, UI |
+| **Language** | C# | .NET 8.0 | Via Godot.NET.Sdk 4.3.0 |
+| **Build System** | dotnet CLI | 9.0+ | `dotnet build`, `dotnet test` |
+| **IDE** | VS Code + C# Dev Kit | Latest | Primary development environment |
+| **IDE (Alternative)** | JetBrains Rider | Latest | Full Godot C# integration |
 
 ---
 
@@ -20,7 +21,8 @@
 | Purpose | Tool | Format | Notes |
 |---------|------|--------|-------|
 | **Pixel Art & Animation** | Aseprite | PNG + JSON | Sprite sheets, animation tags, export automation |
-| **Level Design** | LDtk (Level Designer Toolkit) | .ldtk | Tile-based level editor, entity placement |
+| **Level Design** | Godot TileMap Editor | Built-in | Tile-based level design, collision layers |
+| **Level Design (Optional)** | LDtk (Level Designer Toolkit) | .ldtk | Via Godot LDtk plugin if needed |
 | **Concept Art** | Krita / Photoshop | PNG | Hand-drawn elements, Core art |
 | **Reference Boards** | Pinterest / PureRef | — | Mood boards, visual references |
 
@@ -29,12 +31,13 @@
 - **Metadata:** JSON (for frame data, tags, slices)
 - **Naming:** `<character>_<animation>.png` (e.g., `kael_idle.png`)
 - **Tags:** One tag per animation state (idle, walk, run, etc.)
+- **Import:** Godot auto-imports PNGs → configure as SpriteFrames resource
 
-### LDtk Configuration
+### Godot TileMap Configuration
 - **Tile Size:** 16×16 px
 - **Layers:** Collision, Entity, Decoration, Background
 - **Tileset:** One per realm + village
-- **Integration:** bevy_ecs_ldtk crate (v0.15)
+- **Physics Layers:** Ground, Walls, Platforms (one-way), Hazards
 
 ---
 
@@ -48,12 +51,21 @@
 | **Audio Library** | Spitfire LABS | — | Free orchestral samples |
 | **Audio Library** | BBC Symphony Discover | — | Free full orchestra |
 | **Audio Editing** | Audacity | — | Trimming, normalization |
-| **Integration** | bevy_kira_audio | OGG/WAV | Bevy audio plugin |
+| **Integration** | Godot AudioStreamPlayer | OGG/WAV | Built-in audio system |
 
 ### Audio Export Settings
 - **Music:** OGG Vorbis, 44.1kHz, stereo, ~192kbps
 - **SFX:** WAV, 44.1kHz, mono, 16-bit
 - **Ambient:** OGG Vorbis, looping, stereo
+
+### Audio Bus Layout (Godot)
+```
+Master
+├── Music      (for background music, crossfade via Tween)
+├── SFX        (for combat, UI, interactions)
+├── Ambient    (for environmental loops)
+└── Dialogue   (for voice/text blips, sword voices)
+```
 
 ### Audio File Organization
 ```
@@ -78,11 +90,11 @@ assets/audio/
 
 | Purpose | Tool/Format | Notes |
 |---------|-------------|-------|
-| **Dialogue Data** | RON (.ron files) | Rusty Object Notation, native Rust parsing |
-| **Cutscene Scripts** | RON (.ron files) | Sequential step-based scripting |
-| **Save Data** | JSON / RON | Serialized game state |
-| **Configuration** | RON | Game settings, constants |
-| **Serialization** | serde + serde_json + ron | Rust serialization framework |
+| **Dialogue Data** | JSON (.json files) | Parsed by System.Text.Json in C# |
+| **Cutscene Scripts** | JSON (.json files) | Sequential step-based scripting |
+| **Save Data** | JSON | Serialized game state via System.Text.Json |
+| **Configuration** | Godot Resources (.tres) | Game settings, constants |
+| **Serialization** | System.Text.Json | .NET JSON serialization framework |
 
 ---
 
@@ -90,9 +102,12 @@ assets/audio/
 
 | Purpose | Tool | Notes |
 |---------|------|-------|
-| **2D Physics** | bevy_rapier2d (v0.34) | Collision, hitbox/hurtbox, raycasts |
-| **Tilemap Rendering** | bevy_ecs_tilemap | Via bevy_ecs_ldtk |
-| **UI Framework** | bevy_ui | Built-in Bevy UI system |
+| **2D Physics** | Godot built-in | CharacterBody2D, RigidBody2D, Area2D, RayCast2D |
+| **Collision System** | Godot physics layers | Hitbox/hurtbox via Area2D with collision layers |
+| **Tilemap Rendering** | Godot TileMap | Built-in tile rendering and collision |
+| **UI Framework** | Godot Control nodes | CanvasLayer + Control tree (VBoxContainer, HBoxContainer, etc.) |
+| **Animation** | Godot AnimationPlayer | Sprite animations, tweens, cutscene timing |
+| **Shaders** | Godot Shader Language | Chromatic aberration, vignette, realm effects |
 
 ---
 
@@ -102,7 +117,7 @@ assets/audio/
 |---------|------|-------|
 | **Version Control** | Git | Local + remote |
 | **Remote Repository** | GitHub | Branch protection, PR reviews |
-| **CI Pipeline** | GitHub Actions | cargo check, clippy, test |
+| **CI Pipeline** | GitHub Actions | `dotnet build`, `dotnet test` |
 | **Branch Strategy** | Git Flow | main, develop, feature/* |
 
 ### Branch Rules
@@ -117,28 +132,72 @@ assets/audio/
 
 | Purpose | Tool | Notes |
 |---------|------|-------|
-| **Profiling** | Tracy | Frame-level performance analysis |
-| **Debug Rendering** | bevy_rapier2d debug-render | Collision shape visualization |
-| **Logging** | bevy::log (tracing) | Built-in structured logging |
-| **Hot Reloading** | Bevy asset hot-reload | Live asset updates during development |
+| **Profiling** | Godot built-in profiler | Frame-level performance analysis (Debugger → Profiler) |
+| **Debug Rendering** | Godot debug draw | Collision shape visualization (Debug → Visible Collision Shapes) |
+| **Logging** | GD.Print / GD.PushWarning | Built-in logging, visible in Output panel |
+| **Hot Reloading** | Godot asset hot-reload | Live asset updates during development |
+| **Remote Inspector** | Godot Scene Tree (Remote) | Live node inspection during play |
 
 ---
 
 ## 8. Cutscene System
 
-The cutscene system is **custom-built in Bevy** (not a third-party tool).
+The cutscene system is **custom-built in Godot/C#** (not a third-party tool).
 
-**Approach:** In-engine scripted sequences using RON files.
+**Approach:** In-engine scripted sequences using JSON data files.
 - No pre-rendered video — keeps file size small and visual consistency
 - Player input disabled during cutscenes (with skip support)
-- Supports: camera movement, entity spawning, dialogue, audio cues, shader effects, fades
+- Supports: camera movement (Tween), entity spawning, dialogue, audio cues, shader effects, fades
 
 **Types:**
 1. Scripted Gameplay (camera + entities on script)
-2. Illustrated Stills (full-screen art + text)
-3. Dialogue Cutscene (portraits + text boxes)
-4. Memory Sequence (screen effects + replay)
-5. Environmental Transition (camera pan + title card)
+2. Illustrated Stills (full-screen art + text via TextureRect)
+3. Dialogue Cutscene (portraits + text boxes via Control nodes)
+4. Memory Sequence (screen effects via ShaderMaterial + replay)
+5. Environmental Transition (camera pan via Tween + title card)
+
+---
+
+## 9. Project Structure
+
+```
+TheLastPrimordial/
+├── project.godot              # Godot project file
+├── TheLastPrimordial.csproj   # C# project
+├── TheLastPrimordial.sln      # .NET solution
+├── main.tscn                  # Root scene
+├── src/                       # C# source code
+│   ├── Main.cs
+│   ├── Autoloads/             # Singletons (GameManager, AudioManager, etc.)
+│   ├── Core/                  # Core systems (StateMachine, Events)
+│   ├── Player/                # Player scripts
+│   ├── Enemies/               # Enemy AI
+│   ├── NPCs/                  # NPC interactions
+│   ├── UI/                    # UI controllers
+│   ├── Dialogue/              # Dialogue system
+│   ├── Combat/                # Combat system
+│   ├── Camera/                # Camera system
+│   ├── SaveLoad/              # Save/Load system
+│   └── Cutscenes/             # Cutscene system
+├── scenes/                    # Godot scene files (.tscn)
+│   ├── levels/
+│   ├── characters/
+│   ├── ui/
+│   ├── effects/
+│   └── cutscenes/
+├── assets/                    # Game assets
+│   ├── sprites/
+│   ├── audio/
+│   ├── dialogues/             # JSON dialogue data
+│   ├── cutscenes/             # JSON cutscene data
+│   ├── fonts/
+│   └── shaders/               # Custom .gdshader files
+├── resources/                 # Godot resources (.tres)
+│   ├── themes/
+│   ├── materials/
+│   └── data/
+└── docs/                      # Design documents
+```
 
 ---
 

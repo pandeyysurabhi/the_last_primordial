@@ -1,11 +1,29 @@
 # ===========================
 # The Last Primordial - .gitignore
+# Godot 4.3 + .NET/C# Project
 # ===========================
 
-# Rust / Cargo build artifacts
-/target/
-**/*.rs.bk
-*.pdb
+# Godot 4.x build/import cache
+.godot/
+.import/
+export_presets.cfg
+
+# .NET / C# build artifacts
+bin/
+obj/
+*.csproj.nuget.*
+*.user
+*.suo
+.vs/
+
+# Mono/C# (Godot legacy)
+.mono/
+data_*/
+mono_crash_*.json
+
+# NuGet
+*.nupkg
+packages/
 
 # IDE files
 .vscode/
@@ -27,10 +45,6 @@ desktop.ini
 # Environment variables
 .env
 .env.local
-
-# Temporary files created during development
-dev_plan.txt
-game_lore.txt
 
 # LDtk backup files
 *.ldtk.bak

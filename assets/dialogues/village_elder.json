@@ -1,0 +1,53 @@
+{
+  "_comment": "Village Elder — First Conversation | Phase: 2 | Context: Village Hub | The elder gives one of many conflicting stories about Kael's parents.",
+  "id": "village_elder_intro",
+  "trigger": { "type": "OnInteract", "entity_id": "elder_home_npc" },
+  "scenes": [
+    {
+      "type": "DialogueLine",
+      "speaker": "Elder Maren",
+      "portrait": "elder_maren_neutral",
+      "text": "Kael. You're awake early. The nightmares again?",
+      "emotion": "Compassion",
+      "duration": { "type": "Auto" },
+      "on_complete": null
+    },
+    {
+      "type": "PlayerChoice",
+      "options": [
+        { "text": "Yes. I keep seeing fire and shadows.", "next_scene": "elder_response_honest" },
+        { "text": "I'm fine. Just restless.", "next_scene": "elder_response_dismiss" },
+        { "text": "Tell me about my parents.", "next_scene": "elder_response_parents" }
+      ]
+    },
+    {
+      "_branch": "elder_response_honest",
+      "type": "DialogueLine",
+      "speaker": "Elder Maren",
+      "portrait": "elder_maren_sad",
+      "text": "Dreams are the mind's way of holding onto what it cannot understand. They will pass, child.",
+      "emotion": "Melancholy",
+      "duration": { "type": "Auto" },
+      "on_complete": { "type": "SetFlag", "flag": "elder_knows_nightmares" }
+    },
+    {
+      "_branch": "elder_response_parents",
+      "type": "DialogueLine",
+      "speaker": "Elder Maren",
+      "portrait": "elder_maren_mysterious",
+      "text": "Your parents... they died protecting something important. That is all anyone knows.",
+      "emotion": "Mysterious",
+      "duration": { "type": "Auto" },
+      "on_complete": null
+    },
+    {
+      "type": "DialogueLine",
+      "speaker": "Elder Maren",
+      "portrait": "elder_maren_neutral",
+      "text": "Some truths are heavier than a child should carry. When you're older, perhaps.",
+      "emotion": "Wisdom",
+      "duration": { "type": "Auto" },
+      "on_complete": null
+    }
+  ]
+}

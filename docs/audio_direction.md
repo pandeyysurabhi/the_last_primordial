@@ -1,6 +1,6 @@
 # The Last Primordial — Audio Direction Document
 
-> **Version:** 0.1.0 | **Last Updated:** 2026-07-10
+> **Version:** 0.2.0 | **Last Updated:** 2026-07-10 | **Engine:** Godot 4.3 (.NET/C#)
 
 ---
 
@@ -23,11 +23,11 @@ The Last Primordial uses audio as an emotional narrative tool, not just backgrou
 | **Music Format** | OGG Vorbis, 44.1kHz, stereo |
 | **SFX Format** | WAV, 44.1kHz, mono |
 | **Ambient Format** | OGG Vorbis, looping |
-| **Audio Engine** | bevy_kira_audio |
-| **Channels** | Music, SFX, Ambient, Dialogue |
-| **Volume Control** | Per-channel, user-adjustable |
-| **Crossfade Duration** | 2-3 seconds between zones |
-| **Dynamic Layers** | Boss fights use layered system |
+| **Audio Engine** | Godot AudioStreamPlayer / AudioStreamPlayer2D |
+| **Audio Bus Layout** | Master → Music, SFX, Ambient, Dialogue (Godot AudioBus) |
+| **Volume Control** | Per-bus, user-adjustable via AudioServer |
+| **Crossfade Duration** | 2-3 seconds between zones (Tween-based) |
+| **Dynamic Layers** | Boss fights use layered AudioStreamPlayer nodes |
 
 ---
 

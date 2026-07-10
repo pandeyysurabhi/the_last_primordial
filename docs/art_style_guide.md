@@ -1,6 +1,6 @@
 # The Last Primordial — Art Direction & Style Guide
 
-> **Version:** 0.1.0 | **Last Updated:** 2026-07-10
+> **Version:** 0.2.0 | **Last Updated:** 2026-07-10 | **Engine:** Godot 4.3 (.NET/C#)
 
 ---
 
@@ -31,7 +31,17 @@ The game should feel like a beautifully illustrated storybook rendered in pixels
 | **Resolution** | 320×180 internal (scaled to 1280×720) |
 | **Scale Factor** | 4x |
 | **Sprite Format** | PNG (horizontal strip or grid) |
-| **Metadata** | JSON (Aseprite export) |
+| **Metadata** | JSON (Aseprite export) → imported as Godot SpriteFrames |
+
+### Godot Import Settings (Critical for Pixel Art)
+| Setting | Value | Location |
+|---------|-------|----------|
+| **Texture Filter** | Nearest | Project Settings → Rendering → Textures |
+| **Texture Repeat** | Disabled | Per-sprite import preset |
+| **Mipmaps** | Off | Import dock → uncheck "Generate Mipmaps" |
+| **2D Pixel Snap** | Enabled | Project Settings → Rendering → 2D |
+| **Stretch Mode** | Viewport | Project Settings → Display → Window → Stretch |
+| **Stretch Aspect** | Keep | Project Settings → Display → Window → Stretch |
 
 ---
 

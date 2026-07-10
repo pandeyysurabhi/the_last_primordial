@@ -1,0 +1,134 @@
+[gd_scene load_steps=22 format=3 uid="uid://player_scene_001"]
+
+[ext_resource type="Script" path="res://src/Player/Player.cs" id="1_player"]
+[ext_resource type="Script" path="res://src/Core/StateMachine/StateMachine.cs" id="2_statemachine"]
+[ext_resource type="Script" path="res://src/Player/States/PlayerIdleState.cs" id="3_idle"]
+[ext_resource type="Script" path="res://src/Player/States/PlayerRunState.cs" id="4_run"]
+[ext_resource type="Script" path="res://src/Player/States/PlayerJumpState.cs" id="5_jump"]
+[ext_resource type="Script" path="res://src/Player/States/PlayerFallState.cs" id="6_fall"]
+[ext_resource type="Script" path="res://src/Player/States/PlayerLandState.cs" id="7_land"]
+[ext_resource type="Script" path="res://src/Player/States/PlayerDashState.cs" id="8_dash"]
+[ext_resource type="Script" path="res://src/Player/States/PlayerWallSlideState.cs" id="9_wallslide"]
+[ext_resource type="Script" path="res://src/Player/States/PlayerWallJumpState.cs" id="10_walljump"]
+[ext_resource type="Script" path="res://src/Player/States/PlayerAttackState.cs" id="11_attack"]
+[ext_resource type="Script" path="res://src/Player/States/PlayerBlockState.cs" id="12_block"]
+[ext_resource type="Script" path="res://src/Player/States/PlayerHurtState.cs" id="13_hurt"]
+[ext_resource type="Script" path="res://src/Player/States/PlayerDeathState.cs" id="14_death"]
+[ext_resource type="Script" path="res://src/Combat/HitboxComponent.cs" id="15_hitbox"]
+[ext_resource type="Script" path="res://src/Combat/HurtboxComponent.cs" id="16_hurtbox"]
+[ext_resource type="Script" path="res://src/Combat/HealthSystem.cs" id="17_health"]
+[ext_resource type="Script" path="res://src/Combat/DeflectSystem.cs" id="18_deflect"]
+[ext_resource type="Script" path="res://src/Combat/ComboTracker.cs" id="19_combo"]
+[ext_resource type="Script" path="res://src/Combat/StyleMeter.cs" id="20_style"]
+[ext_resource type="Texture2D" uid="uid://la7q72eg220i" path="res://assets/sprites/characters/kael/kael_spritesheet.png" id="21_spritesheet"]
+
+[sub_resource type="RectangleShape2D" id="collision_shape"]
+size = Vector2(10, 20)
+
+[sub_resource type="RectangleShape2D" id="hitbox_shape"]
+size = Vector2(16, 12)
+
+[sub_resource type="RectangleShape2D" id="hurtbox_shape"]
+size = Vector2(10, 18)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 1
+collision_mask = 1
+floor_snap_length = 2.0
+script = ExtResource("1_player")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -14)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("21_spritesheet")
+region_enabled = true
+region_rect = Rect2(10, 20, 135, 190)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("collision_shape")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_statemachine")
+InitialStatePath = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("3_idle")
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource("4_run")
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource("5_jump")
+
+[node name="Fall" type="Node" parent="StateMachine"]
+script = ExtResource("6_fall")
+
+[node name="Land" type="Node" parent="StateMachine"]
+script = ExtResource("7_land")
+
+[node name="Dash" type="Node" parent="StateMachine"]
+script = ExtResource("8_dash")
+
+[node name="WallSlide" type="Node" parent="StateMachine"]
+script = ExtResource("9_wallslide")
+
+[node name="WallJump" type="Node" parent="StateMachine"]
+script = ExtResource("10_walljump")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("11_attack")
+
+[node name="Block" type="Node" parent="StateMachine"]
+script = ExtResource("12_block")
+
+[node name="Hurt" type="Node" parent="StateMachine"]
+script = ExtResource("13_hurt")
+
+[node name="Death" type="Node" parent="StateMachine"]
+script = ExtResource("14_death")
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("15_hitbox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(12, -10)
+shape = SubResource("hitbox_shape")
+disabled = true
+
+[node name="HurtboxComponent" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("16_hurtbox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+position = Vector2(0, -10)
+shape = SubResource("hurtbox_shape")
+
+[node name="HealthSystem" type="Node" parent="."]
+script = ExtResource("17_health")
+
+[node name="DeflectSystem" type="Node" parent="."]
+script = ExtResource("18_deflect")
+
+[node name="ComboTracker" type="Node" parent="."]
+script = ExtResource("19_combo")
+
+[node name="StyleMeter" type="Node" parent="."]
+script = ExtResource("20_style")
+
+[node name="WallDetectorRight" type="RayCast2D" parent="."]
+position = Vector2(0, -10)
+target_position = Vector2(7, 0)
+collision_mask = 1
+enabled = true
+
+[node name="WallDetectorLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -10)
+target_position = Vector2(-7, 0)
+collision_mask = 1
+enabled = true

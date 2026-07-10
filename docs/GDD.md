@@ -1,6 +1,6 @@
 # The Last Primordial — Game Design Document (Living GDD)
 
-> **Version:** 0.1.0 | **Last Updated:** 2026-07-10 | **Status:** Phase 0 - Pre-Production
+> **Version:** 0.2.0 | **Last Updated:** 2026-07-10 | **Status:** Phase 0 - Pre-Production (Godot/.NET Migration)
 
 ---
 
@@ -10,7 +10,8 @@
 |-------|--------|
 | **Title** | The Last Primordial |
 | **Genre** | 2D Action-Adventure / Narrative Puzzle |
-| **Engine** | Bevy (Rust) |
+| **Engine** | Godot 4.3 (.NET/C#) |
+
 | **Art Style** | Pixel Art + Hand-drawn elements |
 | **Audio** | Orchestral + Pixel-style SFX + Realm-specific ambience |
 | **Platforms** | PC (Steam) → Nintendo Switch → Mac / Linux |
@@ -187,17 +188,46 @@ Three Endings → Epilogues → Final Scene (child + black flower)
 
 | Component | Technology |
 |-----------|-----------|
-| Engine | Bevy 0.19 (Rust) |
-| Physics | bevy_rapier2d |
-| Tilemap | LDtk + bevy_ecs_ldtk |
-| Audio | bevy_kira_audio |
-| UI | bevy_ui |
-| Serialization | serde + RON |
-| Art Pipeline | Aseprite → PNG sprite sheets |
-| Level Design | LDtk → .ldtk files |
+| Engine | Godot 4.3 (.NET/C#) |
+| Language | C# (.NET 8.0) |
+| Physics | Godot built-in 2D physics (CharacterBody2D, RigidBody2D, Area2D) |
+| Tilemap | Godot TileMap / TileSet |
+| Audio | Godot AudioStreamPlayer / AudioBus |
+| UI | Godot Control nodes (CanvasLayer) |
+| Serialization | System.Text.Json / Godot Resources (.tres) |
+| Art Pipeline | Aseprite → PNG sprite sheets → Godot SpriteFrames |
+| Level Design | Godot TileMap editor (LDtk optional via plugin) |
 | Audio Formats | OGG Vorbis (music) / WAV (SFX) |
 | Target FPS | 60fps on minimum spec |
-| Resolution | 1280×720 default, scalable |
+| Internal Resolution | 320×180 (4x scale to 1280×720) |
+| Rendering | Nearest neighbor filtering, 2D pixel snap |
+
+---
+
+## 8. Godot Node Architecture
+
+```
+Main (Node2D) — Root scene
+├── GameManager (Autoload) — Global game state, scene transitions
+├── AudioManager (Autoload) — Music, SFX, ambient channels via AudioBus
+├── DialogueManager (Autoload) — Dialogue parsing and display
+├── SaveManager (Autoload) — JSON save/load system
+├── Player (CharacterBody2D)
+│   ├── Sprite2D + AnimationPlayer
+│   ├── CollisionShape2D
+│   ├── HitboxComponent (Area2D)
+│   ├── HurtboxComponent (Area2D)
+│   └── StateMachine (Node)
+├── Camera2D — Smooth follow, room boundaries
+├── TileMap — Level geometry
+├── Entities (Node2D) — Enemies, NPCs, interactables
+├── UI (CanvasLayer)
+│   ├── HUD — Health bar, stamina, sword indicator
+│   ├── DialogueBox — Portrait + text + choices
+│   ├── PauseMenu
+│   └── InventoryPanel
+└── ParallaxBackground — Multi-layer scrolling
+```
 
 ---
 
