@@ -1,215 +1,144 @@
 using Godot;
-using TheLastPrimordial.Combat;
 
-namespace TheLastPrimordial.Player.States;
-
-/// <summary>
-/// Attack state — handles combo chain execution.
-/// DMC5-inspired: reads from ComboTracker for current move data,
-/// manages hitbox activation timing, allows dodge-cancelling,
-/// and supports ground + aerial variants.
-///
-/// Transitions to: Idle/Run (combo end, ground), Fall (combo end, air),
-/// Dash (dodge-cancel), next Attack (combo continue).
-/// </summary>
-public partial class PlayerAttackState : PlayerState
+namespace Player.StateMachine.States
 {
-    private ComboData? _currentMove;
-    private float _attackTimer;
-    private float _attackDuration;
-    private bool _hitboxActive;
-    private bool _comboQueued;
-    private ComboData.InputType _queuedInput;
-
-    public override void Enter()
+    /// <summary>
+    /// Handles the attack state including hitbox timing, combo window, and knockback.
+    /// Godot port: Physics2D.OverlapBoxNonAlloc → PhysicsDirectSpaceState2D query,
+    ///             Rigidbody2D.AddForce → CharacterBody2D velocity impulse.
+    /// </summary>
+    public class PlayerAttackState : PlayerState
     {
-        // Determine input type from what was just pressed
-        var inputType = Input.IsActionPressed("attack_heavy")
-            ? ComboData.InputType.Heavy
-            : ComboData.InputType.Light;
+        private KaelCombatSettings? _combat;
+        private int  _comboIndex;
+        private bool _hitboxActive;
+        private bool _comboQueued;
 
-        // Tell combo tracker if we're aerial
-        P.ComboTracker.IsAerial = !P.IsOnFloor();
+        public PlayerAttackState(PlayerController player, PlayerStateMachine stateMachine, string animBoolName)
+            : base(player, stateMachine, animBoolName) { }
 
-        // Register the input and get the move data
-        _currentMove = P.ComboTracker.RegisterInput(inputType);
+        public void SetComboIndex(int index) => _comboIndex = index;
 
-        if (_currentMove == null)
+        public override void Enter()
         {
-            // No valid move — exit
-            ExitToDefault();
-            return;
-        }
+            base.Enter();
 
-        _attackDuration = _currentMove.Duration;
-        _attackTimer = 0f;
-        _hitboxActive = false;
-        _comboQueued = false;
-
-        // Set hitbox damage values
-        P.Hitbox.Damage = _currentMove.Damage;
-        P.Hitbox.PostureDamage = _currentMove.PostureDamage;
-        P.Hitbox.KnockbackForce = _currentMove.KnockbackForce;
-        P.Hitbox.IsLauncher = _currentMove.IsLauncher;
-        P.Hitbox.LaunchForce = _currentMove.LaunchForce;
-
-        // Apply forward momentum
-        if (_currentMove.ForwardMomentum > 0f)
-        {
-            P.Velocity = new Vector2(
-                P.FacingDirection * _currentMove.ForwardMomentum,
-                P.Velocity.Y
-            );
-        }
-
-        // Style meter points for attack variety
-        P.StyleMeter.AddPoints(5f, _currentMove.MoveName);
-
-        // Aerial bonus
-        if (!P.IsOnFloor())
-        {
-            P.StyleMeter.AddAerialBonus(3f);
-        }
-
-        // Launcher bonus
-        if (_currentMove.IsLauncher)
-        {
-            P.StyleMeter.AddLauncherBonus();
-        }
-    }
-
-    public override void Exit()
-    {
-        // Ensure hitbox is deactivated
-        P.Hitbox.Deactivate();
-        _hitboxActive = false;
-    }
-
-    public override void PhysicsUpdate(double delta)
-    {
-        if (_currentMove == null)
-        {
-            ExitToDefault();
-            return;
-        }
-
-        _attackTimer += (float)delta;
-        float progress = _attackTimer / _attackDuration;
-
-        // Apply gravity if aerial (slight suspension for air combos)
-        if (!P.IsOnFloor())
-        {
-            P.ApplyGravity(delta, 0.3f); // Reduced gravity during air attacks
-        }
-
-        // Hitbox activation based on animation timing
-        if (!_hitboxActive && progress >= _currentMove.HitboxStartFraction)
-        {
-            P.Hitbox.Activate();
-            _hitboxActive = true;
-        }
-        if (_hitboxActive && progress >= _currentMove.HitboxEndFraction)
-        {
-            P.Hitbox.Deactivate();
+            _combat       = Player.CombatSettings;
             _hitboxActive = false;
+            _comboQueued  = false;
+
+            if (_combat != null && _combat.LockMovementOnGroundAttack && Player.IsGrounded)
+                Player.SetVelocityX(0f);
         }
 
-        // Slow down horizontal movement during attack
-        P.Velocity = new Vector2(
-            Mathf.MoveToward(P.Velocity.X, 0f, 200f * (float)delta),
-            P.Velocity.Y
-        );
-
-        P.MoveAndSlide();
-
-        // Attack finished
-        if (_attackTimer >= _attackDuration)
+        public override void Exit()
         {
-            if (_comboQueued)
+            base.Exit();
+            _hitboxActive = false;
+
+            // Chain combo
+            if (_comboQueued && _combat != null && _comboIndex < _combat.MaxComboCount - 1)
             {
-                // Continue combo with queued input
-                P.ComboTracker.IsAerial = !P.IsOnFloor();
-                _currentMove = P.ComboTracker.RegisterInput(_queuedInput);
-                if (_currentMove != null)
-                {
-                    // Restart attack with new move
-                    _attackTimer = 0f;
-                    _hitboxActive = false;
-                    _comboQueued = false;
-
-                    P.Hitbox.Damage = _currentMove.Damage;
-                    P.Hitbox.PostureDamage = _currentMove.PostureDamage;
-                    P.Hitbox.KnockbackForce = _currentMove.KnockbackForce;
-                    P.Hitbox.IsLauncher = _currentMove.IsLauncher;
-                    P.Hitbox.LaunchForce = _currentMove.LaunchForce;
-
-                    if (_currentMove.ForwardMomentum > 0f)
-                    {
-                        P.Velocity = new Vector2(
-                            P.FacingDirection * _currentMove.ForwardMomentum,
-                            P.Velocity.Y
-                        );
-                    }
-
-                    P.StyleMeter.AddPoints(5f, _currentMove.MoveName);
-                    _attackDuration = _currentMove.Duration;
-                    return;
-                }
+                Player.AttackState.SetComboIndex(_comboIndex + 1);
+                StateMachine.ChangeState(Player.AttackState);
             }
-
-            // End of combo chain
-            P.ComboTracker.ResetCombo();
-            ExitToDefault();
-        }
-    }
-
-    public override void HandleInput(InputEvent @event)
-    {
-        // Queue next combo input (input buffering for smooth chains)
-        if (@event.IsActionPressed("attack_light"))
-        {
-            _comboQueued = true;
-            _queuedInput = ComboData.InputType.Light;
-            return;
         }
 
-        if (@event.IsActionPressed("attack_heavy"))
+        public override void LogicUpdate()
         {
-            _comboQueued = true;
-            _queuedInput = ComboData.InputType.Heavy;
-            return;
-        }
+            base.LogicUpdate();
 
-        // Dodge-cancel (DMC5-style: cancel attack into dash)
-        if (@event.IsActionPressed("dodge") && P.CanDash)
-        {
-            if (_currentMove?.CanDodgeCancel == true)
+            if (_combat == null)
             {
-                P.ComboTracker.ResetCombo();
-                Machine?.TransitionTo("Dash");
+                if (Elapsed >= 0.45) StateMachine.ChangeState(Player.IdleState);
                 return;
             }
+
+            // Hitbox window
+            bool shouldBeActive = Elapsed >= _combat.HitboxActiveStart
+                                && Elapsed <  _combat.HitboxActiveEnd;
+
+            if (shouldBeActive && !_hitboxActive)
+            {
+                _hitboxActive = true;
+                PerformHitboxCheck();
+            }
+            else if (!shouldBeActive && _hitboxActive)
+            {
+                _hitboxActive = false;
+            }
+
+            // Combo queue window
+            if (Elapsed >= _combat.HitboxActiveEnd && Elapsed < _combat.AttackDuration)
+            {
+                if (Player.InputReader.AttackDown && _comboIndex < _combat.MaxComboCount - 1)
+                    _comboQueued = true;
+            }
+
+            // End of attack
+            if (Elapsed >= _combat.AttackDuration)
+            {
+                if (Player.IsGrounded)
+                    StateMachine.ChangeState(Mathf.Abs(Player.InputReader.Horizontal) > 0.01f
+                        ? (PlayerState)Player.RunState
+                        : Player.IdleState);
+                else
+                    StateMachine.ChangeState(Player.FallState);
+            }
         }
 
-        // Jump-cancel (allows aerial combo extension)
-        if (@event.IsActionPressed("jump") && P.IsOnFloor())
+        public override void PhysicsUpdate()
         {
-            P.ComboTracker.ResetCombo();
-            Machine?.TransitionTo("Jump");
-            return;
-        }
-    }
+            base.PhysicsUpdate();
 
-    private void ExitToDefault()
-    {
-        if (P.IsOnFloor())
-        {
-            float dir = P.GetInputDirection();
-            Machine?.TransitionTo(Mathf.Abs(dir) > 0.1f ? "Run" : "Idle");
+            if (_combat == null) return;
+
+            // Slow horizontal air movement during attack
+            if (!Player.IsGrounded)
+            {
+                float target    = Player.Velocity.X * _combat.AirAttackSpeedMultiplier;
+                Player.SetVelocityX(Mathf.MoveToward(Player.Velocity.X, target,
+                    Player.Settings.AirDeceleration * Player.PhysicsDelta));
+            }
         }
-        else
+
+        // ── Hitbox ────────────────────────────────────────────────────────────
+        private void PerformHitboxCheck()
         {
-            Machine?.TransitionTo("Fall");
+            if (_combat == null) return;
+
+            // Build the query using Godot's physics space
+            var spaceState = Player.GetWorld2D().DirectSpaceState;
+
+            Vector2 hitboxCentre = Player.GlobalPosition + new Vector2(
+                _combat.HitboxOffset.X * Player.FacingDirection,
+                _combat.HitboxOffset.Y);
+
+            var shape    = new RectangleShape2D();
+            shape.Size   = _combat.HitboxSize;
+
+            var query    = new PhysicsShapeQueryParameters2D();
+            query.Shape  = shape;
+            query.Transform = new Transform2D(0f, hitboxCentre);
+            query.CollisionMask = _combat.HittableLayers;
+            query.Exclude.Add(Player.GetRid()); // Don't hit ourselves
+
+            var results  = spaceState.IntersectShape(query);
+
+            foreach (var result in results)
+            {
+                var collider = result["collider"].AsGodotObject() as Node;
+                if (collider == null) continue;
+
+                GD.Print($"[Kael Attack] Hit: {collider.Name}  Damage: {_combat.AttackDamage}");
+
+                // Apply knockback via velocity if it's a CharacterBody2D
+                if (collider is CharacterBody2D body)
+                {
+                    Vector2 knockDir = new Vector2(Player.FacingDirection, -0.3f).Normalized();
+                    body.Velocity += knockDir * _combat.KnockbackForce;
+                }
+            }
         }
     }
 }

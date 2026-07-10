@@ -1,81 +1,39 @@
-using Godot;
-
-namespace TheLastPrimordial.Player.States;
-
-/// <summary>
-/// Fall state — player is descending (not on ground).
-/// Supports coyote time jump and jump buffering.
-/// Transitions to: Land, WallSlide, Jump (coyote/buffer), Dash, Attack.
-/// </summary>
-public partial class PlayerFallState : PlayerState
+namespace Player.StateMachine.States
 {
-    public override void Enter()
+    public class PlayerFallState : PlayerAirState
     {
-        // Play fall animation
-    }
+        public bool AllowCoyoteTime { get; set; }
 
-    public override void PhysicsUpdate(double delta)
-    {
-        // Apply stronger gravity when falling (snappier feel, like Hollow Knight)
-        P.ApplyGravity(delta, P.FastFallMultiplier);
+        public PlayerFallState(PlayerController player, PlayerStateMachine stateMachine, string animBoolName)
+            : base(player, stateMachine, animBoolName) { }
 
-        // Air control
-        float dir = P.GetInputDirection();
-        P.UpdateFacing(dir);
-        P.ApplyHorizontalMovement(delta, dir, P.MoveSpeed);
-
-        // Transition: landed
-        if (P.IsOnFloor())
+        public override void Exit()
         {
-            // Check jump buffer — if player pressed jump just before landing
-            if (P.HasJumpBuffer)
-            {
-                Machine?.TransitionTo("Jump");
-            }
-            else
-            {
-                Machine?.TransitionTo("Land");
-            }
-            return;
+            AllowCoyoteTime = false;
+            base.Exit();
         }
 
-        // Transition: touching wall → WallSlide
-        if (P.IsTouchingWall() && dir != 0f)
+        public override void LogicUpdate()
         {
-            Machine?.TransitionTo("WallSlide");
-            return;
-        }
+            base.LogicUpdate();
 
-        P.MoveAndSlide();
-    }
-
-    public override void HandleInput(InputEvent @event)
-    {
-        // Coyote time jump — can still jump briefly after leaving a ledge
-        if (@event.IsActionPressed("jump"))
-        {
-            if (P.HasCoyoteTime)
+            if (AllowCoyoteTime)
             {
-                Machine?.TransitionTo("Jump");
-                return;
+                if (Elapsed <= Player.Settings.CoyoteTimeDuration)
+                {
+                    if (Player.InputReader.JumpDown || Player.InputReader.HasJumpBuffered)
+                    {
+                        AllowCoyoteTime = false;
+                        Player.InputReader.ConsumeJumpBuffer();
+                        StateMachine.ChangeState(Player.JumpState);
+                        return;
+                    }
+                }
+                else
+                {
+                    AllowCoyoteTime = false;
+                }
             }
-            else
-            {
-                // Buffer the jump input for when we land
-                P.JumpBufferTimer = P.JumpBufferTime;
-            }
-        }
-
-        if (@event.IsActionPressed("dodge") && P.CanDash)
-        {
-            Machine?.TransitionTo("Dash");
-            return;
-        }
-
-        if (@event.IsActionPressed("attack_light") || @event.IsActionPressed("attack_heavy"))
-        {
-            Machine?.TransitionTo("Attack");
-            return;
         }
     }
 }

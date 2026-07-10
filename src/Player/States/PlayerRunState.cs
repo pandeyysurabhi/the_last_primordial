@@ -1,73 +1,45 @@
 using Godot;
 
-namespace TheLastPrimordial.Player.States;
-
-/// <summary>
-/// Run state — player is moving horizontally on the ground.
-/// Uses acceleration/friction for responsive but not instant movement.
-/// Transitions to: Idle, Jump, Fall, Attack, Dash, Block.
-/// </summary>
-public partial class PlayerRunState : PlayerState
+namespace Player.StateMachine.States
 {
-    public override void Enter()
+    public class PlayerRunState : PlayerGroundedState
     {
-        // Play run animation
-    }
+        public PlayerRunState(PlayerController player, PlayerStateMachine stateMachine, string animBoolName)
+            : base(player, stateMachine, animBoolName) { }
 
-    public override void PhysicsUpdate(double delta)
-    {
-        P.ApplyGravity(delta);
-
-        float dir = P.GetInputDirection();
-
-        // Update facing direction
-        P.UpdateFacing(dir);
-
-        // Apply movement
-        P.ApplyHorizontalMovement(delta, dir, P.MoveSpeed);
-
-        // Transition: no input → Idle
-        if (Mathf.Abs(dir) < 0.1f)
+        public override void LogicUpdate()
         {
-            Machine?.TransitionTo("Idle");
-            return;
+            base.LogicUpdate();
+
+            if (Player.CanMove)
+            {
+                Player.CheckIfShouldFlip(HorizontalInput);
+
+                if (Mathf.Abs(HorizontalInput) <= 0.01f)
+                    StateMachine.ChangeState(Player.IdleState);
+            }
         }
 
-        // Transition: not on floor → Fall (with coyote time)
-        if (!P.IsOnFloor())
+        public override void PhysicsUpdate()
         {
-            P.CoyoteTimer = P.CoyoteTime;
-            Machine?.TransitionTo("Fall");
-            return;
-        }
+            base.PhysicsUpdate();
 
-        P.MoveAndSlide();
-    }
+            float physDelta = Player.PhysicsDelta;
 
-    public override void HandleInput(InputEvent @event)
-    {
-        if (@event.IsActionPressed("jump") && P.IsOnFloor())
-        {
-            Machine?.TransitionTo("Jump");
-            return;
-        }
+            if (Player.CanMove)
+            {
+                float targetSpeed  = HorizontalInput * Player.Settings.MaxRunSpeed;
+                float currentSpeed = Player.Velocity.X;
+                bool  isReversing  = (HorizontalInput > 0 && currentSpeed < 0)
+                                  || (HorizontalInput < 0 && currentSpeed > 0);
+                float rate = isReversing ? Player.Settings.RunDeceleration : Player.Settings.RunAcceleration;
 
-        if (@event.IsActionPressed("dodge") && P.CanDash)
-        {
-            Machine?.TransitionTo("Dash");
-            return;
-        }
-
-        if (@event.IsActionPressed("attack_light") || @event.IsActionPressed("attack_heavy"))
-        {
-            Machine?.TransitionTo("Attack");
-            return;
-        }
-
-        if (@event.IsActionPressed("block"))
-        {
-            Machine?.TransitionTo("Block");
-            return;
+                Player.SetVelocityX(Mathf.MoveToward(currentSpeed, targetSpeed, rate * physDelta));
+            }
+            else
+            {
+                Player.SetVelocityX(Mathf.MoveToward(Player.Velocity.X, 0f, Player.Settings.RunDeceleration * physDelta));
+            }
         }
     }
 }

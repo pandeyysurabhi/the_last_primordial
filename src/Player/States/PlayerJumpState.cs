@@ -1,72 +1,35 @@
 using Godot;
 
-namespace TheLastPrimordial.Player.States;
-
-/// <summary>
-/// Jump state — ascending phase of a jump.
-/// Variable-height jump: releasing jump early cuts upward velocity.
-/// Transitions to: Fall, WallSlide, Attack (aerial), Dash.
-/// </summary>
-public partial class PlayerJumpState : PlayerState
+namespace Player.StateMachine.States
 {
-    private bool _jumpCut;
-
-    public override void Enter()
+    public class PlayerJumpState : PlayerAirState
     {
-        _jumpCut = false;
+        private bool _hasCutVelocity;
 
-        // Apply jump impulse
-        P.Velocity = new Vector2(P.Velocity.X, -P.JumpForce);
-        P.CoyoteTimer = 0f;
-        P.JumpBufferTimer = 0f;
-        P.EmitSignal(Player.SignalName.Jumped);
-    }
+        public PlayerJumpState(PlayerController player, PlayerStateMachine stateMachine, string animBoolName)
+            : base(player, stateMachine, animBoolName) { }
 
-    public override void PhysicsUpdate(double delta)
-    {
-        P.ApplyGravity(delta);
-
-        // Air control
-        float dir = P.GetInputDirection();
-        P.UpdateFacing(dir);
-        P.ApplyHorizontalMovement(delta, dir, P.MoveSpeed);
-
-        // Variable height jump: cut velocity when jump released
-        if (!_jumpCut && Input.IsActionJustReleased("jump") && P.Velocity.Y < 0)
+        public override void Enter()
         {
-            _jumpCut = true;
-            P.Velocity = new Vector2(P.Velocity.X, P.Velocity.Y * P.JumpCutMultiplier);
+            base.Enter();
+            _hasCutVelocity = false;
+            Player.SetVelocityY(-Player.Settings.JumpForce); // Godot Y axis is DOWN (+), so negate
         }
 
-        // Transition: velocity going down → Fall
-        if (P.Velocity.Y >= 0)
+        public override void LogicUpdate()
         {
-            Machine?.TransitionTo("Fall");
-            return;
-        }
+            base.LogicUpdate();
 
-        // Transition: touching wall → WallSlide
-        if (P.IsTouchingWall() && !P.IsOnFloor())
-        {
-            Machine?.TransitionTo("WallSlide");
-            return;
-        }
+            // Variable jump height
+            if (Player.InputReader.JumpUp && Player.Velocity.Y < -0.01f && !_hasCutVelocity)
+            {
+                Player.SetVelocityY(Player.Velocity.Y * Player.Settings.JumpCutoffMultiplier);
+                _hasCutVelocity = true;
+            }
 
-        P.MoveAndSlide();
-    }
-
-    public override void HandleInput(InputEvent @event)
-    {
-        if (@event.IsActionPressed("dodge") && P.CanDash)
-        {
-            Machine?.TransitionTo("Dash");
-            return;
-        }
-
-        if (@event.IsActionPressed("attack_light") || @event.IsActionPressed("attack_heavy"))
-        {
-            Machine?.TransitionTo("Attack");
-            return;
+            // Rising phase ends — fall
+            if (Player.Velocity.Y >= 0f)
+                StateMachine.ChangeState(Player.FallState);
         }
     }
 }

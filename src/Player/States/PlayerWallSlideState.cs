@@ -1,75 +1,47 @@
 using Godot;
 
-namespace TheLastPrimordial.Player.States;
-
-/// <summary>
-/// Wall Slide state — player clings to a wall and slides down slowly.
-/// Hollow Knight-style: must push toward wall to cling, slow descent.
-/// Transitions to: WallJump, Fall (move away), Idle (landed), Dash.
-/// </summary>
-public partial class PlayerWallSlideState : PlayerState
+namespace Player.StateMachine.States
 {
-    private int _wallDirection;
-
-    public override void Enter()
+    public class PlayerWallSlideState : PlayerState
     {
-        _wallDirection = P.GetWallDirection();
+        public PlayerWallSlideState(PlayerController player, PlayerStateMachine stateMachine, string animBoolName)
+            : base(player, stateMachine, animBoolName) { }
 
-        // Face away from wall (like Hollow Knight)
-        P.UpdateFacing(-_wallDirection);
-    }
-
-    public override void PhysicsUpdate(double delta)
-    {
-        // Cap fall speed to wall slide speed
-        float velY = P.Velocity.Y;
-        if (velY < 0)
+        public override void LogicUpdate()
         {
-            // Still going up — apply normal gravity
-            velY += P.GravityScale * (float)delta;
-        }
-        else
-        {
-            // Sliding down — clamp to wall slide speed
-            velY = Mathf.Min(velY + P.GravityScale * 0.5f * (float)delta, P.WallSlideSpeed);
-        }
-        P.Velocity = new Vector2(0, velY);
+            base.LogicUpdate();
 
-        float dir = P.GetInputDirection();
+            // Wall jump
+            if (Player.InputReader.JumpDown || Player.InputReader.HasJumpBuffered)
+            {
+                Player.InputReader.ConsumeJumpBuffer();
+                StateMachine.ChangeState(Player.WallJumpState);
+                return;
+            }
 
-        // Transition: landed
-        if (P.IsOnFloor())
-        {
-            Machine?.TransitionTo("Idle");
-            return;
-        }
+            // Landed on ground
+            if (Player.IsGrounded)
+            {
+                StateMachine.ChangeState(Player.IdleState);
+                return;
+            }
 
-        // Transition: lost wall contact or moving away from wall
-        if (!P.IsTouchingWall() || (int)dir == -_wallDirection)
-        {
-            Machine?.TransitionTo("Fall");
-            return;
+            // Fell off wall
+            float xInput = Player.InputReader.Horizontal;
+            bool isPushingWall = (Player.WallDirection ==  1 && xInput >  0.01f)
+                              || (Player.WallDirection == -1 && xInput < -0.01f);
+
+            if (!Player.TouchingWall || !isPushingWall)
+                StateMachine.ChangeState(Player.FallState);
         }
 
-        P.MoveAndSlide();
-    }
-
-    public override void HandleInput(InputEvent @event)
-    {
-        // Wall jump
-        if (@event.IsActionPressed("jump"))
+        public override void PhysicsUpdate()
         {
-            Machine?.TransitionTo("WallJump");
-            return;
-        }
+            base.PhysicsUpdate();
 
-        // Dash off wall
-        if (@event.IsActionPressed("dodge") && P.CanDash)
-        {
-            // Face away from wall before dashing
-            P.FacingDirection = -_wallDirection;
-            Machine?.TransitionTo("Dash");
-            return;
+            // Clamp downward speed (in Godot, positive Y = down)
+            if (Player.Velocity.Y > Player.Settings.WallSlideSpeed)
+                Player.SetVelocityY(Player.Settings.WallSlideSpeed);
         }
     }
 }

@@ -1,0 +1,220 @@
+{
+  "main": {
+    "id": "1e58d221ba1c8181",
+    "type": "split",
+    "children": [
+      {
+        "id": "b2af89a5a713a67c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fe580166ffd4e078",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b59170346e96ebff",
+    "type": "split",
+    "children": [
+      {
+        "id": "933c40cad2bde0fb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8cd4d86743e851b9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "5db1f6c501084386",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "37a7c1cdd4a6b037",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d0f59230518d3b86",
+    "type": "split",
+    "children": [
+      {
+        "id": "707f1c5dac594fc8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f8a73a2d13d0142c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Lore/Core Concepts/The Black Sword.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for The Black Sword"
+            }
+          },
+          {
+            "id": "912dc703e54fc48e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Lore/Core Concepts/The Black Sword.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from The Black Sword"
+            }
+          },
+          {
+            "id": "7d87377b222c4c75",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "7f091c657d15785a",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "51472c52e6c2576a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Lore/Core Concepts/The Black Sword.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of The Black Sword"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "fe580166ffd4e078",
+  "lastOpenFiles": [
+    "Story/Volume IV – The Core and the Final Choice.md",
+    "Story/Volume III – The Pilgrimage Through the Seven Realms.md",
+    "Story/Volume II – The Child of Choice.md",
+    "Story/Volume I – The Birth of Reality.md",
+    "Story/Vol IV - Part 3 - 5. Final Scene.md",
+    "Story/Vol IV - Part 3 - 4. Epilogues.md",
+    "Story/Vol IV - Part 3 - 3. The Core Offers Three Paths.md",
+    "Story/Vol IV - Part 3 - 2. The Black Sword's Last Purpose.md",
+    "Story/Vol IV - Part 3 - 1. The Final Chamber.md",
+    "Story/Vol IV - Part 2 - 8. One Last Question.md",
+    "Story/Vol IV - Part 2 - 7. The Final Truth.md",
+    "Story/Vol IV - Part 2 - 6. The Burden Ends.md",
+    "Story/Vol IV - Part 2 - 5. Why Christ Was Left Alive.md",
+    "Story/Vol IV - Part 2 - 4. The Truth About His Parents.md",
+    "Story/Vol IV - Part 2 - 3. Why They Never Chose Successors.md",
+    "Story/Vol IV - Part 2 - 2. The Weight They Carried.md",
+    "Story/Vol IV - Part 2 - 1. The Seven Enter the Core.md",
+    "Story/Vol IV - Part 1 - 9. The Core Speaks.md",
+    "Story/Vol IV - Part 1 - 8. His Parents' Choice.md",
+    "Story/Vol IV - Part 1 - 7. Why Every Choice Wielder Failed.md",
+    "Story/Vol IV - Part 1 - 6. Why the Choice Wielders Existed.md",
+    "Story/Vol IV - Part 1 - 5. The Price of Becoming a Primordial.md",
+    "Story/Vol IV - Part 1 - 4. The Volunteers.md",
+    "Story/Vol IV - Part 1 - 3. The Original Catastrophe.md",
+    "Story/Vol IV - Part 1 - 2. The First Memory.md",
+    "Story/Vol IV - Part 1 - 10. Christ's Realization.md",
+    "Story",
+    "Lore/Realms",
+    "Lore/Realm Spirits",
+    "Lore/Primordials",
+    "Lore/Kingdoms",
+    "Lore/Core Concepts",
+    "Lore/Characters",
+    "Lore",
+    "Developer Bible"
+  ]
+}

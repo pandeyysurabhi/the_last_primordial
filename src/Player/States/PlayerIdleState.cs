@@ -1,78 +1,32 @@
 using Godot;
 
-namespace TheLastPrimordial.Player.States;
-
-/// <summary>
-/// Idle state — player is standing still on the ground.
-/// Transitions to: Run, Jump, Fall, Attack, Dash, Block.
-/// </summary>
-public partial class PlayerIdleState : PlayerState
+namespace Player.StateMachine.States
 {
-    public override void Enter()
+    public class PlayerIdleState : PlayerGroundedState
     {
-        // Play idle animation (placeholder: just stop movement)
-        P.Velocity = new Vector2(0, P.Velocity.Y);
-    }
+        public PlayerIdleState(PlayerController player, PlayerStateMachine stateMachine, string animBoolName)
+            : base(player, stateMachine, animBoolName) { }
 
-    public override void PhysicsUpdate(double delta)
-    {
-        P.ApplyGravity(delta);
-
-        float dir = P.GetInputDirection();
-
-        // Transition: movement input → Run
-        if (Mathf.Abs(dir) > 0.1f)
+        public override void Enter()
         {
-            Machine?.TransitionTo("Run");
-            return;
+            base.Enter();
+            Player.SetVelocityX(0f);
         }
 
-        // Transition: not on floor → Fall
-        if (!P.IsOnFloor())
+        public override void LogicUpdate()
         {
-            P.CoyoteTimer = P.CoyoteTime;
-            Machine?.TransitionTo("Fall");
-            return;
+            base.LogicUpdate();
+
+            if (Player.CanMove && Mathf.Abs(HorizontalInput) > 0.01f)
+                StateMachine.ChangeState(Player.RunState);
         }
 
-        P.MoveAndSlide();
-    }
-
-    public override void HandleInput(InputEvent @event)
-    {
-        // Jump
-        if (@event.IsActionPressed("jump") && P.IsOnFloor())
+        public override void PhysicsUpdate()
         {
-            Machine?.TransitionTo("Jump");
-            return;
-        }
+            base.PhysicsUpdate();
 
-        // Dash
-        if (@event.IsActionPressed("dodge") && P.CanDash)
-        {
-            Machine?.TransitionTo("Dash");
-            return;
-        }
-
-        // Light attack
-        if (@event.IsActionPressed("attack_light"))
-        {
-            Machine?.TransitionTo("Attack");
-            return;
-        }
-
-        // Heavy attack
-        if (@event.IsActionPressed("attack_heavy"))
-        {
-            Machine?.TransitionTo("Attack");
-            return;
-        }
-
-        // Block
-        if (@event.IsActionPressed("block"))
-        {
-            Machine?.TransitionTo("Block");
-            return;
+            float newVel = Mathf.MoveToward(Player.Velocity.X, 0f, Player.Settings.RunDeceleration * Player.PhysicsDelta);
+            Player.SetVelocityX(newVel);
         }
     }
 }

@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+  <ItemGroup>
+    <!-- Unity C# scripts — kept as reference, excluded from Godot build -->
+    <Compile Remove="Assets/**/*.cs" />
+  </ItemGroup>
 </Project>
