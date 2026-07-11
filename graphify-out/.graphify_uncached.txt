@@ -1,0 +1,195 @@
+/home/jemin/Projects/game/Game/The_Last_Primordial/.agents/rules/graphify.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/.agents/workflows/graphify.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Developer Bible/Central Themes.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Developer Bible/Developer Bible.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Developer Bible/Future Expansion Opportunities.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Developer Bible/Gameplay Progression.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Developer Bible/Symbolism.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Developer Bible/Timeline.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Characters/Christ.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Characters/Immortal Woman.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Characters/Last Choice Wielder.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Core Concepts/Choice Wielder.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Core Concepts/Choice.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Core Concepts/The Black Sword.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Core Concepts/The Core.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Core Concepts/Universal Laws of Reality.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Kingdoms/Kingdom of Chaos.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Kingdoms/Kingdom of Creation.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Kingdoms/Kingdom of Death.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Kingdoms/Kingdom of Destruction.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Kingdoms/Kingdom of Life.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Kingdoms/Kingdom of Space.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Kingdoms/Kingdom of Time.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Kingdoms/Seven Kingdoms.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Lore Index.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Primordials/Aetherion.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Primordials/Chronar.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Primordials/Elaria.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Primordials/Morvex.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Primordials/Nihros.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Primordials/Seven Primordials.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Primordials/Vastara.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Primordials/Xael.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Realm Spirits/Seven Realm Spirits.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Realm Spirits/Spirit of Chaos.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Realm Spirits/Spirit of Creation.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Realm Spirits/Spirit of Death.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Realm Spirits/Spirit of Destruction.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Realm Spirits/Spirit of Life.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Realm Spirits/Spirit of Space.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Realm Spirits/Spirit of Time.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Realms/Realm of Chaos.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Realms/Realm of Creation.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Realms/Realm of Death.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Realms/Realm of Destruction.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Realms/Realm of Life.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Realms/Realm of Space.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Realms/Realm of Time.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Lore/Realms/Seven Realms.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Part 1 – The Beginning of Everything.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Part 1 – The Impossible Child.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Part 1 – The Realm of Time.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Part 1 – The Truth of the Core.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Part 2 – The Burden of the Seven.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Part 2 – The Collapse of Reality.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Part 2 – The Judgment of the Seven.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Part 2 – The Realms of Space and Life.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Part 3 – Death, Chaos, and the Cracks in Memory.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Part 3 – The Black Sword and the Journey Begins.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Part 3 – The Seven Primordials.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Part 3 – The Three Choices.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Part 4 – Creation, Destruction, and the Road to the Core.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Part 4 – The Forgotten Law.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Part 4 – The Seven Realms.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Part 4 – World Reference & Developer Bible.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Story Index.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 1 - 1. The Beginning.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 1 - 2. The Core.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 1 - 3. Humanity's Rise.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 1 - 4. The Seven Kingdoms.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 1 - 5. Discovery of the Core.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 1 - 6. Humanity's Golden Age.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 1 - 7. The First Mistake.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 2 - 1. Humanity Crosses the Line.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 2 - 2. The Seven Kingdoms and Their Ideals.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 2 - 3. The Core Never Said "No".md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 2 - 4. The Collapse Begins.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 2 - 5. Understanding the Problem.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 2 - 6. The Final Council.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 2 - 7. An Impossible Proposal.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 3 - 1. The Seven Volunteers.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 3 - 2. The Ascension.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 3 - 3. The Price of Becoming a Primordial.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 3 - 4. The First Thousand Years.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 3 - 5. A Difficult Truth.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 3 - 6. The Missing Law.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 4 - 1. The Eighth Law.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 4 - 2. The Discovery.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 4 - 3. Why Choice Could Never Have A Guardian.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 4 - 4. The Cycle Begins.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 4 - 5. The Black Sword.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 4 - 6. The Seven's Decision.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol I - Part 4 - 7. The Burden of Hope.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 1 - 1. The Endless Cycle.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 1 - 2. The Last Choice Wielder.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 1 - 3. Morvex's Greatest Mistake.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 1 - 4. Judgment of the Seven.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 1 - 5. An Impossible Love.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 1 - 6. The Oldest Law.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 1 - 7. A Different Solution.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 1 - 8. The Birth of Christ.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 2 - 1. Reality Notices the Impossible.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 2 - 2. The Council of the Seven.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 2 - 3. The Verdict.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 2 - 4. Why Christ Was Spared.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 2 - 5. The Final Night.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 2 - 6. The Execution.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 2 - 7. A Child's Memory.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 3 - 1. A Life Built on Fragments.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 3 - 2. The Nightmares.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 3 - 3. An Ordinary Boy.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 3 - 4. The Return of the Black Sword.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 3 - 5. The Voices Within.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 3 - 6. The First Memory.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 3 - 7. The Decision.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 3 - 8. The First Guide.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 4 - 1. The World Beyond the Physical.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 4 - 2. Why the Realms Exist.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 4 - 3. The Realm Spirits.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 4 - 4. The Seven Trials.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 4 - 5. The Meeting After Every Trial.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 4 - 6. Christ's Internal Conflict.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol II - Part 4 - 7. The Truth Waiting at the End.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 1 - 1. Why the Realm of Time Comes First.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 1 - 2. Arrival.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 1 - 3. Environmental Design.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 1 - 4. Core Gameplay Mechanics.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 1 - 5. The Spirit of Time.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 1 - 6. Defeating the Spirit.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 1 - 7. The First Meeting with a Primordial.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 1 - 8. Narrative Purpose.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 2 - 1. Between the Realms.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 2 - 10. The Spirit of Life.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 2 - 11. Meeting Elaria.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 2 - 12. Christ Begins to Doubt.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 2 - 2. The Realm of Space.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 2 - 3. Philosophy of Space.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 2 - 4. Gameplay Mechanics.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 2 - 5. The Spirit of Space.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 2 - 6. Meeting Vastara.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 2 - 7. The Realm of Life.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 2 - 8. Philosophy of Life.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 2 - 9. Gameplay Mechanics.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 3 - 1. The Realm of Death.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 3 - 10. The Cracks in Memory.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 3 - 11. The Beginning of Doubt.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 3 - 2. The Weight of Memory.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 3 - 3. Gameplay Mechanics.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 3 - 4. The Spirit of Death.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 3 - 5. Morvex.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 3 - 6. The Realm of Chaos.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 3 - 7. Gameplay Mechanics.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 3 - 8. The Spirit of Chaos.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 3 - 9. Xael.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 4 - 1. The Realm of Creation.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 4 - 10. The Last Voice.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 4 - 11. The End of the Journey.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 4 - 2. Gameplay Mechanics.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 4 - 3. The Spirit of Creation.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 4 - 4. Meeting Aetherion.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 4 - 5. The Realm of Destruction.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 4 - 6. Gameplay Mechanics.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 4 - 7. The Spirit of Destruction.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 4 - 8. Nihros.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol III - Part 4 - 9. The Seven Gather.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 1 - 1. The Heart of Reality.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 1 - 10. Christ's Realization.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 1 - 2. The First Memory.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 1 - 3. The Original Catastrophe.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 1 - 4. The Volunteers.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 1 - 5. The Price of Becoming a Primordial.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 1 - 6. Why the Choice Wielders Existed.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 1 - 7. Why Every Choice Wielder Failed.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 1 - 8. His Parents' Choice.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 1 - 9. The Core Speaks.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 2 - 1. The Seven Enter the Core.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 2 - 2. The Weight They Carried.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 2 - 3. Why They Never Chose Successors.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 2 - 4. The Truth About His Parents.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 2 - 5. Why Christ Was Left Alive.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 2 - 6. The Burden Ends.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 2 - 7. The Final Truth.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 2 - 8. One Last Question.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 3 - 1. The Final Chamber.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 3 - 2. The Black Sword's Last Purpose.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 3 - 3. The Core Offers Three Paths.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 3 - 4. Epilogues.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Vol IV - Part 3 - 5. Final Scene.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Volume I – The Birth of Reality.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Volume II – The Child of Choice.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Volume III – The Pilgrimage Through the Seven Realms.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/Story/Volume IV – The Core and the Final Choice.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Brain/index.md
+/home/jemin/Projects/game/Game/The_Last_Primordial/Assets/Sprites/Characters/Kael/kael_spritesheet.png
+/home/jemin/Projects/game/Game/The_Last_Primordial/icon.svg

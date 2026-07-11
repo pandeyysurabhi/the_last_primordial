@@ -1,0 +1,1177 @@
+{
+  "Assets/Scripts/Editor/KaelSetupWizard.cs": {
+    "mtime": 1783718233.259385,
+    "ast_hash": "672df854ef07842a983953d0c2b01bcb",
+    "semantic_hash": "672df854ef07842a983953d0c2b01bcb"
+  },
+  "Assets/Scripts/Player/Combat/IDamageable.cs": {
+    "mtime": 1783716884.3972938,
+    "ast_hash": "f2b744633da88b8831ae2dcbe6f84b68",
+    "semantic_hash": "f2b744633da88b8831ae2dcbe6f84b68"
+  },
+  "Assets/Scripts/Player/Combat/KaelCombatSettings.cs": {
+    "mtime": 1783716712.2881262,
+    "ast_hash": "aa29f59c84e2607637a58951a84bf7a9",
+    "semantic_hash": "aa29f59c84e2607637a58951a84bf7a9"
+  },
+  "Assets/Scripts/Player/Core/IPlayerInput.cs": {
+    "mtime": 1783716819.3692496,
+    "ast_hash": "3f14ca2d4bb20176452968dc0e15a01e",
+    "semantic_hash": "3f14ca2d4bb20176452968dc0e15a01e"
+  },
+  "Assets/Scripts/Player/Core/PlayerController.cs": {
+    "mtime": 1783717257.5294578,
+    "ast_hash": "2f94236a6b431bc2bc35e1e5b61426ba",
+    "semantic_hash": "2f94236a6b431bc2bc35e1e5b61426ba"
+  },
+  "Assets/Scripts/Player/Core/PlayerInput.cs": {
+    "mtime": 1783716858.2828858,
+    "ast_hash": "52c5974fd2d40b0a841a9bafec4405de",
+    "semantic_hash": "52c5974fd2d40b0a841a9bafec4405de"
+  },
+  "Assets/Scripts/Player/Core/PlayerMovementSettings.cs": {
+    "mtime": 1783715814.1089115,
+    "ast_hash": "a9482ab082483a9fa5594a207771a755",
+    "semantic_hash": "a9482ab082483a9fa5594a207771a755"
+  },
+  "Assets/Scripts/Player/StateMachine/PlayerState.cs": {
+    "mtime": 1783716635.1904383,
+    "ast_hash": "70ab8ad2e9a3f1f3740e6be23b83f499",
+    "semantic_hash": "70ab8ad2e9a3f1f3740e6be23b83f499"
+  },
+  "Assets/Scripts/Player/StateMachine/PlayerStateMachine.cs": {
+    "mtime": 1783715829.2533007,
+    "ast_hash": "56e1e17d44998684b969a520328b37fc",
+    "semantic_hash": "56e1e17d44998684b969a520328b37fc"
+  },
+  "Assets/Scripts/Player/StateMachine/States/PlayerAirState.cs": {
+    "mtime": 1783715867.5493014,
+    "ast_hash": "219c3f077cd2b54256690efaacf5ef8a",
+    "semantic_hash": "219c3f077cd2b54256690efaacf5ef8a"
+  },
+  "Assets/Scripts/Player/StateMachine/States/PlayerAttackState.cs": {
+    "mtime": 1783716923.1967487,
+    "ast_hash": "fc6faf85e999e68c297f2bb5bcee6ee1",
+    "semantic_hash": "fc6faf85e999e68c297f2bb5bcee6ee1"
+  },
+  "Assets/Scripts/Player/StateMachine/States/PlayerFallState.cs": {
+    "mtime": 1783715880.7102172,
+    "ast_hash": "092e51e459e8367c70d3221e66a5cfa9",
+    "semantic_hash": "092e51e459e8367c70d3221e66a5cfa9"
+  },
+  "Assets/Scripts/Player/StateMachine/States/PlayerGroundedState.cs": {
+    "mtime": 1783716788.226799,
+    "ast_hash": "8b4c27a94048092fddb3fa14c4c68ef1",
+    "semantic_hash": "8b4c27a94048092fddb3fa14c4c68ef1"
+  },
+  "Assets/Scripts/Player/StateMachine/States/PlayerIdleState.cs": {
+    "mtime": 1783715851.7782032,
+    "ast_hash": "e0d11e3390500e4a9244d959edfcfa1b",
+    "semantic_hash": "e0d11e3390500e4a9244d959edfcfa1b"
+  },
+  "Assets/Scripts/Player/StateMachine/States/PlayerJumpState.cs": {
+    "mtime": 1783715873.2997015,
+    "ast_hash": "be01b23240f463add1b5b99bf4853d5b",
+    "semantic_hash": "be01b23240f463add1b5b99bf4853d5b"
+  },
+  "Assets/Scripts/Player/StateMachine/States/PlayerRunState.cs": {
+    "mtime": 1783715858.9487026,
+    "ast_hash": "3c367c78da1efcf6d309bddc61d053fb",
+    "semantic_hash": "3c367c78da1efcf6d309bddc61d053fb"
+  },
+  "Assets/Scripts/Player/StateMachine/States/PlayerWallJumpState.cs": {
+    "mtime": 1783715899.7048717,
+    "ast_hash": "c137556627cdc94bf59246a939841fa3",
+    "semantic_hash": "c137556627cdc94bf59246a939841fa3"
+  },
+  "Assets/Scripts/Player/StateMachine/States/PlayerWallSlideState.cs": {
+    "mtime": 1783715887.827379,
+    "ast_hash": "c130c58c16baf77fea36304f868737c5",
+    "semantic_hash": "c130c58c16baf77fea36304f868737c5"
+  },
+  "Brain/.obsidian/app.json": {
+    "mtime": 1783286930.0,
+    "ast_hash": "99914b932bd37a50b983c5e7c90ae93b",
+    "semantic_hash": "99914b932bd37a50b983c5e7c90ae93b"
+  },
+  "Brain/.obsidian/appearance.json": {
+    "mtime": 1783286930.0,
+    "ast_hash": "99914b932bd37a50b983c5e7c90ae93b",
+    "semantic_hash": "99914b932bd37a50b983c5e7c90ae93b"
+  },
+  "Brain/.obsidian/core-plugins.json": {
+    "mtime": 1783286930.0,
+    "ast_hash": "7c877bea49eaeabb100563bd157b9051",
+    "semantic_hash": "7c877bea49eaeabb100563bd157b9051"
+  },
+  "Brain/.obsidian/graph.json": {
+    "mtime": 1783287822.0,
+    "ast_hash": "f90e10492f430d02773ec0c0f859253a",
+    "semantic_hash": "f90e10492f430d02773ec0c0f859253a"
+  },
+  "Brain/.obsidian/workspace.json": {
+    "mtime": 1783367870.0,
+    "ast_hash": "0584c8690fa6b911732b568497822831",
+    "semantic_hash": "0584c8690fa6b911732b568497822831"
+  },
+  "TheLastPrimordial.csproj": {
+    "mtime": 1783720292.3404856,
+    "ast_hash": "a46dfd0e542096609cf0bb8aeca62a80",
+    "semantic_hash": "a46dfd0e542096609cf0bb8aeca62a80"
+  },
+  "src/Player/IPlayerInput.cs": {
+    "mtime": 1783719952.5027046,
+    "ast_hash": "126d250dc29d34ca12d5143a11ad809b",
+    "semantic_hash": "126d250dc29d34ca12d5143a11ad809b"
+  },
+  "src/Player/KaelCombatSettings.cs": {
+    "mtime": 1783719939.922781,
+    "ast_hash": "08ab27dbe64faf377a904ae66464a65e",
+    "semantic_hash": "08ab27dbe64faf377a904ae66464a65e"
+  },
+  "src/Player/PlayerController.cs": {
+    "mtime": 1783721015.6911485,
+    "ast_hash": "189bd2c8186f791fd837cde594853bc5",
+    "semantic_hash": "189bd2c8186f791fd837cde594853bc5"
+  },
+  "src/Player/PlayerInput.cs": {
+    "mtime": 1783720801.3740642,
+    "ast_hash": "75f1d467fcf3fd85ff184320c53879c8",
+    "semantic_hash": "75f1d467fcf3fd85ff184320c53879c8"
+  },
+  "src/Player/PlayerMovementSettings.cs": {
+    "mtime": 1783719924.4669452,
+    "ast_hash": "e3896bb6f662758b63c35ee8667370d1",
+    "semantic_hash": "e3896bb6f662758b63c35ee8667370d1"
+  },
+  "src/Player/StateMachine/PlayerState.cs": {
+    "mtime": 1783719991.200109,
+    "ast_hash": "20fa89371a125bcff3f9c4a87a2193c0",
+    "semantic_hash": "20fa89371a125bcff3f9c4a87a2193c0"
+  },
+  "src/Player/StateMachine/PlayerStateMachine.cs": {
+    "mtime": 1783719976.7444491,
+    "ast_hash": "4a763e9ca5c0f42b2de8b2a7dc815135",
+    "semantic_hash": "4a763e9ca5c0f42b2de8b2a7dc815135"
+  },
+  "src/Player/States/PlayerAirState.cs": {
+    "mtime": 1783720775.3057208,
+    "ast_hash": "010fc4ef2a956e4c668983cc3c12671c",
+    "semantic_hash": "010fc4ef2a956e4c668983cc3c12671c"
+  },
+  "src/Player/States/PlayerAttackState.cs": {
+    "mtime": 1783720777.3130465,
+    "ast_hash": "a4ba799934fc06c9866692929b515ab1",
+    "semantic_hash": "a4ba799934fc06c9866692929b515ab1"
+  },
+  "src/Player/States/PlayerFallState.cs": {
+    "mtime": 1783720141.2445946,
+    "ast_hash": "0afb8318361a230580198e7762f45e17",
+    "semantic_hash": "0afb8318361a230580198e7762f45e17"
+  },
+  "src/Player/States/PlayerGroundedState.cs": {
+    "mtime": 1783720050.2023253,
+    "ast_hash": "8866114f20059d4494d3bb1004ff956b",
+    "semantic_hash": "8866114f20059d4494d3bb1004ff956b"
+  },
+  "src/Player/States/PlayerIdleState.cs": {
+    "mtime": 1783720752.1671143,
+    "ast_hash": "adf5772d6cfc26e22dbdfbae8ed925ac",
+    "semantic_hash": "adf5772d6cfc26e22dbdfbae8ed925ac"
+  },
+  "src/Player/States/PlayerJumpState.cs": {
+    "mtime": 1783720127.5703838,
+    "ast_hash": "d42a38865550aa51c5b5eda82516737d",
+    "semantic_hash": "d42a38865550aa51c5b5eda82516737d"
+  },
+  "src/Player/States/PlayerRunState.cs": {
+    "mtime": 1783720754.1733449,
+    "ast_hash": "446e66077c2aacd5a06e5a8e6b92469b",
+    "semantic_hash": "446e66077c2aacd5a06e5a8e6b92469b"
+  },
+  "src/Player/States/PlayerWallJumpState.cs": {
+    "mtime": 1783720181.7097204,
+    "ast_hash": "448c141fcb9200aa0a2d3aeb13ab36fd",
+    "semantic_hash": "448c141fcb9200aa0a2d3aeb13ab36fd"
+  },
+  "src/Player/States/PlayerWallSlideState.cs": {
+    "mtime": 1783720368.9818387,
+    "ast_hash": "4334b53045f91f5ad2c67e9ffe8ef74b",
+    "semantic_hash": "4334b53045f91f5ad2c67e9ffe8ef74b"
+  },
+  ".agents/rules/graphify.md": {
+    "mtime": 1783761369.8108814,
+    "ast_hash": "f1e53ecc9194573d3c28fc116c743a2e",
+    "semantic_hash": "f1e53ecc9194573d3c28fc116c743a2e"
+  },
+  ".agents/workflows/graphify.md": {
+    "mtime": 1783761369.8110712,
+    "ast_hash": "0bc020d491fca99550c1ea3de0a5f862",
+    "semantic_hash": "0bc020d491fca99550c1ea3de0a5f862"
+  },
+  "Brain/Developer Bible/Central Themes.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "b5dbc7931fdc9ab2da694458f1eb195c",
+    "semantic_hash": "b5dbc7931fdc9ab2da694458f1eb195c"
+  },
+  "Brain/Developer Bible/Developer Bible.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "740f9e39bcac17d266366d061c1386be",
+    "semantic_hash": "740f9e39bcac17d266366d061c1386be"
+  },
+  "Brain/Developer Bible/Future Expansion Opportunities.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "deee42e3c99e142ff965cdfb8ff1d762",
+    "semantic_hash": "deee42e3c99e142ff965cdfb8ff1d762"
+  },
+  "Brain/Developer Bible/Gameplay Progression.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "d479e958ee1c8a9f91ea19c15042cc15",
+    "semantic_hash": "d479e958ee1c8a9f91ea19c15042cc15"
+  },
+  "Brain/Developer Bible/Symbolism.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "b1a6726c75e306a26eee9ee662568978",
+    "semantic_hash": "b1a6726c75e306a26eee9ee662568978"
+  },
+  "Brain/Developer Bible/Timeline.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "9d230a5212341e99e60ff0413b08cf28",
+    "semantic_hash": "9d230a5212341e99e60ff0413b08cf28"
+  },
+  "Brain/Lore/Characters/Christ.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "fb0b82ae60fd70a13883094a0b9aad6d",
+    "semantic_hash": "fb0b82ae60fd70a13883094a0b9aad6d"
+  },
+  "Brain/Lore/Characters/Immortal Woman.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "e5ba36884b506b6eaa83f1f109335a7c",
+    "semantic_hash": "e5ba36884b506b6eaa83f1f109335a7c"
+  },
+  "Brain/Lore/Characters/Last Choice Wielder.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "117eb9a52456f04840067d36f13b7d46",
+    "semantic_hash": "117eb9a52456f04840067d36f13b7d46"
+  },
+  "Brain/Lore/Core Concepts/Choice Wielder.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "d8564cf102991708b5ac79dcbfecfc99",
+    "semantic_hash": "d8564cf102991708b5ac79dcbfecfc99"
+  },
+  "Brain/Lore/Core Concepts/Choice.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "8ef52807034a10e0a4cc524058aa5135",
+    "semantic_hash": "8ef52807034a10e0a4cc524058aa5135"
+  },
+  "Brain/Lore/Core Concepts/The Black Sword.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "ce6ee67b3d6b5ea0e2f2884e7b15a11d",
+    "semantic_hash": "ce6ee67b3d6b5ea0e2f2884e7b15a11d"
+  },
+  "Brain/Lore/Core Concepts/The Core.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "e52c686965795bc5a927de6d8c10cd1c",
+    "semantic_hash": "e52c686965795bc5a927de6d8c10cd1c"
+  },
+  "Brain/Lore/Core Concepts/Universal Laws of Reality.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "033c9082bfc17677b6ee2a2e5968171d",
+    "semantic_hash": "033c9082bfc17677b6ee2a2e5968171d"
+  },
+  "Brain/Lore/Kingdoms/Kingdom of Chaos.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "81b7e9c519a1a60f9d4d31ba0b60a335",
+    "semantic_hash": "81b7e9c519a1a60f9d4d31ba0b60a335"
+  },
+  "Brain/Lore/Kingdoms/Kingdom of Creation.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "b4bb435f214dea469ac2960807ff4e1d",
+    "semantic_hash": "b4bb435f214dea469ac2960807ff4e1d"
+  },
+  "Brain/Lore/Kingdoms/Kingdom of Death.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "84d8e4ef73de788dc07cecc6be6926be",
+    "semantic_hash": "84d8e4ef73de788dc07cecc6be6926be"
+  },
+  "Brain/Lore/Kingdoms/Kingdom of Destruction.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "5fdecb2084a594b632f7de7b4d5496c5",
+    "semantic_hash": "5fdecb2084a594b632f7de7b4d5496c5"
+  },
+  "Brain/Lore/Kingdoms/Kingdom of Life.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "bd531aff0a7364ab3901546682adbe84",
+    "semantic_hash": "bd531aff0a7364ab3901546682adbe84"
+  },
+  "Brain/Lore/Kingdoms/Kingdom of Space.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "56e6d8964a8dd8169865c12be21a420b",
+    "semantic_hash": "56e6d8964a8dd8169865c12be21a420b"
+  },
+  "Brain/Lore/Kingdoms/Kingdom of Time.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "79e6ecb8677de18ae343df95d5c51288",
+    "semantic_hash": "79e6ecb8677de18ae343df95d5c51288"
+  },
+  "Brain/Lore/Kingdoms/Seven Kingdoms.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "1511fcf4f7af479dca46374be52a6f2d",
+    "semantic_hash": "1511fcf4f7af479dca46374be52a6f2d"
+  },
+  "Brain/Lore/Lore Index.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "461f1b1f407566a32527eadf89ef4d7f",
+    "semantic_hash": "461f1b1f407566a32527eadf89ef4d7f"
+  },
+  "Brain/Lore/Primordials/Aetherion.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "5206ec1a745c7673ec785bdad7bd4368",
+    "semantic_hash": "5206ec1a745c7673ec785bdad7bd4368"
+  },
+  "Brain/Lore/Primordials/Chronar.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "0c24fca19836cd26e56b77f6c57c9233",
+    "semantic_hash": "0c24fca19836cd26e56b77f6c57c9233"
+  },
+  "Brain/Lore/Primordials/Elaria.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "a4f924f5e2c2dd802dc87a88f617b9b5",
+    "semantic_hash": "a4f924f5e2c2dd802dc87a88f617b9b5"
+  },
+  "Brain/Lore/Primordials/Morvex.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "e55b686270a031d07a0901d37b3bb891",
+    "semantic_hash": "e55b686270a031d07a0901d37b3bb891"
+  },
+  "Brain/Lore/Primordials/Nihros.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "d961356ba165347b1d5e930fb3ba767a",
+    "semantic_hash": "d961356ba165347b1d5e930fb3ba767a"
+  },
+  "Brain/Lore/Primordials/Seven Primordials.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "5c3ca7e51004a553d2b218d4d1da654f",
+    "semantic_hash": "5c3ca7e51004a553d2b218d4d1da654f"
+  },
+  "Brain/Lore/Primordials/Vastara.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "8825c41068b5c1633f5a025496d47ea8",
+    "semantic_hash": "8825c41068b5c1633f5a025496d47ea8"
+  },
+  "Brain/Lore/Primordials/Xael.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "471b1749aabfb43a852b3d4b3e5b3bcd",
+    "semantic_hash": "471b1749aabfb43a852b3d4b3e5b3bcd"
+  },
+  "Brain/Lore/Realm Spirits/Seven Realm Spirits.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "bcef0275c25ea7f4dda0d701b1924925",
+    "semantic_hash": "bcef0275c25ea7f4dda0d701b1924925"
+  },
+  "Brain/Lore/Realm Spirits/Spirit of Chaos.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "da35fa3816f02b5bc9800edb713de461",
+    "semantic_hash": "da35fa3816f02b5bc9800edb713de461"
+  },
+  "Brain/Lore/Realm Spirits/Spirit of Creation.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "7f8f5cac73ca6c75934839dbb432394f",
+    "semantic_hash": "7f8f5cac73ca6c75934839dbb432394f"
+  },
+  "Brain/Lore/Realm Spirits/Spirit of Death.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "84487758da8f2f9ee725bf8d1dbb32a0",
+    "semantic_hash": "84487758da8f2f9ee725bf8d1dbb32a0"
+  },
+  "Brain/Lore/Realm Spirits/Spirit of Destruction.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "1fdace4f335f878f7c1779f4a67800de",
+    "semantic_hash": "1fdace4f335f878f7c1779f4a67800de"
+  },
+  "Brain/Lore/Realm Spirits/Spirit of Life.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "5f5a6f8be9eab239ae97d00fac064da7",
+    "semantic_hash": "5f5a6f8be9eab239ae97d00fac064da7"
+  },
+  "Brain/Lore/Realm Spirits/Spirit of Space.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "3c8d1e7e325b169d8ab57bf184354111",
+    "semantic_hash": "3c8d1e7e325b169d8ab57bf184354111"
+  },
+  "Brain/Lore/Realm Spirits/Spirit of Time.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "99a72be5f88207a521d9791bdd67dc6f",
+    "semantic_hash": "99a72be5f88207a521d9791bdd67dc6f"
+  },
+  "Brain/Lore/Realms/Realm of Chaos.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "b5cf61d89b4541af779b29bae9539ed3",
+    "semantic_hash": "b5cf61d89b4541af779b29bae9539ed3"
+  },
+  "Brain/Lore/Realms/Realm of Creation.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "3ca8ad2992fed16fe17f66fe93df7c15",
+    "semantic_hash": "3ca8ad2992fed16fe17f66fe93df7c15"
+  },
+  "Brain/Lore/Realms/Realm of Death.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "8268ffa797be7787e838809580fc8a98",
+    "semantic_hash": "8268ffa797be7787e838809580fc8a98"
+  },
+  "Brain/Lore/Realms/Realm of Destruction.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "c11c763cf5f9bc7ffe24d369b05e57b4",
+    "semantic_hash": "c11c763cf5f9bc7ffe24d369b05e57b4"
+  },
+  "Brain/Lore/Realms/Realm of Life.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "611a98b246d6fa95b89679ed587f351d",
+    "semantic_hash": "611a98b246d6fa95b89679ed587f351d"
+  },
+  "Brain/Lore/Realms/Realm of Space.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "3af4a1c8eef1ee9bd2faf65ab4b92074",
+    "semantic_hash": "3af4a1c8eef1ee9bd2faf65ab4b92074"
+  },
+  "Brain/Lore/Realms/Realm of Time.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "1e35914f001468c963b78d7b35b0bd3b",
+    "semantic_hash": "1e35914f001468c963b78d7b35b0bd3b"
+  },
+  "Brain/Lore/Realms/Seven Realms.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "b4e8262c7dec86406f94e0912c5d39c1",
+    "semantic_hash": "b4e8262c7dec86406f94e0912c5d39c1"
+  },
+  "Brain/Story/Part 1 \u2013 The Beginning of Everything.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "5eaf10d6905246477f75679470a741e3",
+    "semantic_hash": "5eaf10d6905246477f75679470a741e3"
+  },
+  "Brain/Story/Part 1 \u2013 The Impossible Child.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "06033b9189efdb54c1fd43b098e87317",
+    "semantic_hash": "06033b9189efdb54c1fd43b098e87317"
+  },
+  "Brain/Story/Part 1 \u2013 The Realm of Time.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "64dc91f62d21280b0dfadeb5d7021a1a",
+    "semantic_hash": "64dc91f62d21280b0dfadeb5d7021a1a"
+  },
+  "Brain/Story/Part 1 \u2013 The Truth of the Core.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "4060a306fcdb372c8a95244f8cabbd88",
+    "semantic_hash": "4060a306fcdb372c8a95244f8cabbd88"
+  },
+  "Brain/Story/Part 2 \u2013 The Burden of the Seven.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "01513a87a24321b0c415de8080376136",
+    "semantic_hash": "01513a87a24321b0c415de8080376136"
+  },
+  "Brain/Story/Part 2 \u2013 The Collapse of Reality.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "50674d7eacb0f47fd6fe57fcf890f210",
+    "semantic_hash": "50674d7eacb0f47fd6fe57fcf890f210"
+  },
+  "Brain/Story/Part 2 \u2013 The Judgment of the Seven.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "e671854b127c3403a5f5057a26eb9e7e",
+    "semantic_hash": "e671854b127c3403a5f5057a26eb9e7e"
+  },
+  "Brain/Story/Part 2 \u2013 The Realms of Space and Life.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "8abaf6b671153e387f726d4d1774181e",
+    "semantic_hash": "8abaf6b671153e387f726d4d1774181e"
+  },
+  "Brain/Story/Part 3 \u2013 Death, Chaos, and the Cracks in Memory.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "046914d111dbc776e7bc4c98e65a0ea9",
+    "semantic_hash": "046914d111dbc776e7bc4c98e65a0ea9"
+  },
+  "Brain/Story/Part 3 \u2013 The Black Sword and the Journey Begins.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "c2aaae6a2df5ae0fbbf8d9f7c8c01cae",
+    "semantic_hash": "c2aaae6a2df5ae0fbbf8d9f7c8c01cae"
+  },
+  "Brain/Story/Part 3 \u2013 The Seven Primordials.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "deace2a35e382efd5961f92658f49e2d",
+    "semantic_hash": "deace2a35e382efd5961f92658f49e2d"
+  },
+  "Brain/Story/Part 3 \u2013 The Three Choices.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "3d1a504d713ff559826b9a8fef8eb1ce",
+    "semantic_hash": "3d1a504d713ff559826b9a8fef8eb1ce"
+  },
+  "Brain/Story/Part 4 \u2013 Creation, Destruction, and the Road to the Core.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "a4440ab7c84c97d14039ab22681f155b",
+    "semantic_hash": "a4440ab7c84c97d14039ab22681f155b"
+  },
+  "Brain/Story/Part 4 \u2013 The Forgotten Law.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "dda6b810b06792da655013961a25c62c",
+    "semantic_hash": "dda6b810b06792da655013961a25c62c"
+  },
+  "Brain/Story/Part 4 \u2013 The Seven Realms.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "82f07fca7ed82e9b06756f52a5ca0395",
+    "semantic_hash": "82f07fca7ed82e9b06756f52a5ca0395"
+  },
+  "Brain/Story/Part 4 \u2013 World Reference & Developer Bible.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "972e9e19512f6b639996cf0a6aa1faa2",
+    "semantic_hash": "972e9e19512f6b639996cf0a6aa1faa2"
+  },
+  "Brain/Story/Story Index.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "9ecfd418b34f1e490e9c7e01e515528b",
+    "semantic_hash": "9ecfd418b34f1e490e9c7e01e515528b"
+  },
+  "Brain/Story/Vol I - Part 1 - 1. The Beginning.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "513b1886f550b08d5bff1c600eb32b91",
+    "semantic_hash": "513b1886f550b08d5bff1c600eb32b91"
+  },
+  "Brain/Story/Vol I - Part 1 - 2. The Core.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "dca75a45d95bae4359bce4f8b76664c1",
+    "semantic_hash": "dca75a45d95bae4359bce4f8b76664c1"
+  },
+  "Brain/Story/Vol I - Part 1 - 3. Humanity's Rise.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "fd77aad93b67df7908547b8de442766d",
+    "semantic_hash": "fd77aad93b67df7908547b8de442766d"
+  },
+  "Brain/Story/Vol I - Part 1 - 4. The Seven Kingdoms.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "129547dab59fa2b673416128e507248f",
+    "semantic_hash": "129547dab59fa2b673416128e507248f"
+  },
+  "Brain/Story/Vol I - Part 1 - 5. Discovery of the Core.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "8a368e976bd638f8d16ca9053c8ebd17",
+    "semantic_hash": "8a368e976bd638f8d16ca9053c8ebd17"
+  },
+  "Brain/Story/Vol I - Part 1 - 6. Humanity's Golden Age.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "a70ba76bf6aa573fed98ef10fa5c859a",
+    "semantic_hash": "a70ba76bf6aa573fed98ef10fa5c859a"
+  },
+  "Brain/Story/Vol I - Part 1 - 7. The First Mistake.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "bc8a3528d93e4fd67beafb8996de341b",
+    "semantic_hash": "bc8a3528d93e4fd67beafb8996de341b"
+  },
+  "Brain/Story/Vol I - Part 2 - 1. Humanity Crosses the Line.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "4cb2fc2f7d1c03d85537b2572e029448",
+    "semantic_hash": "4cb2fc2f7d1c03d85537b2572e029448"
+  },
+  "Brain/Story/Vol I - Part 2 - 2. The Seven Kingdoms and Their Ideals.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "e1f8bd4e6d83d01dd7a91cbf111e3355",
+    "semantic_hash": "e1f8bd4e6d83d01dd7a91cbf111e3355"
+  },
+  "Brain/Story/Vol I - Part 2 - 3. The Core Never Said \"No\".md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "4543935814cf1edc5faeae06d26e9352",
+    "semantic_hash": "4543935814cf1edc5faeae06d26e9352"
+  },
+  "Brain/Story/Vol I - Part 2 - 4. The Collapse Begins.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "13b2e71d1f4eef7fad7ad2920b4c41fd",
+    "semantic_hash": "13b2e71d1f4eef7fad7ad2920b4c41fd"
+  },
+  "Brain/Story/Vol I - Part 2 - 5. Understanding the Problem.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "217739d8565a45ff9bf55585c154b016",
+    "semantic_hash": "217739d8565a45ff9bf55585c154b016"
+  },
+  "Brain/Story/Vol I - Part 2 - 6. The Final Council.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "4a33fe34c14874c094a3c335f24b8115",
+    "semantic_hash": "4a33fe34c14874c094a3c335f24b8115"
+  },
+  "Brain/Story/Vol I - Part 2 - 7. An Impossible Proposal.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "32d2f8d33a4bbcda14801a8be85d9809",
+    "semantic_hash": "32d2f8d33a4bbcda14801a8be85d9809"
+  },
+  "Brain/Story/Vol I - Part 3 - 1. The Seven Volunteers.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "7d98fec63394d5d52762dae4ef1eef1d",
+    "semantic_hash": "7d98fec63394d5d52762dae4ef1eef1d"
+  },
+  "Brain/Story/Vol I - Part 3 - 2. The Ascension.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "182a02b26edc81725257f2e4b2afe631",
+    "semantic_hash": "182a02b26edc81725257f2e4b2afe631"
+  },
+  "Brain/Story/Vol I - Part 3 - 3. The Price of Becoming a Primordial.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "d47e08d3b70b6f12d360c37d321f0f22",
+    "semantic_hash": "d47e08d3b70b6f12d360c37d321f0f22"
+  },
+  "Brain/Story/Vol I - Part 3 - 4. The First Thousand Years.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "473cde20a98e7f20efdbe1045763827c",
+    "semantic_hash": "473cde20a98e7f20efdbe1045763827c"
+  },
+  "Brain/Story/Vol I - Part 3 - 5. A Difficult Truth.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "7972f5824c5b2d30a424fa5ac701e72e",
+    "semantic_hash": "7972f5824c5b2d30a424fa5ac701e72e"
+  },
+  "Brain/Story/Vol I - Part 3 - 6. The Missing Law.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "903ee22005b1d5e2cb8b09adc6ee6d43",
+    "semantic_hash": "903ee22005b1d5e2cb8b09adc6ee6d43"
+  },
+  "Brain/Story/Vol I - Part 4 - 1. The Eighth Law.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "96e252b0b3af8da06f9e226885a72894",
+    "semantic_hash": "96e252b0b3af8da06f9e226885a72894"
+  },
+  "Brain/Story/Vol I - Part 4 - 2. The Discovery.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "885c5a00a7df77664024d797ef65ba03",
+    "semantic_hash": "885c5a00a7df77664024d797ef65ba03"
+  },
+  "Brain/Story/Vol I - Part 4 - 3. Why Choice Could Never Have A Guardian.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "d63fc7f01344a905d994f973f391794f",
+    "semantic_hash": "d63fc7f01344a905d994f973f391794f"
+  },
+  "Brain/Story/Vol I - Part 4 - 4. The Cycle Begins.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "21b47cb36b7c662f489c363bbd950a41",
+    "semantic_hash": "21b47cb36b7c662f489c363bbd950a41"
+  },
+  "Brain/Story/Vol I - Part 4 - 5. The Black Sword.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "b42947400816d0416e3fe696d1c67297",
+    "semantic_hash": "b42947400816d0416e3fe696d1c67297"
+  },
+  "Brain/Story/Vol I - Part 4 - 6. The Seven's Decision.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "fe169d56d3a67b156281681f511f2c12",
+    "semantic_hash": "fe169d56d3a67b156281681f511f2c12"
+  },
+  "Brain/Story/Vol I - Part 4 - 7. The Burden of Hope.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "811168bf2f4910f3c096e6018a457a0b",
+    "semantic_hash": "811168bf2f4910f3c096e6018a457a0b"
+  },
+  "Brain/Story/Vol II - Part 1 - 1. The Endless Cycle.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "67ab484564a40d650b78de073d496f50",
+    "semantic_hash": "67ab484564a40d650b78de073d496f50"
+  },
+  "Brain/Story/Vol II - Part 1 - 2. The Last Choice Wielder.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "98bb9818e5af07324028aef70463fe3c",
+    "semantic_hash": "98bb9818e5af07324028aef70463fe3c"
+  },
+  "Brain/Story/Vol II - Part 1 - 3. Morvex's Greatest Mistake.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "279d9ad2305fe4b6437c586c18edd801",
+    "semantic_hash": "279d9ad2305fe4b6437c586c18edd801"
+  },
+  "Brain/Story/Vol II - Part 1 - 4. Judgment of the Seven.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "3fbd4f3022921f46eb1553bb1cec93de",
+    "semantic_hash": "3fbd4f3022921f46eb1553bb1cec93de"
+  },
+  "Brain/Story/Vol II - Part 1 - 5. An Impossible Love.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "7530ceb1e281a1c6048b069987f2866f",
+    "semantic_hash": "7530ceb1e281a1c6048b069987f2866f"
+  },
+  "Brain/Story/Vol II - Part 1 - 6. The Oldest Law.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "e5d8c7aebee0a57fc00424316dee75c8",
+    "semantic_hash": "e5d8c7aebee0a57fc00424316dee75c8"
+  },
+  "Brain/Story/Vol II - Part 1 - 7. A Different Solution.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "486e40ad606b877668f3bd46e08b2fe8",
+    "semantic_hash": "486e40ad606b877668f3bd46e08b2fe8"
+  },
+  "Brain/Story/Vol II - Part 1 - 8. The Birth of Christ.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "1ea63b3d1c8cd4fec73d349dc287cb89",
+    "semantic_hash": "1ea63b3d1c8cd4fec73d349dc287cb89"
+  },
+  "Brain/Story/Vol II - Part 2 - 1. Reality Notices the Impossible.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "74f8a0f1c6f8b995d8d92e350a85b698",
+    "semantic_hash": "74f8a0f1c6f8b995d8d92e350a85b698"
+  },
+  "Brain/Story/Vol II - Part 2 - 2. The Council of the Seven.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "72ebc7f14708ba9343e64052893ce2e3",
+    "semantic_hash": "72ebc7f14708ba9343e64052893ce2e3"
+  },
+  "Brain/Story/Vol II - Part 2 - 3. The Verdict.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "4a8151b4fd81ccf36df5f7300403769a",
+    "semantic_hash": "4a8151b4fd81ccf36df5f7300403769a"
+  },
+  "Brain/Story/Vol II - Part 2 - 4. Why Christ Was Spared.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "0a36153d424673dd3e65fd6ec50e95bb",
+    "semantic_hash": "0a36153d424673dd3e65fd6ec50e95bb"
+  },
+  "Brain/Story/Vol II - Part 2 - 5. The Final Night.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "c5ea9903be4b8867b86f51d0fc31f350",
+    "semantic_hash": "c5ea9903be4b8867b86f51d0fc31f350"
+  },
+  "Brain/Story/Vol II - Part 2 - 6. The Execution.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "317e50b871c5f21dfa82d27369c51c9a",
+    "semantic_hash": "317e50b871c5f21dfa82d27369c51c9a"
+  },
+  "Brain/Story/Vol II - Part 2 - 7. A Child's Memory.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "05e796258f6796db02708ac5bdcf2cc7",
+    "semantic_hash": "05e796258f6796db02708ac5bdcf2cc7"
+  },
+  "Brain/Story/Vol II - Part 3 - 1. A Life Built on Fragments.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "b6b20cda05e9175520b3567683888db3",
+    "semantic_hash": "b6b20cda05e9175520b3567683888db3"
+  },
+  "Brain/Story/Vol II - Part 3 - 2. The Nightmares.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "b20b21c7147b76b6cccf39bb62a5b5f7",
+    "semantic_hash": "b20b21c7147b76b6cccf39bb62a5b5f7"
+  },
+  "Brain/Story/Vol II - Part 3 - 3. An Ordinary Boy.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "7d04fec4f4244e342c86cef648f6c014",
+    "semantic_hash": "7d04fec4f4244e342c86cef648f6c014"
+  },
+  "Brain/Story/Vol II - Part 3 - 4. The Return of the Black Sword.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "a38c80282e2a9a6e02c3dd1c4c01f710",
+    "semantic_hash": "a38c80282e2a9a6e02c3dd1c4c01f710"
+  },
+  "Brain/Story/Vol II - Part 3 - 5. The Voices Within.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "a5c0bc47e68a272b71e443c12c14fa1e",
+    "semantic_hash": "a5c0bc47e68a272b71e443c12c14fa1e"
+  },
+  "Brain/Story/Vol II - Part 3 - 6. The First Memory.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "a06bcb840f377265ac4bc28a59d04e05",
+    "semantic_hash": "a06bcb840f377265ac4bc28a59d04e05"
+  },
+  "Brain/Story/Vol II - Part 3 - 7. The Decision.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "4e4d9066c2756ff2f79a05737ae26666",
+    "semantic_hash": "4e4d9066c2756ff2f79a05737ae26666"
+  },
+  "Brain/Story/Vol II - Part 3 - 8. The First Guide.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "3babc8e5b00dc7e73d143e5f5b25b275",
+    "semantic_hash": "3babc8e5b00dc7e73d143e5f5b25b275"
+  },
+  "Brain/Story/Vol II - Part 4 - 1. The World Beyond the Physical.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "2010a44d5560a26125242a6e9ef6911d",
+    "semantic_hash": "2010a44d5560a26125242a6e9ef6911d"
+  },
+  "Brain/Story/Vol II - Part 4 - 2. Why the Realms Exist.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "8ec92a14b0fe36ea2f92a8e413d593f9",
+    "semantic_hash": "8ec92a14b0fe36ea2f92a8e413d593f9"
+  },
+  "Brain/Story/Vol II - Part 4 - 3. The Realm Spirits.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "9b665d248194de1bdb98eba170704484",
+    "semantic_hash": "9b665d248194de1bdb98eba170704484"
+  },
+  "Brain/Story/Vol II - Part 4 - 4. The Seven Trials.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "b6cb3757d738a90e0efed70c6ba77988",
+    "semantic_hash": "b6cb3757d738a90e0efed70c6ba77988"
+  },
+  "Brain/Story/Vol II - Part 4 - 5. The Meeting After Every Trial.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "2fac83e3080fcc3304ab54ebd2bf9bfa",
+    "semantic_hash": "2fac83e3080fcc3304ab54ebd2bf9bfa"
+  },
+  "Brain/Story/Vol II - Part 4 - 6. Christ's Internal Conflict.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "122c2ae6c954b3a9f9c8ac8b3b216abe",
+    "semantic_hash": "122c2ae6c954b3a9f9c8ac8b3b216abe"
+  },
+  "Brain/Story/Vol II - Part 4 - 7. The Truth Waiting at the End.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "37590756d476c8e2b625c50baf508213",
+    "semantic_hash": "37590756d476c8e2b625c50baf508213"
+  },
+  "Brain/Story/Vol III - Part 1 - 1. Why the Realm of Time Comes First.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "d801aaf3384ebf327ee1858c563b1c70",
+    "semantic_hash": "d801aaf3384ebf327ee1858c563b1c70"
+  },
+  "Brain/Story/Vol III - Part 1 - 2. Arrival.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "aeb3307b1d1cf4ebdcad496f91d255c6",
+    "semantic_hash": "aeb3307b1d1cf4ebdcad496f91d255c6"
+  },
+  "Brain/Story/Vol III - Part 1 - 3. Environmental Design.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "dd6dd64bc3fcaade626b1f34a03e7837",
+    "semantic_hash": "dd6dd64bc3fcaade626b1f34a03e7837"
+  },
+  "Brain/Story/Vol III - Part 1 - 4. Core Gameplay Mechanics.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "df7d3d0af435fba1836889337906a579",
+    "semantic_hash": "df7d3d0af435fba1836889337906a579"
+  },
+  "Brain/Story/Vol III - Part 1 - 5. The Spirit of Time.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "11df1d7cf05372b20d524368e66ac5ce",
+    "semantic_hash": "11df1d7cf05372b20d524368e66ac5ce"
+  },
+  "Brain/Story/Vol III - Part 1 - 6. Defeating the Spirit.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "fb63815f3fe8857e0ebfbf0814871dce",
+    "semantic_hash": "fb63815f3fe8857e0ebfbf0814871dce"
+  },
+  "Brain/Story/Vol III - Part 1 - 7. The First Meeting with a Primordial.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "ff6c9127afbb0bc6b588f2fd65a8aff1",
+    "semantic_hash": "ff6c9127afbb0bc6b588f2fd65a8aff1"
+  },
+  "Brain/Story/Vol III - Part 1 - 8. Narrative Purpose.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "34a09a52e71e71674b098b5e912ae94c",
+    "semantic_hash": "34a09a52e71e71674b098b5e912ae94c"
+  },
+  "Brain/Story/Vol III - Part 2 - 1. Between the Realms.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "f41469279cb55e4d9b0a6131515407ae",
+    "semantic_hash": "f41469279cb55e4d9b0a6131515407ae"
+  },
+  "Brain/Story/Vol III - Part 2 - 10. The Spirit of Life.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "7c5229c00a38398ebbbf46f2818f86fb",
+    "semantic_hash": "7c5229c00a38398ebbbf46f2818f86fb"
+  },
+  "Brain/Story/Vol III - Part 2 - 11. Meeting Elaria.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "604696d079f6e313a9754e05fbe780d0",
+    "semantic_hash": "604696d079f6e313a9754e05fbe780d0"
+  },
+  "Brain/Story/Vol III - Part 2 - 12. Christ Begins to Doubt.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "091f2f3a0573bd23d21e479827570dfc",
+    "semantic_hash": "091f2f3a0573bd23d21e479827570dfc"
+  },
+  "Brain/Story/Vol III - Part 2 - 2. The Realm of Space.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "006b8354feed47191721c590bd12004d",
+    "semantic_hash": "006b8354feed47191721c590bd12004d"
+  },
+  "Brain/Story/Vol III - Part 2 - 3. Philosophy of Space.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "fac966eb36b5ae3878ccba9173a40249",
+    "semantic_hash": "fac966eb36b5ae3878ccba9173a40249"
+  },
+  "Brain/Story/Vol III - Part 2 - 4. Gameplay Mechanics.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "04852bafc26a12d884885b438c064c44",
+    "semantic_hash": "04852bafc26a12d884885b438c064c44"
+  },
+  "Brain/Story/Vol III - Part 2 - 5. The Spirit of Space.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "4b54d7d3ab8ce91c2ae19985b2808dbc",
+    "semantic_hash": "4b54d7d3ab8ce91c2ae19985b2808dbc"
+  },
+  "Brain/Story/Vol III - Part 2 - 6. Meeting Vastara.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "598435cddfba3bbef3fbdbc821fb0ff7",
+    "semantic_hash": "598435cddfba3bbef3fbdbc821fb0ff7"
+  },
+  "Brain/Story/Vol III - Part 2 - 7. The Realm of Life.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "82b15e41899261b921f9c46341f2fbec",
+    "semantic_hash": "82b15e41899261b921f9c46341f2fbec"
+  },
+  "Brain/Story/Vol III - Part 2 - 8. Philosophy of Life.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "7999e8af00ee2c0b3071cfa02c8a21bf",
+    "semantic_hash": "7999e8af00ee2c0b3071cfa02c8a21bf"
+  },
+  "Brain/Story/Vol III - Part 2 - 9. Gameplay Mechanics.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "bcb1c8e917ec95a0943780aea3b58065",
+    "semantic_hash": "bcb1c8e917ec95a0943780aea3b58065"
+  },
+  "Brain/Story/Vol III - Part 3 - 1. The Realm of Death.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "27c0e449476b8d86a7eec1a508064b0c",
+    "semantic_hash": "27c0e449476b8d86a7eec1a508064b0c"
+  },
+  "Brain/Story/Vol III - Part 3 - 10. The Cracks in Memory.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "2c07e07361c4932fb41b1f55d7d1dadd",
+    "semantic_hash": "2c07e07361c4932fb41b1f55d7d1dadd"
+  },
+  "Brain/Story/Vol III - Part 3 - 11. The Beginning of Doubt.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "2df3afca1bd3f9cc17bbb3f16e8e0eff",
+    "semantic_hash": "2df3afca1bd3f9cc17bbb3f16e8e0eff"
+  },
+  "Brain/Story/Vol III - Part 3 - 2. The Weight of Memory.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "caf2305a3a923cba36be092f342ced0f",
+    "semantic_hash": "caf2305a3a923cba36be092f342ced0f"
+  },
+  "Brain/Story/Vol III - Part 3 - 3. Gameplay Mechanics.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "b23e382e2081dd08dd0a925bbc544aae",
+    "semantic_hash": "b23e382e2081dd08dd0a925bbc544aae"
+  },
+  "Brain/Story/Vol III - Part 3 - 4. The Spirit of Death.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "4715b9c4125348c7c268d0222992e4e5",
+    "semantic_hash": "4715b9c4125348c7c268d0222992e4e5"
+  },
+  "Brain/Story/Vol III - Part 3 - 5. Morvex.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "d06e9b73c92302d6b7ef17a66abedd0a",
+    "semantic_hash": "d06e9b73c92302d6b7ef17a66abedd0a"
+  },
+  "Brain/Story/Vol III - Part 3 - 6. The Realm of Chaos.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "2b4cf5766c8d2927e4ae212cdf75adf7",
+    "semantic_hash": "2b4cf5766c8d2927e4ae212cdf75adf7"
+  },
+  "Brain/Story/Vol III - Part 3 - 7. Gameplay Mechanics.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "14139c2bfc094c9fc296490954c40610",
+    "semantic_hash": "14139c2bfc094c9fc296490954c40610"
+  },
+  "Brain/Story/Vol III - Part 3 - 8. The Spirit of Chaos.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "c1052d094f5ecad8045afa6ed479d440",
+    "semantic_hash": "c1052d094f5ecad8045afa6ed479d440"
+  },
+  "Brain/Story/Vol III - Part 3 - 9. Xael.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "a9cc5e7876e9663d38449eabb77ae390",
+    "semantic_hash": "a9cc5e7876e9663d38449eabb77ae390"
+  },
+  "Brain/Story/Vol III - Part 4 - 1. The Realm of Creation.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "06d35dd6ca72abaa5c822ddc5f02f2bd",
+    "semantic_hash": "06d35dd6ca72abaa5c822ddc5f02f2bd"
+  },
+  "Brain/Story/Vol III - Part 4 - 10. The Last Voice.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "70de089001dc5974e93fba230edc8144",
+    "semantic_hash": "70de089001dc5974e93fba230edc8144"
+  },
+  "Brain/Story/Vol III - Part 4 - 11. The End of the Journey.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "af5229e7603bb524b883af8a2e969515",
+    "semantic_hash": "af5229e7603bb524b883af8a2e969515"
+  },
+  "Brain/Story/Vol III - Part 4 - 2. Gameplay Mechanics.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "615561237e68486232719505c9d51c36",
+    "semantic_hash": "615561237e68486232719505c9d51c36"
+  },
+  "Brain/Story/Vol III - Part 4 - 3. The Spirit of Creation.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "9966e3be6018a55e7b8b7bdaf4238bd7",
+    "semantic_hash": "9966e3be6018a55e7b8b7bdaf4238bd7"
+  },
+  "Brain/Story/Vol III - Part 4 - 4. Meeting Aetherion.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "059a352ce57feaaeb539948d9cef3841",
+    "semantic_hash": "059a352ce57feaaeb539948d9cef3841"
+  },
+  "Brain/Story/Vol III - Part 4 - 5. The Realm of Destruction.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "249d19ffb6f8d0a2040a29cd276e546e",
+    "semantic_hash": "249d19ffb6f8d0a2040a29cd276e546e"
+  },
+  "Brain/Story/Vol III - Part 4 - 6. Gameplay Mechanics.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "20d103d71563957734da40b16c51b99e",
+    "semantic_hash": "20d103d71563957734da40b16c51b99e"
+  },
+  "Brain/Story/Vol III - Part 4 - 7. The Spirit of Destruction.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "827082800d954c40cdfbc47cfc0a18f7",
+    "semantic_hash": "827082800d954c40cdfbc47cfc0a18f7"
+  },
+  "Brain/Story/Vol III - Part 4 - 8. Nihros.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "ebbfcd6a492bcfb42cbe481250c771aa",
+    "semantic_hash": "ebbfcd6a492bcfb42cbe481250c771aa"
+  },
+  "Brain/Story/Vol III - Part 4 - 9. The Seven Gather.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "fc00d29b49db86daedf0f61a18011b34",
+    "semantic_hash": "fc00d29b49db86daedf0f61a18011b34"
+  },
+  "Brain/Story/Vol IV - Part 1 - 1. The Heart of Reality.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "debf62f3f677017eb4496570dc13a4dd",
+    "semantic_hash": "debf62f3f677017eb4496570dc13a4dd"
+  },
+  "Brain/Story/Vol IV - Part 1 - 10. Christ's Realization.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "a1721152d46853ddd496990af3fa8663",
+    "semantic_hash": "a1721152d46853ddd496990af3fa8663"
+  },
+  "Brain/Story/Vol IV - Part 1 - 2. The First Memory.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "6adb6142e5158b62c61f8df9e3b99487",
+    "semantic_hash": "6adb6142e5158b62c61f8df9e3b99487"
+  },
+  "Brain/Story/Vol IV - Part 1 - 3. The Original Catastrophe.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "64039ba4919a3e5c10e52b1eea698c3d",
+    "semantic_hash": "64039ba4919a3e5c10e52b1eea698c3d"
+  },
+  "Brain/Story/Vol IV - Part 1 - 4. The Volunteers.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "5a6ea7b573bc0a3cd3a1ac6ba6e2608c",
+    "semantic_hash": "5a6ea7b573bc0a3cd3a1ac6ba6e2608c"
+  },
+  "Brain/Story/Vol IV - Part 1 - 5. The Price of Becoming a Primordial.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "4149b125f0eeac4a20ecc93c9440b335",
+    "semantic_hash": "4149b125f0eeac4a20ecc93c9440b335"
+  },
+  "Brain/Story/Vol IV - Part 1 - 6. Why the Choice Wielders Existed.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "59a0ed1151db29c9dd0e5c8d5fdd3512",
+    "semantic_hash": "59a0ed1151db29c9dd0e5c8d5fdd3512"
+  },
+  "Brain/Story/Vol IV - Part 1 - 7. Why Every Choice Wielder Failed.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "11c6bc37ff9c15bcc4b4af1f4ad97ed1",
+    "semantic_hash": "11c6bc37ff9c15bcc4b4af1f4ad97ed1"
+  },
+  "Brain/Story/Vol IV - Part 1 - 8. His Parents' Choice.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "006846469ee3ac9dc5bf64dd3884107f",
+    "semantic_hash": "006846469ee3ac9dc5bf64dd3884107f"
+  },
+  "Brain/Story/Vol IV - Part 1 - 9. The Core Speaks.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "67307b44fd9fc55fe16af2fb88f18378",
+    "semantic_hash": "67307b44fd9fc55fe16af2fb88f18378"
+  },
+  "Brain/Story/Vol IV - Part 2 - 1. The Seven Enter the Core.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "6a357dee1dc1f8e82831e6750b7d08be",
+    "semantic_hash": "6a357dee1dc1f8e82831e6750b7d08be"
+  },
+  "Brain/Story/Vol IV - Part 2 - 2. The Weight They Carried.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "18755ff73715885952b400f268199426",
+    "semantic_hash": "18755ff73715885952b400f268199426"
+  },
+  "Brain/Story/Vol IV - Part 2 - 3. Why They Never Chose Successors.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "a492f576d378034642369709634f93e5",
+    "semantic_hash": "a492f576d378034642369709634f93e5"
+  },
+  "Brain/Story/Vol IV - Part 2 - 4. The Truth About His Parents.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "49c4ac1f3e60b278337178d06cca988e",
+    "semantic_hash": "49c4ac1f3e60b278337178d06cca988e"
+  },
+  "Brain/Story/Vol IV - Part 2 - 5. Why Christ Was Left Alive.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "8f3e61165c58d507ce9bd1f224aa511d",
+    "semantic_hash": "8f3e61165c58d507ce9bd1f224aa511d"
+  },
+  "Brain/Story/Vol IV - Part 2 - 6. The Burden Ends.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "97fddb5e7988618e439d2fd35df3b27d",
+    "semantic_hash": "97fddb5e7988618e439d2fd35df3b27d"
+  },
+  "Brain/Story/Vol IV - Part 2 - 7. The Final Truth.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "45f17c1a763a882644466865ca5e0612",
+    "semantic_hash": "45f17c1a763a882644466865ca5e0612"
+  },
+  "Brain/Story/Vol IV - Part 2 - 8. One Last Question.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "d15b9400b68affb9dd8e03a0d253a216",
+    "semantic_hash": "d15b9400b68affb9dd8e03a0d253a216"
+  },
+  "Brain/Story/Vol IV - Part 3 - 1. The Final Chamber.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "8063151841148c6a30e6a04a61bf395d",
+    "semantic_hash": "8063151841148c6a30e6a04a61bf395d"
+  },
+  "Brain/Story/Vol IV - Part 3 - 2. The Black Sword's Last Purpose.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "08975eb6ce9f7e369069f7c5719f1fdc",
+    "semantic_hash": "08975eb6ce9f7e369069f7c5719f1fdc"
+  },
+  "Brain/Story/Vol IV - Part 3 - 3. The Core Offers Three Paths.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "c2a4a1514757ae60a2b5dc2160475792",
+    "semantic_hash": "c2a4a1514757ae60a2b5dc2160475792"
+  },
+  "Brain/Story/Vol IV - Part 3 - 4. Epilogues.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "78f8cf93d71e4e576476e0ead6d3b42d",
+    "semantic_hash": "78f8cf93d71e4e576476e0ead6d3b42d"
+  },
+  "Brain/Story/Vol IV - Part 3 - 5. Final Scene.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "9141d4e479067f151ac295d080dc8812",
+    "semantic_hash": "9141d4e479067f151ac295d080dc8812"
+  },
+  "Brain/Story/Volume I \u2013 The Birth of Reality.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "2dd7c1bf04010654b5ba71f5c1ead898",
+    "semantic_hash": "2dd7c1bf04010654b5ba71f5c1ead898"
+  },
+  "Brain/Story/Volume II \u2013 The Child of Choice.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "e01af382d17503e6c02d5973abdb23c3",
+    "semantic_hash": "e01af382d17503e6c02d5973abdb23c3"
+  },
+  "Brain/Story/Volume III \u2013 The Pilgrimage Through the Seven Realms.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "8948ac8576bb4d5cd7ad2ba650cd3f1f",
+    "semantic_hash": "8948ac8576bb4d5cd7ad2ba650cd3f1f"
+  },
+  "Brain/Story/Volume IV \u2013 The Core and the Final Choice.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "e2640f0be5e538dd8298ecf4426b3c46",
+    "semantic_hash": "e2640f0be5e538dd8298ecf4426b3c46"
+  },
+  "Brain/index.md": {
+    "mtime": 1783286986.0,
+    "ast_hash": "5ba624e2c530453b1d685aa22dc30f28",
+    "semantic_hash": "5ba624e2c530453b1d685aa22dc30f28"
+  },
+  "Assets/Sprites/Characters/Kael/kael_spritesheet.png": {
+    "mtime": 1783718166.1062322,
+    "ast_hash": "b755ccf0a05bbe2e83fe3e5adc092b92",
+    "semantic_hash": "b755ccf0a05bbe2e83fe3e5adc092b92"
+  },
+  "icon.svg": {
+    "mtime": 1783719906.241797,
+    "ast_hash": "f6b3fbc1d6e87f7a5c53dac3c318ccaf",
+    "semantic_hash": "f6b3fbc1d6e87f7a5c53dac3c318ccaf"
+  }
+}

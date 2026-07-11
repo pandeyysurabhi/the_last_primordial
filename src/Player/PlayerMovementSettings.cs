@@ -10,22 +10,22 @@ namespace Player
     public partial class PlayerMovementSettings : Resource
     {
         // ── Horizontal Movement ──────────────────────────────────────────────
-        [Export] public float MaxRunSpeed = 9f;
-        [Export] public float RunAcceleration = 80f;
-        [Export] public float RunDeceleration = 60f;
-        [Export] public float AirAcceleration = 50f;
-        [Export] public float AirDeceleration = 30f;
+        [Export] public float MaxRunSpeed = 270f;
+        [Export] public float RunAcceleration = 2400f;
+        [Export] public float RunDeceleration = 1800f;
+        [Export] public float AirAcceleration = 1500f;
+        [Export] public float AirDeceleration = 900f;
 
         // ── Jumping ──────────────────────────────────────────────────────────
-        [Export] public float JumpForce = 15f;
+        [Export] public float JumpForce = 450f;
         [Export] public float JumpGravityScale = 2.5f;
         [Export] public float FallGravityScale = 3.5f;
         [Export(PropertyHint.Range, "0,1")] public float JumpCutoffMultiplier = 0.5f;
         [Export] public float CoyoteTimeDuration = 0.12f;
 
         // ── Wall Mechanics ───────────────────────────────────────────────────
-        [Export] public float WallSlideSpeed = 3f;
-        [Export] public Vector2 WallJumpForce = new Vector2(8f, 15f);
+        [Export] public float WallSlideSpeed = 90f;
+        [Export] public Vector2 WallJumpForce = new Vector2(240f, 450f);
         [Export] public float WallJumpControlLockDuration = 0.15f;
 
         // ── Collision Detection ──────────────────────────────────────────────

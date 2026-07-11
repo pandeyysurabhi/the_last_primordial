@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://player_scene"]
+[gd_scene load_steps=7 format=3 uid="uid://player_scene"]
 
 [ext_resource type="Script" path="res://src/Player/PlayerController.cs" id="1"]
 [ext_resource type="Script" path="res://src/Player/PlayerInput.cs" id="2"]
-[ext_resource type="Texture2D" uid="uid://tppygynu7g76" path="res://Assets/Sprites/Characters/Kael/kael_spritesheet.png" id="3"]
+[ext_resource type="SpriteFrames" path="res://Assets/Sprites/Characters/Player2/player2_frames.tres" id="3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1"]
 radius = 9.0
@@ -21,13 +21,12 @@ script = ExtResource("1")
 position = Vector2(0, -18)
 shape = SubResource("CapsuleShape2D_1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("3")
 position = Vector2(0, -22)
-scale = Vector2(0.22, 0.22)
-hframes = 6
-vframes = 4
-frame = 0
+scale = Vector2(0.15, 0.15)
+animation = &"Idle"
+autoplay = "Idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 

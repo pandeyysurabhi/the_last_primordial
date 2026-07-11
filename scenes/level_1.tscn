@@ -1,0 +1,520 @@
+[gd_scene load_steps=43 format=3 uid="uid://level_1_scene"]
+
+; ── External Resources ────────────────────────────────────────────────────────
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1"]
+
+; Background layers
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Background/Cartoon_Medieval_Armory_Level_Set_Background - Layer 00.png" id="2"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Background/Cartoon_Medieval_Armory_Level_Set_Background - Layer 01.png" id="3"]
+
+; Ground / Platformer tiles
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Platformer/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 01.png" id="4"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Platformer/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 02.png" id="5"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Platformer/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 03.png" id="6"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Platformer/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 04.png" id="7"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Platformer/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 05.png" id="8"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Platformer/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 06.png" id="9"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Platformer/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 07.png" id="10"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Platformer/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 08.png" id="11"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Platformer/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 09.png" id="12"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Platformer/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 10.png" id="13"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Platformer/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 11.png" id="14"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Platformer/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 12.png" id="15"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Platformer/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 13.png" id="16"]
+
+; Building elements
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Building/Cartoon_Medieval_Armory_Level_Set_Building - Wall A 01.png" id="17"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Building/Cartoon_Medieval_Armory_Level_Set_Building - Wall A 02.png" id="18"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Building/Cartoon_Medieval_Armory_Level_Set_Building - Wall A 03.png" id="19"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Building/Cartoon_Medieval_Armory_Level_Set_Building - Roof A 01.png" id="20"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Building/Cartoon_Medieval_Armory_Level_Set_Building - Roof A 02.png" id="21"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Building/Cartoon_Medieval_Armory_Level_Set_Building - Roof A 03.png" id="22"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Building/Cartoon_Medieval_Armory_Level_Set_Building - Door 01.png" id="23"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Building/Cartoon_Medieval_Armory_Level_Set_Building - Canopy 01.png" id="24"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Building/Cartoon_Medieval_Armory_Level_Set_Building - Pillar 01.png" id="25"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Building/Cartoon_Medieval_Armory_Level_Set_Building - Decor Weapon 01.png" id="26"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Building/Cartoon_Medieval_Armory_Level_Set_Building - Decor Weapon 02.png" id="27"]
+; Environment props
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Wooden Barrel.png" id="29"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Wooden Crate.png" id="30"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Rock 01.png" id="31"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Fence 01.png" id="32"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Fence 02.png" id="33"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Stand.png" id="34"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Sword 01.png" id="35"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Shield 01.png" id="36"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Sign 01.png" id="37"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Banner 01.png" id="38"]
+[ext_resource type="Texture2D" path="res://Assets/Tilesets/MedievalArmory/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Quest Board.png" id="39"]
+
+; ── Collision shapes ──────────────────────────────────────────────────────────
+; Ground main (spans full 320px wide, 20px thick collision)
+[sub_resource type="RectangleShape2D" id="Shape_Ground"]
+size = Vector2(320, 20)
+
+; Platform shapes (each ground tile = 32px wide, 8px collision)
+[sub_resource type="RectangleShape2D" id="Shape_Plat64"]
+size = Vector2(64, 8)
+
+[sub_resource type="RectangleShape2D" id="Shape_Plat96"]
+size = Vector2(96, 8)
+
+[sub_resource type="RectangleShape2D" id="Shape_Plat32"]
+size = Vector2(32, 8)
+
+; ── Root Node ────────────────────────────────────────────────────────────────
+[node name="Level1" type="Node2D"]
+
+; ══════════════════════════════════════════════════════════════════════════════
+; BACKGROUND LAYERS (parallax)
+; Background: 1334x750 → scale to fill 320x180 → scale = 320/1334 ≈ 0.2398
+; ══════════════════════════════════════════════════════════════════════════════
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="BGLayer0" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="BG0" type="Sprite2D" parent="ParallaxBackground/BGLayer0"]
+position = Vector2(160, 90)
+scale = Vector2(0.2398, 0.2398)
+texture = ExtResource("2")
+centered = true
+
+[node name="BGLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
+
+[node name="BG1" type="Sprite2D" parent="ParallaxBackground/BGLayer1"]
+position = Vector2(160, 90)
+scale = Vector2(0.2398, 0.2398)
+texture = ExtResource("3")
+centered = true
+
+; ══════════════════════════════════════════════════════════════════════════════
+; BUILDING / ARMORY (background decoration — non-collideable mid-layer)
+; Positioned so the building fills the upper portion of the screen
+; Wall A 02 is 320x320 → scale 0.25 = 80x80 px in game, centered at top-right
+; ══════════════════════════════════════════════════════════════════════════════
+[node name="ArmoryBuilding" type="Node2D" parent="."]
+
+; Left pillar
+[node name="PillarLeft" type="Sprite2D" parent="ArmoryBuilding"]
+position = Vector2(178, 82)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("25")
+centered = true
+
+; Main wall (center section)
+[node name="WallCenter" type="Sprite2D" parent="ArmoryBuilding"]
+position = Vector2(234, 72)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("18")
+centered = true
+
+; Right pillar
+[node name="PillarRight" type="Sprite2D" parent="ArmoryBuilding"]
+position = Vector2(288, 82)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("25")
+centered = true
+
+; Left wall section
+[node name="WallLeft" type="Sprite2D" parent="ArmoryBuilding"]
+position = Vector2(200, 72)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("17")
+centered = true
+
+; Right wall section
+[node name="WallRight" type="Sprite2D" parent="ArmoryBuilding"]
+position = Vector2(270, 72)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("19")
+centered = true
+
+; Roof left
+[node name="RoofLeft" type="Sprite2D" parent="ArmoryBuilding"]
+position = Vector2(192, 44)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("20")
+centered = true
+
+; Roof center
+[node name="RoofCenter" type="Sprite2D" parent="ArmoryBuilding"]
+position = Vector2(234, 44)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("21")
+centered = true
+
+; Roof right
+[node name="RoofRight" type="Sprite2D" parent="ArmoryBuilding"]
+position = Vector2(276, 44)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("22")
+centered = true
+
+; Door (128x128 → scale 0.25 = 32x32)
+[node name="Door" type="Sprite2D" parent="ArmoryBuilding"]
+position = Vector2(232, 130)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("23")
+centered = true
+
+; Canopy over door (256x128 → scale 0.25 = 64x32)
+[node name="Canopy" type="Sprite2D" parent="ArmoryBuilding"]
+position = Vector2(232, 112)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("24")
+centered = true
+
+; Weapon decorations on wall
+[node name="DecorWeapon1" type="Sprite2D" parent="ArmoryBuilding"]
+position = Vector2(210, 90)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("26")
+centered = true
+
+[node name="DecorWeapon2" type="Sprite2D" parent="ArmoryBuilding"]
+position = Vector2(258, 90)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("27")
+centered = true
+
+; ══════════════════════════════════════════════════════════════════════════════
+; GROUND (collideable) ─ full width ground at y=164 (ground surface at y=154)
+; Tiles are 128px wide → scale 0.25 = 32px per tile. 10 tiles = 320px total
+; Ground 01 = left cap, Ground 02 = main fill, Ground 03 = right cap
+; Ground 04/05 = underside dirt tiles
+; ══════════════════════════════════════════════════════════════════════════════
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(160, 162)
+
+[node name="GroundCollision" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("Shape_Ground")
+
+; Ground visual tiles — top surface row (y=0 relative to Ground node = game y=162)
+; Left cap tile
+[node name="GroundTile_L" type="Sprite2D" parent="Ground"]
+position = Vector2(-144, -8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4")
+centered = true
+
+; Fill tiles (7 × 32px = 224px, from x=-112 to x=112)
+[node name="GroundTile_M1" type="Sprite2D" parent="Ground"]
+position = Vector2(-112, -8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5")
+centered = true
+
+[node name="GroundTile_M2" type="Sprite2D" parent="Ground"]
+position = Vector2(-80, -8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5")
+centered = true
+
+[node name="GroundTile_M3" type="Sprite2D" parent="Ground"]
+position = Vector2(-48, -8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5")
+centered = true
+
+[node name="GroundTile_M4" type="Sprite2D" parent="Ground"]
+position = Vector2(-16, -8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5")
+centered = true
+
+[node name="GroundTile_M5" type="Sprite2D" parent="Ground"]
+position = Vector2(16, -8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5")
+centered = true
+
+[node name="GroundTile_M6" type="Sprite2D" parent="Ground"]
+position = Vector2(48, -8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5")
+centered = true
+
+[node name="GroundTile_M7" type="Sprite2D" parent="Ground"]
+position = Vector2(80, -8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5")
+centered = true
+
+[node name="GroundTile_M8" type="Sprite2D" parent="Ground"]
+position = Vector2(112, -8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5")
+centered = true
+
+; Right cap tile
+[node name="GroundTile_R" type="Sprite2D" parent="Ground"]
+position = Vector2(144, -8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6")
+centered = true
+
+; Underside dirt row (Ground 11 = left dirt, Ground 12 = mid dirt, Ground 13 = right dirt)
+[node name="DirtTile_L" type="Sprite2D" parent="Ground"]
+position = Vector2(-144, 8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14")
+centered = true
+
+[node name="DirtTile_M1" type="Sprite2D" parent="Ground"]
+position = Vector2(-112, 8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("15")
+centered = true
+
+[node name="DirtTile_M2" type="Sprite2D" parent="Ground"]
+position = Vector2(-80, 8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("15")
+centered = true
+
+[node name="DirtTile_M3" type="Sprite2D" parent="Ground"]
+position = Vector2(-48, 8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("15")
+centered = true
+
+[node name="DirtTile_M4" type="Sprite2D" parent="Ground"]
+position = Vector2(-16, 8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("15")
+centered = true
+
+[node name="DirtTile_M5" type="Sprite2D" parent="Ground"]
+position = Vector2(16, 8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("15")
+centered = true
+
+[node name="DirtTile_M6" type="Sprite2D" parent="Ground"]
+position = Vector2(48, 8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("15")
+centered = true
+
+[node name="DirtTile_M7" type="Sprite2D" parent="Ground"]
+position = Vector2(80, 8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("15")
+centered = true
+
+[node name="DirtTile_M8" type="Sprite2D" parent="Ground"]
+position = Vector2(112, 8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("15")
+centered = true
+
+[node name="DirtTile_R" type="Sprite2D" parent="Ground"]
+position = Vector2(144, 8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("16")
+centered = true
+
+; ══════════════════════════════════════════════════════════════════════════════
+; PLATFORM 1 — mid-left (2 tiles = 64px wide, at y=120)
+; Uses Ground 07 (left cap), Ground 08 (right cap)
+; ══════════════════════════════════════════════════════════════════════════════
+[node name="Platform1" type="StaticBody2D" parent="."]
+position = Vector2(64, 120)
+
+[node name="Collision" type="CollisionShape2D" parent="Platform1"]
+shape = SubResource("Shape_Plat64")
+
+[node name="Tile_L" type="Sprite2D" parent="Platform1"]
+position = Vector2(-16, -4)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10")
+centered = true
+
+[node name="Tile_R" type="Sprite2D" parent="Platform1"]
+position = Vector2(16, -4)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11")
+centered = true
+
+; ══════════════════════════════════════════════════════════════════════════════
+; PLATFORM 2 — mid-center (3 tiles = 96px wide, at y=95)
+; Uses Ground 07, Ground 08 (repeating middle), Ground 09
+; ══════════════════════════════════════════════════════════════════════════════
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(175, 95)
+
+[node name="Collision" type="CollisionShape2D" parent="Platform2"]
+shape = SubResource("Shape_Plat96")
+
+[node name="Tile_L" type="Sprite2D" parent="Platform2"]
+position = Vector2(-32, -4)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10")
+centered = true
+
+[node name="Tile_M" type="Sprite2D" parent="Platform2"]
+position = Vector2(0, -4)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8")
+centered = true
+
+[node name="Tile_R" type="Sprite2D" parent="Platform2"]
+position = Vector2(32, -4)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11")
+centered = true
+
+; ══════════════════════════════════════════════════════════════════════════════
+; PLATFORM 3 — high-right (2 tiles = 64px wide, at y=65)
+; ══════════════════════════════════════════════════════════════════════════════
+[node name="Platform3" type="StaticBody2D" parent="."]
+position = Vector2(265, 65)
+
+[node name="Collision" type="CollisionShape2D" parent="Platform3"]
+shape = SubResource("Shape_Plat64")
+
+[node name="Tile_L" type="Sprite2D" parent="Platform3"]
+position = Vector2(-16, -4)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10")
+centered = true
+
+[node name="Tile_R" type="Sprite2D" parent="Platform3"]
+position = Vector2(16, -4)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11")
+centered = true
+
+; ══════════════════════════════════════════════════════════════════════════════
+; PLATFORM 4 — small step left (1 tile = 32px wide, at y=135)
+; ══════════════════════════════════════════════════════════════════════════════
+[node name="Platform4" type="StaticBody2D" parent="."]
+position = Vector2(28, 135)
+
+[node name="Collision" type="CollisionShape2D" parent="Platform4"]
+shape = SubResource("Shape_Plat32")
+
+[node name="Tile" type="Sprite2D" parent="Platform4"]
+position = Vector2(0, -4)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9")
+centered = true
+
+; ══════════════════════════════════════════════════════════════════════════════
+; ENVIRONMENT PROPS (visual only — non-collideable decorations on the ground)
+; All placed at y ≈ 150 (on top of ground surface at y=154)
+; ══════════════════════════════════════════════════════════════════════════════
+[node name="Props" type="Node2D" parent="."]
+
+; Barrel near left side (128x128 → scale 0.22 = ~28px)
+[node name="Barrel" type="Sprite2D" parent="Props"]
+position = Vector2(28, 147)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("29")
+centered = true
+
+; Wooden crate (129x128 → scale 0.22)
+[node name="Crate1" type="Sprite2D" parent="Props"]
+position = Vector2(62, 147)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("30")
+centered = true
+
+; Stacked crates (slightly offset)
+[node name="Crate2" type="Sprite2D" parent="Props"]
+position = Vector2(78, 133)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("30")
+centered = true
+
+; Rock cluster left
+[node name="Rock1" type="Sprite2D" parent="Props"]
+position = Vector2(110, 151)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("31")
+centered = true
+
+; Fence section mid-left (128x128 → scale 0.22)
+[node name="Fence1" type="Sprite2D" parent="Props"]
+position = Vector2(130, 148)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("32")
+centered = true
+
+[node name="Fence2" type="Sprite2D" parent="Props"]
+position = Vector2(152, 148)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("33")
+centered = true
+
+; Sign post near armory entrance
+[node name="Sign" type="Sprite2D" parent="Props"]
+position = Vector2(195, 148)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("37")
+centered = true
+
+; Weapon stand near armory
+[node name="WeaponStand" type="Sprite2D" parent="Props"]
+position = Vector2(298, 145)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("34")
+centered = true
+
+; Sword leaning on stand
+[node name="Sword" type="Sprite2D" parent="Props"]
+position = Vector2(304, 144)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("35")
+centered = true
+
+; Shield on the wall
+[node name="Shield" type="Sprite2D" parent="Props"]
+position = Vector2(215, 110)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("36")
+centered = true
+
+; Quest board
+[node name="QuestBoard" type="Sprite2D" parent="Props"]
+position = Vector2(12, 142)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("39")
+centered = true
+
+; ══════════════════════════════════════════════════════════════════════════════
+; CAMERA
+; ══════════════════════════════════════════════════════════════════════════════
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(160, 90)
+zoom = Vector2(1, 1)
+
+; ══════════════════════════════════════════════════════════════════════════════
+; PLAYER SPAWN — left area of level, on top of the ground
+; Ground surface is at y=154 (Ground StaticBody2D at y=162, collision top = 162-10=152)
+; Player capsule: radius=9, height=36, feet at y=0 relative to CharacterBody2D
+; Place player at y=136 so feet land on ground (capsule bottom = 136 + 18 = 154)
+; ══════════════════════════════════════════════════════════════════════════════
+[node name="Player" parent="." instance=ExtResource("1")]
+position = Vector2(35, 136)
+
+; ══════════════════════════════════════════════════════════════════════════════
+; HUD
+; ══════════════════════════════════════════════════════════════════════════════
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="LevelLabel" type="Label" parent="HUD"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 200.0
+offset_bottom = 20.0
+text = "Level 1 — The Armory Street"
+
+[node name="Controls" type="Label" parent="HUD"]
+offset_left = 4.0
+offset_top = 168.0
+offset_right = 320.0
+offset_bottom = 180.0
+text = "A/D Move   Space Jump   Z/J Attack"

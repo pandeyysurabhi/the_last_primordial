@@ -10,7 +10,7 @@ namespace Player
     ///   MonoBehaviour   → CharacterBody2D (handles physics + MoveAndSlide)
     ///   Rigidbody2D     → CharacterBody2D.Velocity
     ///   CapsuleCollider → CollisionShape2D (child node)
-    ///   Animator        → AnimationPlayer (child node)
+    ///   Animator        → AnimatedSprite2D (child node, drives individual-frame PNGs)
     ///   Physics2D.OverlapBox → ShapeCast2D child nodes
     ///   Update()        → _Process()
     ///   FixedUpdate()   → _PhysicsProcess()
@@ -23,14 +23,8 @@ namespace Player
 
         // ── Child Node References (auto-found in _Ready) ──────────────────────
         public AnimationPlayer Animator { get; private set; } = null!;
-        private Sprite2D _sprite = null!;
-        private double   _animTimer;
-        private int      _animFrame;
-        // Spritesheet layout: 6 columns x 4 rows (170x256 px each cell in 1024x1024)
-        // Row 0 = Idle(4), Row 1 = Run(6), Row 2 = Jump/Fall(4), Row 3 = Attack(5)
-        private int _animRowOffset;  // top-left frame index for current anim
-        private int _animFrameCount;
-        private float _animFps;
+        private AnimatedSprite2D _sprite = null!;
+
         public IPlayerInput InputReader  { get; private set; } = null!;
         public PlayerStateMachine StateMachine { get; private set; } = null!;
 
@@ -82,7 +76,7 @@ namespace Player
             }
 
             Animator    = GetNode<AnimationPlayer>("AnimationPlayer");
-            _sprite     = GetNode<Sprite2D>("Sprite2D");
+            _sprite     = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
             InputReader = GetNode<PlayerInput>("PlayerInput");
 
             // Ground / wall detection via ShapeCast2D children
@@ -102,14 +96,13 @@ namespace Player
 
             StateMachine.Initialize(IdleState);
 
-            GD.Print("[PlayerController] Kael initialized — ready for action!");
+            GD.Print("[PlayerController] Player initialized — ready for action!");
         }
 
         public override void _Process(double delta)
         {
             if (_controlLockTimer > 0.0) _controlLockTimer -= delta;
             StateMachine.CurrentState.LogicUpdate();
-            TickAnimation(delta);
         }
 
         public override void _PhysicsProcess(double delta)
@@ -146,46 +139,21 @@ namespace Player
         private void Flip()
         {
             FacingDirection *= -1;
-            Scale = new Vector2(Scale.X * -1, Scale.Y);
+            if (_sprite != null)
+                _sprite.FlipH = FacingDirection == -1;
         }
 
         // ── Animation ─────────────────────────────────────────────────────────
         /// <summary>
-        /// States call this on Enter. We map anim name → spritesheet row.
+        /// States call this on Enter. Delegates directly to AnimatedSprite2D.Play().
+        /// Animation names match SpriteFrames resource: Idle, Run, Walk, Jump, Fall,
+        /// WallSlide, Attack, Attack2, Hurt.
         /// </summary>
         public void PlayAnimation(string animName)
         {
-            // Map state name → (rowOffset, frameCount, fps)
-            (int row, int count, float fps) = animName switch
-            {
-                "Idle"      => (0, 4, 6f),
-                "Run"       => (6, 6, 12f),  // row 1 starts at frame index 6
-                "Jump"      => (12, 2, 8f),  // row 2 starts at frame index 12
-                "Fall"      => (14, 2, 8f),  // row 2 frames 2-3
-                "WallSlide" => (14, 2, 6f),
-                "Attack"    => (18, 5, 14f), // row 3 starts at frame index 18
-                _           => (0, 4, 6f)
-            };
-            _animRowOffset   = row;
-            _animFrameCount  = count;
-            _animFps         = fps;
-            _animFrame       = 0;
-            _animTimer       = 0;
-            if (_sprite != null)
-                _sprite.Frame = _animRowOffset;
-        }
-
-        private void TickAnimation(double delta)
-        {
-            if (_sprite == null || _animFrameCount <= 0) return;
-            _animTimer += delta;
-            double frameDuration = 1.0 / _animFps;
-            if (_animTimer >= frameDuration)
-            {
-                _animTimer -= frameDuration;
-                _animFrame = (_animFrame + 1) % _animFrameCount;
-                _sprite.Frame = _animRowOffset + _animFrame;
-            }
+            if (_sprite == null) return;
+            if (_sprite.Animation == animName && _sprite.IsPlaying()) return;
+            _sprite.Play(animName);
         }
 
         // ── Collision Detection ───────────────────────────────────────────────
