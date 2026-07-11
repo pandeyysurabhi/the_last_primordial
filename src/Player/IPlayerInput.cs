@@ -12,6 +12,9 @@ namespace Player
         bool  JumpUp        { get; }
         bool  JumpHeld      { get; }
         bool  AttackDown    { get; }
+        bool  PhaseShiftDown { get; }
+        bool  TimeFreezeDown { get; }
+        bool  TetherHeld    { get; }
         bool  HasJumpBuffered { get; }
         void  ConsumeJumpBuffer();
     }

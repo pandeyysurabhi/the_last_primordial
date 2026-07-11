@@ -1,0 +1,359 @@
+[gd_scene load_steps=16 format=3 uid="uid://forest_escape_scene"]
+
+[ext_resource type="Script" path="res://src/ForestEscapeController.cs" id="1"]
+[ext_resource type="PackedScene" uid="uid://player_scene" path="res://scenes/player.tscn" id="2"]
+[ext_resource type="Script" path="res://src/Player/TimeFreezableHazard.cs" id="3"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/village_house.png" id="8"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/burnt_cottage.png" id="9"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/church.png" id="10"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/belltower.png" id="11"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/forge.png" id="12"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Backgrounds/sleeping_giant.png" id="13"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Gameplay/phase_platform_physical.png" id="14"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Gameplay/phase_platform_spectral.png" id="15"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Gameplay/time_crystal.png" id="16"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Gameplay/gravity_anchor.png" id="17"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Gameplay/black_sword.png" id="18"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/covenant_altar.png" id="19"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/whispering_well.png" id="20"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/burnt_cradle.png" id="21"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
+size = Vector2(1200, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(16, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trigger"]
+size = Vector2(40, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_block"]
+size = Vector2(32, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_finish"]
+size = Vector2(40, 120)
+
+[sub_resource type="Environment" id="Environment_glow"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.8
+glow_strength = 1.0
+glow_bloom = 0.15
+glow_blend_mode = 0
+
+[sub_resource type="Gradient" id="Gradient_light"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_light"]
+gradient = SubResource("Gradient_light")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0.0)
+
+; ── Root Node ────────────────────────────────────────────────────────────────
+[node name="ForestEscape" type="Node2D"]
+script = ExtResource("1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_glow")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.8, 0.55, 0.55, 1)
+
+; ── Canvas Layer (UI, Fade Overlay, White Flash Overlay) ──────────────────────
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FadeOverlay" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LightningOverlay" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 1)
+
+; ── Parallax / Background Layer (Depth & Storytelling) ───────────────────────
+[node name="Background" type="Node2D" parent="."]
+z_index = -10
+
+[node name="FireSky" type="ColorRect" parent="Background"]
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 1500.0
+offset_bottom = 500.0
+color = Color(0.12, 0.04, 0.05, 1)
+
+[node name="SkyFireGlow" type="ColorRect" parent="Background"]
+offset_left = -300.0
+offset_top = 80.0
+offset_right = 1300.0
+offset_bottom = 250.0
+color = Color(0.3, 0.08, 0.04, 0.4)
+
+[node name="FallingEmbers" type="CPUParticles2D" parent="Background"]
+position = Vector2(500, -100)
+amount = 50
+lifetime = 4.0
+preprocess = 3.0
+emission_shape = 3
+emission_rect_extents = Vector2(800, 10)
+direction = Vector2(-0.8, 1.0)
+spread = 15.0
+gravity = Vector2(0, 30)
+initial_velocity_min = 60.0
+initial_velocity_max = 120.0
+scale_amount_min = 0.8
+scale_amount_max = 2.2
+color = Color(1.0, 0.35, 0.1, 0.6)
+
+[node name="RuinedTowerSilhouette" type="ColorRect" parent="Background"]
+offset_left = 340.0
+offset_top = -120.0
+offset_right = 410.0
+offset_bottom = 160.0
+color = Color(1, 1, 1, 0)
+
+[node name="Texture" type="TextureRect" parent="Background/RuinedTowerSilhouette"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11")
+expand_mode = 1
+
+[node name="RuinedArches" type="ColorRect" parent="Background"]
+offset_left = 720.0
+offset_top = -80.0
+offset_right = 800.0
+offset_bottom = 160.0
+color = Color(1, 1, 1, 0)
+
+[node name="Texture" type="TextureRect" parent="Background/RuinedArches"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10")
+expand_mode = 1
+
+; Seven Burning Eyes (hidden celestial event)
+[node name="SevenEyes" type="Node2D" parent="Background"]
+visible = false
+
+[node name="Eye1" type="ColorRect" parent="Background/SevenEyes"]
+offset_left = 420.0
+offset_top = -60.0
+offset_right = 428.0
+offset_bottom = -52.0
+color = Color(0.9, 0.1, 0.1, 0.8)
+
+[node name="Eye2" type="ColorRect" parent="Background/SevenEyes"]
+offset_left = 450.0
+offset_top = -75.0
+offset_right = 458.0
+offset_bottom = -67.0
+color = Color(0.9, 0.1, 0.1, 0.8)
+
+[node name="Eye3" type="ColorRect" parent="Background/SevenEyes"]
+offset_left = 490.0
+offset_top = -80.0
+offset_right = 498.0
+offset_bottom = -72.0
+color = Color(0.9, 0.1, 0.1, 0.8)
+
+[node name="Eye4" type="ColorRect" parent="Background/SevenEyes"]
+offset_left = 530.0
+offset_top = -75.0
+offset_right = 538.0
+offset_bottom = -67.0
+color = Color(0.9, 0.1, 0.1, 0.8)
+
+[node name="Eye5" type="ColorRect" parent="Background/SevenEyes"]
+offset_left = 560.0
+offset_top = -60.0
+offset_right = 568.0
+offset_bottom = -52.0
+color = Color(0.9, 0.1, 0.1, 0.8)
+
+[node name="Eye6" type="ColorRect" parent="Background/SevenEyes"]
+offset_left = 470.0
+offset_top = -50.0
+offset_right = 478.0
+offset_bottom = -42.0
+color = Color(0.9, 0.1, 0.1, 0.8)
+
+[node name="Eye7" type="ColorRect" parent="Background/SevenEyes"]
+offset_left = 510.0
+offset_top = -50.0
+offset_right = 518.0
+offset_bottom = -42.0
+color = Color(0.9, 0.1, 0.1, 0.8)
+
+; ── Environment ───────────────────────────────────────────────────────────────
+[node name="Environment" type="Node2D" parent="."]
+
+; Storm Rain Particles
+[node name="StormRain" type="CPUParticles2D" parent="Environment"]
+z_index = -5
+position = Vector2(400, -80)
+amount = 250
+lifetime = 2.0
+preprocess = 2.0
+emission_shape = 3
+emission_rect_extents = Vector2(800, 1)
+direction = Vector2(0.3, 1)
+spread = 2.0
+gravity = Vector2(0, 250)
+initial_velocity_min = 320.0
+initial_velocity_max = 480.0
+scale_amount_min = 0.5
+scale_amount_max = 1.6
+color = Color(0.5, 0.4, 0.45, 0.35)
+
+[node name="Ground" type="StaticBody2D" parent="Environment"]
+position = Vector2(500, 172)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground"]
+shape = SubResource("RectangleShape2D_ground")
+
+[node name="Visual" type="ColorRect" parent="Environment/Ground"]
+offset_left = -600.0
+offset_top = -8.0
+offset_right = 600.0
+offset_bottom = 8.0
+color = Color(0.08, 0.06, 0.04, 1)
+
+[node name="LeftWall" type="StaticBody2D" parent="Environment"]
+position = Vector2(-8, 80)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/LeftWall"]
+shape = SubResource("RectangleShape2D_wall")
+
+; Spectral Father Silhouette (Alaric's shade)
+[node name="FatherSilhouette" type="ColorRect" parent="Environment"]
+offset_left = 942.0
+offset_top = 118.0
+offset_right = 958.0
+offset_bottom = 164.0
+color = Color(0.65, 0.85, 1, 0.6)
+
+; ── Hazard Triggers ───────────────────────────────────────────────────────────
+[node name="HazardTriggers" type="Node2D" parent="."]
+
+[node name="Trigger1" type="Area2D" parent="HazardTriggers"]
+position = Vector2(300, 100)
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardTriggers/Trigger1"]
+shape = SubResource("RectangleShape2D_trigger")
+
+[node name="Trigger2" type="Area2D" parent="HazardTriggers"]
+position = Vector2(600, 100)
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardTriggers/Trigger2"]
+shape = SubResource("RectangleShape2D_trigger")
+
+; Eyes Trigger Zone (Middle chasm)
+[node name="EyesTrigger" type="Area2D" parent="HazardTriggers"]
+position = Vector2(500, 100)
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardTriggers/EyesTrigger"]
+shape = SubResource("RectangleShape2D_trigger")
+
+; ── Hazard Blocks (falling objects) ───────────────────────────────────────────
+[node name="Hazards" type="Node2D" parent="."]
+
+[node name="HazardBlock1" type="CharacterBody2D" parent="Hazards"]
+position = Vector2(380, -40)
+collision_layer = 1
+collision_mask = 1
+script = ExtResource("3")
+ApplyGravity = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hazards/HazardBlock1"]
+shape = SubResource("RectangleShape2D_block")
+
+[node name="Visual" type="ColorRect" parent="Hazards/HazardBlock1"]
+offset_left = -16.0
+offset_top = -32.0
+offset_right = 16.0
+offset_bottom = 32.0
+color = Color(1, 1, 1, 0)
+
+[node name="Texture" type="TextureRect" parent="Hazards/HazardBlock1/Visual"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16")
+expand_mode = 1
+
+[node name="HazardBlock2" type="CharacterBody2D" parent="Hazards"]
+position = Vector2(680, -40)
+collision_layer = 1
+collision_mask = 1
+script = ExtResource("3")
+ApplyGravity = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hazards/HazardBlock2"]
+shape = SubResource("RectangleShape2D_block")
+
+[node name="Visual" type="ColorRect" parent="Hazards/HazardBlock2"]
+offset_left = -16.0
+offset_top = -32.0
+offset_right = 16.0
+offset_bottom = 32.0
+color = Color(1, 1, 1, 0)
+
+[node name="Texture" type="TextureRect" parent="Hazards/HazardBlock2/Visual"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16")
+expand_mode = 1
+
+; ── Finish Trigger (Level exit) ───────────────────────────────────────────────
+[node name="FinishTrigger" type="Area2D" parent="."]
+position = Vector2(980, 100)
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishTrigger"]
+shape = SubResource("RectangleShape2D_finish")
+
+; ── Instanced Player Character ────────────────────────────────────────────────
+[node name="Player" parent="." instance=ExtResource("2")]
+position = Vector2(40, 140)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -18)
+zoom = Vector2(1, 1)
+limit_left = 0
+limit_right = 1000
+limit_top = -400
+limit_bottom = 400

@@ -22,6 +22,9 @@ namespace Player
         public bool  JumpUp          { get; private set; }
         public bool  JumpHeld        { get; private set; }
         public bool  AttackDown      { get; private set; }
+        public bool  PhaseShiftDown  { get; private set; }
+        public bool  TimeFreezeDown  { get; private set; }
+        public bool  TetherHeld      { get; private set; }
 
         private float _jumpBufferTimer;
         public bool HasJumpBuffered => _jumpBufferTimer > 0f;
@@ -37,6 +40,9 @@ namespace Player
             JumpHeld = Input.IsActionPressed("jump");
 
             AttackDown = Input.IsActionJustPressed("attack");
+            PhaseShiftDown = Input.IsActionJustPressed("phase_shift");
+            TimeFreezeDown = Input.IsActionJustPressed("time_freeze");
+            TetherHeld     = Input.IsActionPressed("gravity_tether");
 
             // Buffer timer
             if (JumpDown)

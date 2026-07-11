@@ -36,6 +36,11 @@ namespace Player
         public PlayerWallSlideState WallSlideState { get; private set; } = null!;
         public PlayerWallJumpState  WallJumpState  { get; private set; } = null!;
         public PlayerAttackState    AttackState    { get; private set; } = null!;
+        public PlayerTetherState    TetherState    { get; private set; } = null!;
+
+        private bool _isSpectral = false;
+        private CanvasLayer? _timeFreezeLayer;
+        private ColorRect? _timeFreezeOverlayRect;
 
         // ── Collision State ───────────────────────────────────────────────────
         public bool IsGrounded      { get; private set; }
@@ -93,6 +98,24 @@ namespace Player
             WallSlideState  = new PlayerWallSlideState(this, StateMachine, "WallSlide");
             WallJumpState   = new PlayerWallJumpState(this, StateMachine, "Jump");
             AttackState     = new PlayerAttackState(this, StateMachine, "Attack");
+            TetherState     = new PlayerTetherState(this, StateMachine, "Jump");
+
+            // Initialize collision mask to listen to default, physical, and spectral layers (1 + 2 + 4 = 7)
+            CollisionLayer = 1u;
+            CollisionMask = 7u;
+            _groundCheck.CollisionMask = CollisionMask;
+            _wallCheckRight.CollisionMask = CollisionMask;
+            _wallCheckLeft.CollisionMask = CollisionMask;
+
+            // Create time freeze screen overlay dynamically
+            _timeFreezeLayer = new CanvasLayer();
+            _timeFreezeLayer.Layer = 100; // Render above other canvas layers
+            _timeFreezeOverlayRect = new ColorRect();
+            _timeFreezeOverlayRect.SetAnchorsAndOffsetsPreset(Control.LayoutPreset.FullRect);
+            _timeFreezeOverlayRect.Color = new Color(0.1f, 0.4f, 0.9f, 0.0f); // Ice blue transparent tint
+            _timeFreezeOverlayRect.Visible = false;
+            _timeFreezeLayer.AddChild(_timeFreezeOverlayRect);
+            AddChild(_timeFreezeLayer);
 
             StateMachine.Initialize(IdleState);
 
@@ -102,6 +125,30 @@ namespace Player
         public override void _Process(double delta)
         {
             if (_controlLockTimer > 0.0) _controlLockTimer -= delta;
+
+            // Handle Phase Shift ability (Dimensional Slip)
+            if (InputReader.PhaseShiftDown)
+            {
+                TogglePhase();
+            }
+
+            // Handle Time Freeze ability (Chronostasis Pulse)
+            if (InputReader.TimeFreezeDown)
+            {
+                TriggerTimeFreeze(4f);
+            }
+
+            // Handle Gravity Tether entry (Vector Pull)
+            if (InputReader.TetherHeld && StateMachine.CurrentState != TetherState)
+            {
+                Node2D? nearestRift = FindNearestGravityRift(250f); // 250px range
+                if (nearestRift != null)
+                {
+                    TetherState.SetTargetRift(nearestRift);
+                    StateMachine.ChangeState(TetherState);
+                }
+            }
+
             StateMachine.CurrentState.LogicUpdate();
         }
 
@@ -116,6 +163,13 @@ namespace Player
                 Velocity += new Vector2(0, _gravity * GravityScale * PhysicsDelta);
 
             MoveAndSlide();
+
+            // Check if player fell out of bounds (Y > 320)
+            if (GlobalPosition.Y > 320f)
+            {
+                GD.Print("[PlayerController] Player fell out of bounds! Reloading scene.");
+                GetTree().ReloadCurrentScene();
+            }
         }
 
         // ── Gravity Scale (replaces Rigidbody2D.gravityScale) ────────────────
@@ -169,6 +223,130 @@ namespace Player
             if      (touchRight) { TouchingWall = true;  WallDirection =  1; }
             else if (touchLeft)  { TouchingWall = true;  WallDirection = -1; }
             else                 { TouchingWall = false; WallDirection =  0; }
+        }
+
+        // ── Custom Metroidvania Gameplay Mechanics ───────────────────────────
+        private void SpawnPhaseSparks()
+        {
+            var sparks = new CpuParticles2D();
+            sparks.Amount = 24;
+            sparks.Lifetime = 0.5f;
+            sparks.OneShot = true;
+            sparks.Explosiveness = 0.85f;
+            sparks.Spread = 180f;
+            sparks.Gravity = new Vector2(0, 0);
+            sparks.InitialVelocityMin = 50f;
+            sparks.InitialVelocityMax = 120f;
+            sparks.ScaleAmountMin = 1.0f;
+            sparks.ScaleAmountMax = 3.0f;
+            sparks.Color = _isSpectral ? new Color(0.7f, 0.4f, 1.0f, 0.9f) : new Color(0.9f, 0.95f, 1.0f, 0.9f);
+            
+            GetParent().AddChild(sparks);
+            sparks.GlobalPosition = GlobalPosition + new Vector2(0, -18);
+            
+            var timer = GetTree().CreateTimer(0.6f);
+            timer.Timeout += () => {
+                if (GodotObject.IsInstanceValid(sparks))
+                {
+                    sparks.QueueFree();
+                }
+            };
+        }
+
+        private void TogglePhase()
+        {
+            _isSpectral = !_isSpectral;
+            GD.Print("[PlayerController] Phase shifted to: ", _isSpectral ? "Spectral" : "Physical");
+
+            // Notify all PhasePlatforms in the active scene to swap visual/collision state
+            GetTree().CallGroup("PhaseActive", "OnPhaseChanged", _isSpectral);
+
+            // Spawn visual sparks at Kael's position
+            SpawnPhaseSparks();
+
+            // Tween visual modulation for transition feedback on Kael himself
+            var tween = CreateTween().SetParallel(true);
+            if (_isSpectral)
+            {
+                tween.TweenProperty(_sprite, "modulate", new Color(0.7f, 0.4f, 1.0f, 1.0f), 0.2f);
+            }
+            else
+            {
+                tween.TweenProperty(_sprite, "modulate", new Color(1.0f, 1.0f, 1.0f, 1.0f), 0.2f);
+            }
+        }
+
+        private async void TriggerTimeFreeze(float duration)
+        {
+            GD.Print("[PlayerController] Chronostasis Pulse activated!");
+
+            // Freeze all nodes in the "TimeFreezable" group
+            var freezables = GetTree().GetNodesInGroup("TimeFreezable");
+            foreach (var node in freezables)
+            {
+                if (node is TimeFreezableHazard hazard)
+                {
+                    hazard.Freeze();
+                }
+            }
+
+            // Visual flash representation
+            var flash = CreateTween();
+            flash.TweenProperty(this, "modulate", new Color(1.5f, 1.5f, 2.0f, 1.0f), 0.1f);
+            flash.TweenProperty(this, "modulate", new Color(1.0f, 1.0f, 1.0f, 1.0f), 0.1f);
+
+            // Smooth fade-in overlay for time freeze visual effect
+            if (_timeFreezeOverlayRect != null)
+            {
+                _timeFreezeOverlayRect.Visible = true;
+                _timeFreezeOverlayRect.Modulate = new Color(1f, 1f, 1f, 0f);
+                var overlayTween = CreateTween();
+                overlayTween.TweenProperty(_timeFreezeOverlayRect, "modulate:a", 0.4f, 0.25f);
+            }
+
+            // Wait for duration (non-blocking)
+            await ToSignal(GetTree().CreateTimer(duration), SceneTreeTimer.SignalName.Timeout);
+
+            GD.Print("[PlayerController] Time resumes.");
+
+            // Unfreeze
+            var freezablesEnd = GetTree().GetNodesInGroup("TimeFreezable");
+            foreach (var node in freezablesEnd)
+            {
+                if (node is TimeFreezableHazard hazard)
+                {
+                    hazard.Unfreeze();
+                }
+            }
+
+            // Smooth fade-out of universal time freeze overlay
+            if (_timeFreezeOverlayRect != null)
+            {
+                var overlayTween = CreateTween();
+                overlayTween.TweenProperty(_timeFreezeOverlayRect, "modulate:a", 0f, 0.25f);
+                overlayTween.Finished += () => { _timeFreezeOverlayRect.Visible = false; };
+            }
+        }
+
+        private Node2D? FindNearestGravityRift(float maxDistance)
+        {
+            var rifts = GetTree().GetNodesInGroup("GravityRift");
+            Node2D? nearest = null;
+            float nearestDist = maxDistance;
+
+            foreach (var node in rifts)
+            {
+                if (node is Node2D rift)
+                {
+                    float dist = GlobalPosition.DistanceTo(rift.GlobalPosition);
+                    if (dist < nearestDist)
+                    {
+                        nearestDist = dist;
+                        nearest = rift;
+                    }
+                }
+            }
+            return nearest;
         }
     }
 }

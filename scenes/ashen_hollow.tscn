@@ -1,0 +1,1213 @@
+[gd_scene load_steps=23 format=3 uid="uid://ashen_hollow_scene"]
+
+[ext_resource type="Script" path="res://src/AshenHollowController.cs" id="1"]
+[ext_resource type="Script" path="res://src/Interactable.cs" id="2"]
+[ext_resource type="PackedScene" uid="uid://player_scene" path="res://scenes/player.tscn" id="3"]
+[ext_resource type="Script" path="res://src/PhasePlatform.cs" id="4"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Characters/gideon.png" id="5"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Characters/vala.png" id="6"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Characters/lia.png" id="7"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/village_house.png" id="8"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/burnt_cottage.png" id="9"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/church.png" id="10"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/belltower.png" id="11"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/forge.png" id="12"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Backgrounds/sleeping_giant.png" id="13"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Gameplay/phase_platform_physical.png" id="14"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Gameplay/phase_platform_spectral.png" id="15"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Gameplay/time_crystal.png" id="16"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Gameplay/gravity_anchor.png" id="17"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Gameplay/black_sword.png" id="18"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/covenant_altar.png" id="19"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/whispering_well.png" id="20"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/burnt_cradle.png" id="21"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/cottage_door.png" id="22"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/gate.png" id="23"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Gameplay/key.png" id="24"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/trapdoor.png" id="25"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/gravestone.png" id="26"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Environment/gold_chest.png" id="27"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Backgrounds/bg_village_storm.png" id="28"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Backgrounds/bg_village_hills.png" id="29"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Platforms/platform_village_dirt.png" id="30"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Platforms/platform_village_cobblestone.png" id="31"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Keys/key_village_iron.png" id="32"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Keys/key_church_silver.png" id="33"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Doors/door_village_locked.png" id="34"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Doors/door_church_heavy.png" id="35"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Props/prop_village_barrel.png" id="36"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Props/prop_village_bench.png" id="37"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Props/prop_church_candle_cluster.png" id="38"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Props/prop_forest_mushroom_glow.png" id="39"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Props/prop_sewer_chain.png" id="40"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Platforms/platform_forest_roots.png" id="41"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Platforms/platform_forest_mossy_stone.png" id="42"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Backgrounds/bg_forest_dense_trees.png" id="43"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Backgrounds/bg_forest_fog.png" id="44"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Platforms/platform_church_marble.png" id="45"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Platforms/platform_church_cracked.png" id="46"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Backgrounds/bg_church_stained_glass.png" id="47"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/V2/Backgrounds/bg_church_rafters.png" id="48"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_groundLeft"]
+size = Vector2(450, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_groundRight"]
+size = Vector2(450, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_groundForest"]
+size = Vector2(200, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(16, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_housePartition"]
+size = Vector2(16, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_door"]
+size = Vector2(24, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gate"]
+size = Vector2(16, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_platform"]
+size = Vector2(64, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trigger_npc"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trigger_item"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_escape"]
+size = Vector2(40, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_well"]
+size = Vector2(48, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sewerGround"]
+size = Vector2(350, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_belltowerWall"]
+size = Vector2(16, 372)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_belltowerWallRight"]
+size = Vector2(16, 320)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rooftop"]
+size = Vector2(150, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_altarCovenant"]
+size = Vector2(48, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_waterfall"]
+size = Vector2(16, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_waterfallTrigger"]
+size = Vector2(40, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_doorTrigger"]
+size = Vector2(48, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_doorTall"]
+size = Vector2(16, 200)
+
+[sub_resource type="Environment" id="Environment_glow"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.8
+glow_strength = 1.0
+glow_bloom = 0.15
+glow_blend_mode = 0
+
+[sub_resource type="Gradient" id="Gradient_light"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_light"]
+gradient = SubResource("Gradient_light")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0.0)
+
+; ── Root Node ────────────────────────────────────────────────────────────────
+[node name="AshenHollow" type="Node2D"]
+script = ExtResource("1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_glow")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.12, 0.15, 0.22, 1)
+
+; ── Canvas Layer (UI, Time Freeze Overlay, Lightning Overlay) ─────────────────
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TimeFreezeOverlay" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.45, 0.9, 1)
+
+[node name="LightningOverlay" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 1)
+
+; ── Parallax / Background Layer (Depth & Storytelling) ───────────────────────
+[node name="Background" type="Node2D" parent="."]
+z_index = -10
+
+[node name="StormSky" type="TextureRect" parent="Background"]
+texture_repeat = 2
+offset_left = -1000.0
+offset_top = -800.0
+offset_right = 2000.0
+offset_bottom = 800.0
+texture = ExtResource("28")
+stretch_mode = 1
+
+[node name="DistantHills" type="TextureRect" parent="Background"]
+texture_repeat = 2
+offset_left = -1000.0
+offset_top = -200.0
+offset_right = 2000.0
+offset_bottom = 600.0
+texture = ExtResource("29")
+stretch_mode = 1
+
+[node name="SleepingGiantSilhouette" type="ColorRect" parent="Background"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 180.0
+offset_top = -180.0
+offset_right = 440.0
+offset_bottom = 40.0
+color = Color(1, 1, 1, 0)
+
+[node name="Texture" type="TextureRect" parent="Background/SleepingGiantSilhouette"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13")
+expand_mode = 1
+
+[node name="ForestTrees" type="TextureRect" parent="Background"]
+texture_repeat = 2
+offset_left = 600.0
+offset_top = -200.0
+offset_right = 1600.0
+offset_bottom = 600.0
+texture = ExtResource("43")
+stretch_mode = 1
+
+[node name="ForestFog" type="TextureRect" parent="Background"]
+texture_repeat = 2
+offset_left = 600.0
+offset_top = -200.0
+offset_right = 1600.0
+offset_bottom = 600.0
+texture = ExtResource("44")
+stretch_mode = 1
+
+[node name="ChurchGlass" type="TextureRect" parent="Background"]
+texture_repeat = 2
+offset_left = -600.0
+offset_top = -600.0
+offset_right = 400.0
+offset_bottom = 200.0
+texture = ExtResource("47")
+stretch_mode = 1
+
+[node name="ChurchRafters" type="TextureRect" parent="Background"]
+texture_repeat = 2
+offset_left = -600.0
+offset_top = -800.0
+offset_right = 400.0
+offset_bottom = 0.0
+texture = ExtResource("48")
+stretch_mode = 1
+
+[node name="DistantMonolith" type="ColorRect" parent="Background"]
+offset_left = 480.0
+offset_top = -220.0
+offset_right = 530.0
+offset_bottom = 50.0
+color = Color(0.06, 0.07, 0.09, 0.4)
+
+[node name="ForgeGlowVisual" type="ColorRect" parent="Background"]
+offset_left = 570.0
+offset_top = 110.0
+offset_right = 610.0
+offset_bottom = 160.0
+color = Color(0.8, 0.35, 0.1, 0.15)
+
+; ── NPC Structures ────────────────────────────────────────────────────────────
+[node name="NPCs" type="Node2D" parent="."]
+
+[node name="ElderGideon" type="Node2D" parent="NPCs"]
+position = Vector2(160, 148)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCs/ElderGideon"]
+position = Vector2(0, -10)
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("5")
+
+[node name="FireplaceLight" type="PointLight2D" parent="NPCs/ElderGideon"]
+position = Vector2(-20, -10)
+color = Color(1.0, 0.45, 0.1, 1.0)
+energy = 1.8
+texture = SubResource("GradientTexture2D_light")
+texture_scale = 4.0
+
+[node name="Interactable" type="Area2D" parent="NPCs/ElderGideon"]
+script = ExtResource("2")
+PromptText = "Talk to Gideon"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/ElderGideon/Interactable"]
+shape = SubResource("RectangleShape2D_trigger_npc")
+
+[node name="BlacksmithVala" type="Node2D" parent="NPCs"]
+position = Vector2(580, 148)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCs/BlacksmithVala"]
+position = Vector2(0, -10)
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("6")
+
+[node name="Anvil" type="Polygon2D" parent="NPCs/BlacksmithVala"]
+position = Vector2(16, 6)
+color = Color(0.15, 0.15, 0.18, 1)
+polygon = PackedVector2Array(-10, 10, -6, -4, 6, -4, 10, 10)
+
+[node name="ForgeSparks" type="CPUParticles2D" parent="NPCs/BlacksmithVala"]
+position = Vector2(0, 10)
+amount = 6
+lifetime = 1.0
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector2(0, -1)
+spread = 20.0
+gravity = Vector2(0, -50)
+initial_velocity_min = 20.0
+initial_velocity_max = 40.0
+scale_amount_min = 0.5
+scale_amount_max = 1.5
+color = Color(1.0, 0.5, 0.1, 0.8)
+
+[node name="ForgeLight" type="PointLight2D" parent="NPCs/BlacksmithVala"]
+position = Vector2(0, -10)
+color = Color(1.0, 0.6, 0.15, 1.0)
+energy = 1.6
+texture = SubResource("GradientTexture2D_light")
+texture_scale = 3.5
+
+[node name="Interactable" type="Area2D" parent="NPCs/BlacksmithVala"]
+script = ExtResource("2")
+PromptText = "Talk to Vala"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/BlacksmithVala/Interactable"]
+shape = SubResource("RectangleShape2D_trigger_npc")
+
+[node name="ShrineMaidenLia" type="Node2D" parent="NPCs"]
+position = Vector2(-80, 148)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCs/ShrineMaidenLia"]
+position = Vector2(0, -10)
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("7")
+
+[node name="CandleLeft" type="ColorRect" parent="NPCs/ShrineMaidenLia"]
+offset_left = -16.0
+offset_top = 8.0
+offset_right = -13.0
+offset_bottom = 16.0
+color = Color(0.9, 0.9, 0.95, 1)
+
+[node name="CandleRight" type="ColorRect" parent="NPCs/ShrineMaidenLia"]
+offset_left = 13.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(0.9, 0.9, 0.95, 1)
+
+[node name="FlameLeft" type="CPUParticles2D" parent="NPCs/ShrineMaidenLia"]
+position = Vector2(-14.5, 7)
+amount = 3
+lifetime = 0.6
+direction = Vector2(0, -1)
+gravity = Vector2(0, -20)
+scale_amount_min = 0.5
+scale_amount_max = 1.0
+color = Color(1.0, 0.7, 0.3, 0.8)
+
+[node name="FlameRight" type="CPUParticles2D" parent="NPCs/ShrineMaidenLia"]
+position = Vector2(14.5, 7)
+amount = 3
+lifetime = 0.6
+direction = Vector2(0, -1)
+gravity = Vector2(0, -20)
+scale_amount_min = 0.5
+scale_amount_max = 1.0
+color = Color(1.0, 0.7, 0.3, 0.8)
+
+[node name="ShrineLight" type="PointLight2D" parent="NPCs/ShrineMaidenLia"]
+position = Vector2(0, -15)
+color = Color(0.85, 0.7, 1.0, 1.0)
+energy = 1.3
+texture = SubResource("GradientTexture2D_light")
+texture_scale = 3.0
+
+[node name="Interactable" type="Area2D" parent="NPCs/ShrineMaidenLia"]
+script = ExtResource("2")
+PromptText = "Talk to Lia"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/ShrineMaidenLia/Interactable"]
+shape = SubResource("RectangleShape2D_trigger_npc")
+
+
+; ── Environment & Collision (Physical/Default Layer) ──────────────────────────
+[node name="Environment" type="Node2D" parent="."]
+
+; Storm Rain Particles
+[node name="StormRain" type="CPUParticles2D" parent="Environment"]
+z_index = -5
+position = Vector2(300, -80)
+amount = 220
+lifetime = 2.0
+preprocess = 2.0
+emission_shape = 3
+emission_rect_extents = Vector2(800, 1)
+direction = Vector2(0.2, 1)
+spread = 3.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 280.0
+initial_velocity_max = 420.0
+scale_amount_min = 0.5
+scale_amount_max = 1.6
+color = Color(0.45, 0.55, 0.7, 0.4)
+
+; Ground segments
+[node name="GroundLeft" type="StaticBody2D" parent="Environment"]
+position = Vector2(25, 172)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/GroundLeft"]
+shape = SubResource("RectangleShape2D_groundLeft")
+
+[node name="Visual" type="TextureRect" parent="Environment/GroundLeft"]
+texture_repeat = 2
+offset_left = -225.0
+offset_top = -16.0
+offset_right = 225.0
+offset_bottom = 240.0
+texture = ExtResource("31")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="GroundRight" type="StaticBody2D" parent="Environment"]
+position = Vector2(475, 172)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/GroundRight"]
+shape = SubResource("RectangleShape2D_groundRight")
+
+[node name="Visual" type="TextureRect" parent="Environment/GroundRight"]
+texture_repeat = 2
+offset_left = -225.0
+offset_top = -16.0
+offset_right = 225.0
+offset_bottom = 240.0
+texture = ExtResource("31")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="GroundForest" type="StaticBody2D" parent="Environment"]
+position = Vector2(850, 172)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/GroundForest"]
+shape = SubResource("RectangleShape2D_groundForest")
+
+[node name="Visual" type="TextureRect" parent="Environment/GroundForest"]
+texture_repeat = 2
+offset_left = -100.0
+offset_top = -16.0
+offset_right = 100.0
+offset_bottom = 240.0
+texture = ExtResource("41")
+expand_mode = 1
+stretch_mode = 1
+
+; Boundary walls
+[node name="WallLeftBoundary" type="StaticBody2D" parent="Environment"]
+position = Vector2(-208, 80)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WallLeftBoundary"]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="WallRightBoundary" type="StaticBody2D" parent="Environment"]
+position = Vector2(958, 80)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WallRightBoundary"]
+shape = SubResource("RectangleShape2D_wall")
+
+; Gideon's house partition wall
+[node name="GideonHouseWall" type="StaticBody2D" parent="Environment"]
+position = Vector2(242, 124)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/GideonHouseWall"]
+shape = SubResource("RectangleShape2D_housePartition")
+
+[node name="Visual" type="ColorRect" parent="Environment/GideonHouseWall"]
+offset_left = -8.0
+offset_top = -40.0
+offset_right = 8.0
+offset_bottom = 40.0
+color = Color(0.2, 0.15, 0.25, 1)
+
+; SOOT KEY PICKUP
+[node name="KeyPickup" type="Node2D" parent="Environment"]
+position = Vector2(130, 60)
+
+[node name="Visual" type="TextureRect" parent="Environment/KeyPickup"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("32")
+expand_mode = 1
+
+[node name="Interactable" type="Area2D" parent="Environment/KeyPickup"]
+script = ExtResource("2")
+PromptText = "Pick up Key"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/KeyPickup/Interactable"]
+shape = SubResource("RectangleShape2D_trigger_item")
+
+; LOCKED COTTAGE DOOR
+[node name="LockedCottageDoor" type="StaticBody2D" parent="Environment"]
+position = Vector2(350, 64)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/LockedCottageDoor"]
+shape = SubResource("RectangleShape2D_doorTall")
+
+[node name="Visual" type="TextureRect" parent="Environment/LockedCottageDoor"]
+offset_left = -24.0
+offset_top = -100.0
+offset_right = 24.0
+offset_bottom = 100.0
+texture = ExtResource("34")
+expand_mode = 1
+
+[node name="Interactable" type="Area2D" parent="Environment/LockedCottageDoor"]
+position = Vector2(0, 80)
+script = ExtResource("2")
+PromptText = "Unlock door"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Environment/LockedCottageDoor/Interactable"]
+shape = SubResource("RectangleShape2D_doorTrigger")
+
+; BURNT CRADLE & LORE BLACK CRYSTALS
+[node name="BurntCradle" type="Node2D" parent="Environment"]
+position = Vector2(420, 154)
+
+[node name="Visual" type="ColorRect" parent="Environment/BurntCradle"]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(1, 1, 1, 0)
+
+[node name="Texture" type="TextureRect" parent="Environment/BurntCradle/Visual"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21")
+expand_mode = 1
+
+[node name="Interactable" type="Area2D" parent="Environment/BurntCradle"]
+script = ExtResource("2")
+PromptText = "Examine cradle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/BurntCradle/Interactable"]
+shape = SubResource("RectangleShape2D_trigger_item")
+
+; Black Crystal Spires (environmental storytelling)
+[node name="BlackCrystal1" type="ColorRect" parent="Environment/BurntCradle"]
+offset_left = -18.0
+offset_top = -16.0
+offset_right = -14.0
+offset_bottom = 10.0
+color = Color(0.08, 0.03, 0.12, 1)
+
+[node name="BlackCrystal2" type="ColorRect" parent="Environment/BurntCradle"]
+offset_left = 12.0
+offset_top = -22.0
+offset_right = 15.0
+offset_bottom = 10.0
+color = Color(0.08, 0.03, 0.12, 1)
+
+[node name="CradleLight" type="PointLight2D" parent="Environment/BurntCradle"]
+color = Color(0.7, 0.2, 1.0, 1.3)
+energy = 1.5
+texture = SubResource("GradientTexture2D_light")
+texture_scale = 3.0
+
+; THE WHISPERING WELL
+[node name="WhisperingWell" type="StaticBody2D" parent="Environment"]
+position = Vector2(500, 154)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WhisperingWell"]
+shape = SubResource("RectangleShape2D_well")
+
+[node name="Visual" type="ColorRect" parent="Environment/WhisperingWell"]
+offset_left = -24.0
+offset_top = -10.0
+offset_right = 24.0
+offset_bottom = 10.0
+color = Color(1, 1, 1, 0)
+
+[node name="Texture" type="TextureRect" parent="Environment/WhisperingWell/Visual"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20")
+expand_mode = 1
+
+[node name="WellLight" type="PointLight2D" parent="Environment/WhisperingWell"]
+position = Vector2(0, 5)
+color = Color(0.2, 0.7, 0.9, 1.0)
+energy = 1.4
+texture = SubResource("GradientTexture2D_light")
+texture_scale = 3.0
+
+; THE BLACK SWORD
+[node name="BlackSword" type="Node2D" parent="Environment"]
+position = Vector2(-10, -140)
+
+[node name="VisualSword" type="ColorRect" parent="Environment/BlackSword"]
+offset_left = -2.0
+offset_top = -16.0
+offset_right = 2.0
+offset_bottom = 16.0
+color = Color(1, 1, 1, 0)
+
+[node name="Texture" type="TextureRect" parent="Environment/BlackSword/VisualSword"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18")
+expand_mode = 1
+
+[node name="SwordGlowLight" type="PointLight2D" parent="Environment/BlackSword"]
+color = Color(0.7, 0.1, 1.0, 1.0)
+energy = 1.8
+texture = SubResource("GradientTexture2D_light")
+texture_scale = 3.5
+
+[node name="Interactable" type="Area2D" parent="Environment/BlackSword"]
+script = ExtResource("2")
+PromptText = "Draw Black Sword"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/BlackSword/Interactable"]
+shape = SubResource("RectangleShape2D_trigger_item")
+
+; FOREST GATE
+[node name="ForestGate" type="StaticBody2D" parent="Environment"]
+position = Vector2(740, 124)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/ForestGate"]
+shape = SubResource("RectangleShape2D_gate")
+
+[node name="Visual" type="TextureRect" parent="Environment/ForestGate"]
+offset_left = -8.0
+offset_top = -40.0
+offset_right = 8.0
+offset_bottom = 40.0
+texture = ExtResource("23")
+expand_mode = 1
+
+; ESCAPE TRIGGER ZONE
+[node name="EscapeTrigger" type="Area2D" parent="Environment"]
+position = Vector2(780, 114)
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/EscapeTrigger"]
+shape = SubResource("RectangleShape2D_escape")
+
+; Rafters inside Gideon's House
+[node name="Rafter" type="StaticBody2D" parent="Environment"]
+position = Vector2(130, 90)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Rafter"]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="Visual" type="ColorRect" parent="Environment/Rafter"]
+offset_left = -32.0
+offset_top = -6.0
+offset_right = 32.0
+offset_bottom = 6.0
+color = Color(0.4, 0.3, 0.2, 1)
+
+; ── UPPER BASEMENT TRAPDOOR (Inside Gideon's House) ───────────────────────────
+[node name="BasementTrapdoorUpper" type="Node2D" parent="Environment"]
+position = Vector2(80, 154)
+
+[node name="Visual" type="TextureRect" parent="Environment/BasementTrapdoorUpper"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("25")
+expand_mode = 1
+
+[node name="Interactable" type="Area2D" parent="Environment/BasementTrapdoorUpper"]
+script = ExtResource("2")
+PromptText = "Open Cellar Trapdoor"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/BasementTrapdoorUpper/Interactable"]
+shape = SubResource("RectangleShape2D_trigger_item")
+
+; ── CISTERN TELEPORT TRAPDOOR (Behind Church courtyard) ──────────────────────
+[node name="CisternTrapdoor" type="Node2D" parent="Environment"]
+position = Vector2(-170, 154)
+
+[node name="Visual" type="TextureRect" parent="Environment/CisternTrapdoor"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("25")
+expand_mode = 1
+
+[node name="Interactable" type="Area2D" parent="Environment/CisternTrapdoor"]
+script = ExtResource("2")
+PromptText = "Enter Cistern"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/CisternTrapdoor/Interactable"]
+shape = SubResource("RectangleShape2D_trigger_item")
+
+; ── THE HOLLOW BELLTOWER (Vertical Traversal Shaft) ───────────────────────────
+[node name="Belltower" type="Node2D" parent="Environment"]
+
+[node name="BelltowerWallLeft" type="StaticBody2D" parent="Environment/Belltower"]
+position = Vector2(-138, -14)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Belltower/BelltowerWallLeft"]
+shape = SubResource("RectangleShape2D_belltowerWall")
+
+[node name="Visual" type="ColorRect" parent="Environment/Belltower/BelltowerWallLeft"]
+offset_left = -8.0
+offset_top = -186.0
+offset_right = 8.0
+offset_bottom = 186.0
+color = Color(1, 1, 1, 0)
+
+[node name="Texture" type="TextureRect" parent="Environment/Belltower/BelltowerWallLeft/Visual"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11")
+expand_mode = 1
+
+[node name="BelltowerWallRight" type="StaticBody2D" parent="Environment/Belltower"]
+position = Vector2(-62, -40)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Belltower/BelltowerWallRight"]
+shape = SubResource("RectangleShape2D_belltowerWallRight")
+
+[node name="Visual" type="ColorRect" parent="Environment/Belltower/BelltowerWallRight"]
+offset_left = -8.0
+offset_top = -160.0
+offset_right = 8.0
+offset_bottom = 160.0
+color = Color(1, 1, 1, 0)
+
+[node name="Texture" type="TextureRect" parent="Environment/Belltower/BelltowerWallRight/Visual"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11")
+expand_mode = 1
+
+[node name="PlatformPhysical1" type="StaticBody2D" parent="Environment/Belltower"]
+position = Vector2(-100, 60)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4")
+IsSpectralPlatform = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Belltower/PlatformPhysical1"]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="Visual" type="TextureRect" parent="Environment/Belltower/PlatformPhysical1"]
+offset_left = -22.0
+offset_top = -4.0
+offset_right = 22.0
+offset_bottom = 4.0
+texture = ExtResource("14")
+expand_mode = 1
+
+[node name="PlatformSpectral1" type="StaticBody2D" parent="Environment/Belltower"]
+position = Vector2(-100, 25)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("4")
+IsSpectralPlatform = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Belltower/PlatformSpectral1"]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="Visual" type="TextureRect" parent="Environment/Belltower/PlatformSpectral1"]
+offset_left = -22.0
+offset_top = -4.0
+offset_right = 22.0
+offset_bottom = 4.0
+texture = ExtResource("15")
+expand_mode = 1
+
+[node name="PlatformPhysical2" type="StaticBody2D" parent="Environment/Belltower"]
+position = Vector2(-100, -10)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4")
+IsSpectralPlatform = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Belltower/PlatformPhysical2"]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="Visual" type="TextureRect" parent="Environment/Belltower/PlatformPhysical2"]
+offset_left = -22.0
+offset_top = -4.0
+offset_right = 22.0
+offset_bottom = 4.0
+texture = ExtResource("14")
+expand_mode = 1
+
+[node name="PlatformSpectral2" type="StaticBody2D" parent="Environment/Belltower"]
+position = Vector2(-100, -45)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("4")
+IsSpectralPlatform = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Belltower/PlatformSpectral2"]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="Visual" type="TextureRect" parent="Environment/Belltower/PlatformSpectral2"]
+offset_left = -22.0
+offset_top = -4.0
+offset_right = 22.0
+offset_bottom = 4.0
+texture = ExtResource("15")
+expand_mode = 1
+
+[node name="PlatformPhysical3" type="StaticBody2D" parent="Environment/Belltower"]
+position = Vector2(-100, -80)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4")
+IsSpectralPlatform = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Belltower/PlatformPhysical3"]
+shape = SubResource("RectangleShape2D_platform")
+
+[node name="Visual" type="TextureRect" parent="Environment/Belltower/PlatformPhysical3"]
+offset_left = -22.0
+offset_top = -4.0
+offset_right = 22.0
+offset_bottom = 4.0
+texture = ExtResource("14")
+expand_mode = 1
+
+[node name="ChurchRooftop" type="StaticBody2D" parent="Environment/Belltower"]
+position = Vector2(5, -120)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Belltower/ChurchRooftop"]
+shape = SubResource("RectangleShape2D_rooftop")
+
+[node name="Visual" type="TextureRect" parent="Environment/Belltower/ChurchRooftop"]
+texture_repeat = 2
+offset_left = -75.0
+offset_top = -16.0
+offset_right = 75.0
+offset_bottom = 64.0
+texture = ExtResource("45")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="RooftopGate" type="StaticBody2D" parent="Environment/Belltower"]
+position = Vector2(30, -200)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Belltower/RooftopGate"]
+shape = SubResource("RectangleShape2D_doorTall")
+
+[node name="Visual" type="TextureRect" parent="Environment/Belltower/RooftopGate"]
+offset_left = -24.0
+offset_top = -100.0
+offset_right = 24.0
+offset_bottom = 100.0
+texture = ExtResource("35")
+expand_mode = 1
+
+[node name="Interactable" type="Area2D" parent="Environment/Belltower/RooftopGate"]
+position = Vector2(0, 80)
+script = ExtResource("2")
+PromptText = "Examine Gate"
+DialogueText = "The gate cell is locked by a crescent-moon keyhole. It is sealed."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Belltower/RooftopGate/Interactable"]
+shape = SubResource("RectangleShape2D_trigger_npc")
+
+[node name="GoldChestVisual" type="TextureRect" parent="Environment/Belltower"]
+offset_left = 40.0
+offset_top = -150.0
+offset_right = 72.0
+offset_bottom = -126.0
+texture = ExtResource("27")
+expand_mode = 1
+
+; ── LORE GRAVEYARD & SHATTERED IRON COLLARS (storytelling) ───────────────────
+; --- Priority 3 World Density Props ---
+[node name="VillageBench" type="TextureRect" parent="Environment"]
+offset_left = -100.0
+offset_top = 114.0
+offset_right = -36.0
+offset_bottom = 154.0
+texture = ExtResource("37")
+expand_mode = 1
+
+[node name="VillageBarrel" type="TextureRect" parent="Environment"]
+offset_left = 100.0
+offset_top = 114.0
+offset_right = 140.0
+offset_bottom = 154.0
+texture = ExtResource("36")
+expand_mode = 1
+
+[node name="ChurchCandles" type="TextureRect" parent="Environment"]
+offset_left = 370.0
+offset_top = 114.0
+offset_right = 410.0
+offset_bottom = 154.0
+texture = ExtResource("38")
+expand_mode = 1
+
+[node name="CandleLight" type="PointLight2D" parent="Environment/ChurchCandles"]
+position = Vector2(20, 10)
+color = Color(1, 0.7, 0.3, 1)
+energy = 1.2
+texture = SubResource("GradientTexture2D_light")
+texture_scale = 1.5
+
+[node name="ForestMushroom" type="TextureRect" parent="Environment"]
+offset_left = 900.0
+offset_top = 114.0
+offset_right = 964.0
+offset_bottom = 154.0
+texture = ExtResource("39")
+expand_mode = 1
+
+[node name="MushroomLight" type="PointLight2D" parent="Environment/ForestMushroom"]
+position = Vector2(32, 20)
+color = Color(0.2, 0.8, 0.6, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_light")
+texture_scale = 2.0
+
+[node name="SewerChain" type="TextureRect" parent="Environment"]
+offset_left = 350.0
+offset_top = 350.0
+offset_right = 382.0
+offset_bottom = 478.0
+texture = ExtResource("40")
+expand_mode = 1
+
+[node name="GraveyardGravestone1" type="StaticBody2D" parent="Environment"]
+position = Vector2(-192, 160)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/GraveyardGravestone1"]
+shape = SubResource("RectangleShape2D_trigger_item")
+
+[node name="Visual" type="TextureRect" parent="Environment/GraveyardGravestone1"]
+offset_left = -12.0
+offset_top = -24.0
+offset_right = 12.0
+offset_bottom = 8.0
+texture = ExtResource("26")
+expand_mode = 1
+
+[node name="Interactable" type="Area2D" parent="Environment/GraveyardGravestone1"]
+script = ExtResource("2")
+PromptText = "Examine Gravestone"
+DialogueText = "A mossy gravestone covered in glowing wisteria. The inscription reads: 'Alaric, Wielder of Choice. He who stood against the Seven.'"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/GraveyardGravestone1/Interactable"]
+shape = SubResource("RectangleShape2D_trigger_item")
+
+[node name="ValaForgeSecretCollar" type="Node2D" parent="Environment"]
+position = Vector2(620, 166)
+
+[node name="Visual" type="ColorRect" parent="Environment/ValaForgeSecretCollar"]
+offset_left = -8.0
+offset_top = -6.0
+offset_right = 8.0
+offset_bottom = 6.0
+color = Color(0.28, 0.28, 0.32, 1)
+
+[node name="Interactable" type="Area2D" parent="Environment/ValaForgeSecretCollar"]
+script = ExtResource("2")
+PromptText = "Examine Iron Collar"
+DialogueText = "A massive iron shackle etched with suppression runes. It was built to collar a giant. The blacksmith has been secretly melting them down."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/ValaForgeSecretCollar/Interactable"]
+shape = SubResource("RectangleShape2D_trigger_item")
+
+; ── SEWER CISTERN ────────────────────────────────────────────────────────────
+[node name="SewerCistern" type="Node2D" parent="Environment"]
+
+[node name="SewerFloor" type="StaticBody2D" parent="Environment/SewerCistern"]
+position = Vector2(-25, 460)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/SewerCistern/SewerFloor"]
+shape = SubResource("RectangleShape2D_sewerGround")
+
+[node name="Visual" type="ColorRect" parent="Environment/SewerCistern/SewerFloor"]
+offset_left = -175.0
+offset_top = -8.0
+offset_right = 175.0
+offset_bottom = 8.0
+color = Color(0.06, 0.05, 0.08, 1)
+
+[node name="SewerWater" type="ColorRect" parent="Environment/SewerCistern"]
+offset_left = -170.0
+offset_top = 448.0
+offset_right = 100.0
+offset_bottom = 452.0
+color = Color(0.05, 0.1, 0.25, 0.6)
+
+[node name="LadderToSurface" type="Node2D" parent="Environment/SewerCistern"]
+position = Vector2(-170, 420)
+
+[node name="Visual" type="ColorRect" parent="Environment/SewerCistern/LadderToSurface"]
+offset_left = -4.0
+offset_top = -40.0
+offset_right = 4.0
+offset_bottom = 30.0
+color = Color(0.3, 0.25, 0.2, 0.8)
+
+[node name="Interactable" type="Area2D" parent="Environment/SewerCistern/LadderToSurface"]
+script = ExtResource("2")
+PromptText = "Climb to Surface"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/SewerCistern/LadderToSurface/Interactable"]
+shape = SubResource("RectangleShape2D_trigger_npc")
+
+[node name="BasementTrapdoor" type="Node2D" parent="Environment/SewerCistern"]
+position = Vector2(80, 420)
+
+[node name="Visual" type="TextureRect" parent="Environment/SewerCistern/BasementTrapdoor"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("25")
+expand_mode = 1
+
+[node name="Interactable" type="Area2D" parent="Environment/SewerCistern/BasementTrapdoor"]
+script = ExtResource("2")
+PromptText = "Open Trapdoor"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/SewerCistern/BasementTrapdoor/Interactable"]
+shape = SubResource("RectangleShape2D_trigger_npc")
+
+[node name="AltarCovenant" type="StaticBody2D" parent="Environment/SewerCistern"]
+position = Vector2(-50, 420)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/SewerCistern/AltarCovenant"]
+shape = SubResource("RectangleShape2D_altarCovenant")
+
+[node name="Visual" type="ColorRect" parent="Environment/SewerCistern/AltarCovenant"]
+offset_left = -24.0
+offset_top = -32.0
+offset_right = 24.0
+offset_bottom = 32.0
+color = Color(1, 1, 1, 0)
+
+[node name="Texture" type="TextureRect" parent="Environment/SewerCistern/AltarCovenant/Visual"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19")
+expand_mode = 1
+
+[node name="CovenantAltarLight" type="PointLight2D" parent="Environment/SewerCistern/AltarCovenant"]
+position = Vector2(0, -20)
+color = Color(0.7, 0.2, 1.0, 1.0)
+energy = 1.6
+texture = SubResource("GradientTexture2D_light")
+texture_scale = 4.5
+
+[node name="CisternDrips" type="CPUParticles2D" parent="Environment/SewerCistern"]
+position = Vector2(-50, 340)
+amount = 4
+lifetime = 2.5
+emission_shape = 3
+emission_rect_extents = Vector2(100, 1)
+direction = Vector2(0, 1)
+gravity = Vector2(0, 150)
+scale_amount_min = 0.5
+scale_amount_max = 1.2
+color = Color(0.4, 0.6, 0.8, 0.5)
+
+[node name="Keyhole1" type="ColorRect" parent="Environment/SewerCistern/AltarCovenant"]
+offset_left = -16.0
+offset_top = -20.0
+offset_right = -12.0
+offset_bottom = -16.0
+color = Color(0.8, 0.1, 0.1, 0.7)
+
+[node name="Keyhole2" type="ColorRect" parent="Environment/SewerCistern/AltarCovenant"]
+offset_left = -8.0
+offset_top = -20.0
+offset_right = -4.0
+offset_bottom = -16.0
+color = Color(0.8, 0.1, 0.1, 0.7)
+
+[node name="Keyhole3" type="ColorRect" parent="Environment/SewerCistern/AltarCovenant"]
+offset_left = 0.0
+offset_top = -20.0
+offset_right = 4.0
+offset_bottom = -16.0
+color = Color(0.8, 0.1, 0.1, 0.7)
+
+[node name="Keyhole4" type="ColorRect" parent="Environment/SewerCistern/AltarCovenant"]
+offset_left = 8.0
+offset_top = -20.0
+offset_right = 12.0
+offset_bottom = -16.0
+color = Color(0.8, 0.1, 0.1, 0.7)
+
+[node name="Keyhole5" type="ColorRect" parent="Environment/SewerCistern/AltarCovenant"]
+offset_left = -12.0
+offset_top = -8.0
+offset_right = -8.0
+offset_bottom = -4.0
+color = Color(0.8, 0.1, 0.1, 0.7)
+
+[node name="Keyhole6" type="ColorRect" parent="Environment/SewerCistern/AltarCovenant"]
+offset_left = 8.0
+offset_top = -8.0
+offset_right = 12.0
+offset_bottom = -4.0
+color = Color(0.8, 0.1, 0.1, 0.7)
+
+[node name="Keyhole7" type="ColorRect" parent="Environment/SewerCistern/AltarCovenant"]
+offset_left = -2.0
+offset_top = -8.0
+offset_right = 2.0
+offset_bottom = -4.0
+color = Color(0.8, 0.1, 0.1, 0.7)
+
+[node name="Interactable" type="Area2D" parent="Environment/SewerCistern/AltarCovenant"]
+script = ExtResource("2")
+PromptText = "Examine Obsidian Gate"
+DialogueText = "A massive gate carved from solid obsidian. Seven keyholes hum with ancient crimson energy. The gate whispers: 'The keys rest in the blood of the Seven. Return when the circle is broken.'"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/SewerCistern/AltarCovenant/Interactable"]
+shape = SubResource("RectangleShape2D_trigger_npc")
+
+
+; ── FROZEN WATERFALL PLATFORM (Solidifies during Time Freeze) ──────────────────
+[node name="FrozenWaterfall" type="StaticBody2D" parent="Environment"]
+position = Vector2(-105, 115)
+collision_layer = 1
+collision_mask = 0
+modulate = Color(0.2, 0.45, 0.9, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/FrozenWaterfall"]
+shape = SubResource("RectangleShape2D_waterfall")
+disabled = true
+
+[node name="Visual" type="ColorRect" parent="Environment/FrozenWaterfall"]
+offset_left = -8.0
+offset_top = -55.0
+offset_right = 8.0
+offset_bottom = 55.0
+color = Color(0.1, 0.45, 0.9, 1)
+
+[node name="Interactable" type="Area2D" parent="Environment/FrozenWaterfall"]
+script = ExtResource("2")
+PromptText = "Climb Waterfall"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/FrozenWaterfall/Interactable"]
+shape = SubResource("RectangleShape2D_waterfallTrigger")
+
+; ── Instanced Player Character ────────────────────────────────────────────────
+[node name="Player" parent="." instance=ExtResource("3")]
+position = Vector2(80, 140)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -18)
+zoom = Vector2(1, 1)
+limit_left = -200
+limit_right = 950
+limit_top = -400
+limit_bottom = 500
